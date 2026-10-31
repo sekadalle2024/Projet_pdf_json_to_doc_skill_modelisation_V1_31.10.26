@@ -1,0 +1,77 @@
+{
+  "Feuille de révision - Test des contrôles": [
+    {
+      "table 1": {
+        "Etape de mission": "Feuille de révision - Tests des contrôles clés",
+        "Document": "Feuille de test et de pointage des contrôles",
+        "Processus": "Audit interne - Phase de réalisation",
+        "Cycle d'activité": "Vérification de l'efficacité des contrôles",
+        "Secteur d'activité": "Banque, Industrie et Assurance UMOA",
+        "Critère d'audit": "Efficacité des contrôles préventifs et détectifs",
+        "Reference": "FDR-AUD-TEST-CTRL-05",
+        "Version": "V2.1 - Tests de contrôles renforcés",
+        "Etablissement": "Afrika Group Holdings",
+        "Auditeur responsable": "Chef de mission / Auditeur senior"
+      }
+    },
+    {
+      "table 2": [
+        {
+          "N° Test": "T-001",
+          "Objectif de contrôle": "Séparer les fonctions d'engagement et de validation",
+          "Nature du contrôle": "Préventif - Séparation des tâches",
+          "Procédure de test": "- Examiner matrice des habilitations\n- Vérifier l'absence de cumul de rôles\n- Tester 15 opérations d'engagement",
+          "Taille échantillon": "15 engagements / 120 total (12,5%)",
+          "Résultat observé": "14/15 conformes - 1 anomalie détectée",
+          "Écart identifié": "1 opérateur cumule engagement et validation (mission temporaire)",
+          "Conclusion": "Contrôle efficace avec réserve mineure",
+          "Action recommandée": "Régulariser la situation temporaire sous 30 jours"
+        },
+        {
+          "N° Test": "T-002",
+          "Objectif de contrôle": "Valider les limites d'autorisation par niveau",
+          "Nature du contrôle": "Préventif - Limites d'autorisation",
+          "Procédure de test": "- Extraire 20 transactions > seuil\n- Vérifier signatures conformes\n- Contrôler traçabilité des approbations",
+          "Taille échantillon": "20 transactions / 85 total (23,5%)",
+          "Résultat observé": "20/20 conformes - Aucune anomalie",
+          "Écart identifié": "Aucun écart détecté",
+          "Conclusion": "Contrôle efficace et bien appliqué",
+          "Action recommandée": "Maintenir le dispositif actuel"
+        },
+        {
+          "N° Test": "T-003",
+          "Objectif de contrôle": "Vérifier la réconciliation hebdomadaire des comptes",
+          "Nature du contrôle": "Détectif - Réconciliation périodique",
+          "Procédure de test": "- Sélectionner 8 semaines aléatoires\n- Vérifier présence des rapports de réconciliation\n- Contrôler signatures des responsables",
+          "Taille échantillon": "8 semaines / 52 total (15,4%)",
+          "Résultat observé": "7/8 réconciliations complètes - 1 retard de 3 jours",
+          "Écart identifié": "1 réconciliation effectuée avec retard (période de congés)",
+          "Conclusion": "Contrôle généralement efficace",
+          "Action recommandée": "Prévoir un suppléant pendant les congés"
+        },
+        {
+          "N° Test": "T-004",
+          "Objectif de contrôle": "Contrôler l'approbation des dépenses exceptionnelles",
+          "Nature du contrôle": "Préventif - Approbation multi-niveaux",
+          "Procédure de test": "- Examiner 12 dépenses > 100 000 €\n- Vérifier circuit de validation conforme\n- Contrôler présence de toutes les signatures",
+          "Taille échantillon": "12 dépenses / 18 total (66,7%)",
+          "Résultat observé": "12/12 conformes - Circuit respecté",
+          "Écart identifié": "Aucun écart",
+          "Conclusion": "Contrôle pleinement efficace",
+          "Action recommandée": "Maintenir le dispositif et sensibiliser les nouveaux managers"
+        },
+        {
+          "N° Test": "T-005",
+          "Objectif de contrôle": "Vérifier la revue mensuelle des accès sensibles",
+          "Nature du contrôle": "Détectif - Revue périodique des droits",
+          "Procédure de test": "- Analyser 6 mois de rapports de revue\n- Vérifier traitement des anomalies identifiées\n- Contrôler délais de correction",
+          "Taille échantillon": "6 mois / 12 total (50%)",
+          "Résultat observé": "5/6 revues effectuées à temps - 1 revue avec retard de 10 jours",
+          "Écart identifié": "1 revue retardée (absence du responsable sécurité)",
+          "Conclusion": "Contrôle efficace avec amélioration possible",
+          "Action recommandée": "Désigner un suppléant pour les revues d'accès"
+        }
+      ]
+    }
+  ]
+}

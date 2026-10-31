@@ -39,7 +39,7 @@ pip install python-docx requests
 
 ## Metadata
 - **Name**: audit-procedures-json2word
-- **Version**: 1.2.0
+- **Version**: 1.3.0
 - **Author**: Expert Python & Document Automation
 - **Description**: Convertit des données JSON de procédures d'audit (Manuel des procédures d'audit interne) en documents Word professionnels au format E-procedure
 - **Tags**: audit, json, word, automation, documentation, procedures
@@ -223,12 +223,12 @@ Le JSON d'entrée suit cette structure :
 
 **Formule avec horodatage (Cas 2)** :
 ```
-[référence] ― [Etape de mission] ― [Nom logiciel]_V1_HH-MM-SS_DD.MM.YY.docx
+[Etape de mission] ― [Nom logiciel]_V1_HH-MM-SS_DD.MM.YY.docx
 ```
 
 **Exemple** :
 ```
-PROD001 ― Manuel_audit_interne ― Logiciel automatisé E-audit pro_V1_14-15-10_31.10.26.docx
+Manuel_audit_interne ― Logiciel automatisé E-audit pro_V1_14-15-10_31.10.26.docx
 ```
 
 **Génération automatique** :
@@ -340,16 +340,17 @@ Le document Word généré respecte les spécifications E-procedure :
 
 **Exemple complet** :
 ```
-PROD001 ― Manuel_audit_interne ― Logiciel automatisé E-audit pro_V1_14-15-10_31.10.26.docx
+Manuel_audit_interne ― Logiciel automatisé E-audit pro_V1_14-15-10_31.10.26.docx
 ```
 
 **Décomposition** :
-- `PROD001` : Référence séquentielle de production
 - `Manuel_audit_interne` : Étape de mission (espaces remplacés par `_`)
 - `Logiciel automatisé E-audit pro` : Nom du logiciel (par défaut)
 - `V1` : Version
 - `14-15-10` : Heure (14h 15min 10sec)
 - `31.10.26` : Date (31 octobre 2026)
+
+**Note** : Le préfixe de référence (PROD001, etc.) n'apparaît pas dans le nom du fichier lorsqu'un timestamp est présent.
 
 **Avantages du timestamp (Cas 2)** :
 - ✅ **Pas d'écrasement** : Générations multiples dans le même dossier
@@ -724,11 +725,23 @@ Ce skill est basé sur le script `json2word_audit.py` développé pour l'automat
 
 ## Changelog
 
+### Version 1.3.0 (2026-10-31)
+- ✨ **Suppression du préfixe de référence dans les noms de fichiers avec timestamp**
+- ✅ Format final : `[Etape] ― [Logiciel]_V1_HH-MM-SS_DD.MM.YY.docx`
+- ✅ Exemple : `Manuel_audit_interne ― Logiciel automatisé E-audit pro_V1_15-22-03_31.10.26.docx`
+- ✅ Noms plus courts et plus lisibles
+- ✅ Organisation par étape de mission (regroupement naturel)
+- 📝 Documentation mise à jour avec le nouveau format
+
 ### Version 1.2.0 (2026-10-31)
-- ✨ **Horodatage déplacé à la fin du nom de fichier**
-- ✅ Nouveau format : `[ref]-[etape]- [logiciel]_V1_HH-MM-SS_DD.MM.YY.docx`
+- ✨ **Format de nommage simplifié sans préfixe de référence**
+- ✅ Nouveau format : `[Etape] ― [Logiciel]_V1_HH-MM-SS_DD.MM.YY.docx`
+- ✅ Horodatage déplacé à la fin du nom de fichier
+- ✅ Tiret du 8 (―) avec espaces entre les composants
+- ✅ Nom de logiciel par défaut : `Logiciel automatisé E-audit pro`
 - ✅ Format français pour la date (JJ.MM.AA)
 - ✅ Meilleure lisibilité des noms de fichiers
+- 🔧 Gestion UTF-8 pour Windows (encodage subprocess et console)
 - 📖 **Documentation complète des contraintes obligatoires**
 - 📖 Section dédiée aux règles de nommage avec exemples multiples
 - 📖 Documentation du cas spécial "Feuille couverture" avec schéma de calcul

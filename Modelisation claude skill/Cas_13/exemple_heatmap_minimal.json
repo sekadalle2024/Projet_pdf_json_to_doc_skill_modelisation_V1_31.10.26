@@ -1,0 +1,33 @@
+{
+  "Heatmap des risques - Matrice de criticité": [
+    {
+      "table 1": {
+        "Etape de mission": "Heatmap des risques",
+        "Document": "Carte de chaleur des risques - Matrice Impact × Probabilité",
+        "Processus": "Gestion des risques - Visualisation et priorisation",
+        "Cycle d'activité": "Management des Risques et Contrôle Interne",
+        "Secteur d'activité": "Banque, Industrie et Assurance UMOA",
+        "Reference": "HEATMAP-RISK-001",
+        "Version": "V1.0 - Heatmap standard avec échelle 5×5",
+        "Etablissement": "Afrika Group Holdings",
+        "Approbation": "Comité des Risques / Direction des Risques"
+      }
+    },
+    {
+      "table 2": [
+        {
+          "Processus": "Gestion de la trésorerie",
+          "Risque identifié": "Défaut de réconciliation bancaire quotidienne",
+          "Probabilité": "Moyenne (3/5)",
+          "Probabilité score": "3",
+          "Impact": "Élevé (4/5)",
+          "Impact score": "4",
+          "Risque inhérent": "12 - Élevé",
+          "Zone de risque": "Rouge",
+          "Position X": "3",
+          "Position Y": "4"
+        }
+      ]
+    }
+  ]
+}

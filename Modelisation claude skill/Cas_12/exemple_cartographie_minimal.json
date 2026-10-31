@@ -1,0 +1,43 @@
+{
+  "Cartographie des risques - Processus opérationnels": [
+    {
+      "table 1": {
+        "Etape de mission": "Cartographie des risques",
+        "Document": "Cartographie des risques opérationnels et financiers - Identification et évaluation des risques",
+        "Processus": "Gestion des risques - Cartographie et évaluation",
+        "Cycle d'activité": "Management des Risques et Contrôle Interne",
+        "Secteur d'activité": "Banque, Industrie et Assurance UMOA",
+        "Reference": "CARTO-RISK-001",
+        "Version": "V1.0 - Cartographie standard des risques",
+        "Etablissement": "Afrika Group Holdings",
+        "Approbation": "Comité des Risques / Direction des Risques"
+      }
+    },
+    {
+      "table 2": [
+        {
+          "Processus": "Gestion de la trésorerie",
+          "Sous-processus": "Réconciliation bancaire quotidienne",
+          "Risque identifié": "Défaut de réconciliation bancaire quotidienne",
+          "Catégorie de risque": "Risque opérationnel",
+          "Cause racine": "Manque de ressources humaines qualifiées",
+          "Événement déclencheur": "Non-réalisation pendant 3 jours",
+          "Impact potentiel": "Erreurs de caisse non détectées > 1M FCFA",
+          "Probabilité": "Moyenne (3/5)",
+          "Impact": "Élevé (4/5)",
+          "Risque inhérent": "12 - Élevé",
+          "Contrôle préventif": "Procédure formalisée",
+          "Contrôle détectif": "Rapprochement manuel hebdomadaire",
+          "Contrôle correctif": "Plan d'action en cas d'écart",
+          "Efficacité contrôle": "Partiellement efficace",
+          "Risque résiduel": "8 - Moyen",
+          "Propriétaire du risque": "Directeur Financier",
+          "Statut traitement": "En cours",
+          "Recommandation": "Automatiser les réconciliations et former le personnel",
+          "Échéance": "31 décembre 2026",
+          "Coût traitement": "5M FCFA"
+        }
+      ]
+    }
+  ]
+}
