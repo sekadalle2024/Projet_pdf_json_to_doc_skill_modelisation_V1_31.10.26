@@ -1,0 +1,71 @@
+[
+  {
+    "Data_integrale": [
+      {
+        "Etape mission - Manuel des procedures": [
+          {
+            "table 1": {
+              "Etape de mission": "Test Manuel audit interne",
+              "Document": "Manuel de test - Procédure 1",
+              "Processus": "Test de simulation API",
+              "Cycle d'activité": "Cycle de test",
+              "Secteur d'activité": "Banque Test",
+              "Norme": {
+                "Norme 1": "Norme 1.1 Test",
+                "Norme 2": "Norme 1.2 Test"
+              },
+              "Reference": "TEST-001",
+              "Version": "V1.0 Test",
+              "Etablissement": "Banque de Test",
+              "Approbation": "Direction Test"
+            }
+          },
+          {
+            "table 2": [
+              {
+                "Étape méthodologique": "Étape de test 1",
+                "Acteur audit": "Auditeur Test",
+                "Traitement et diligences d'audit": "Test des diligences d'audit",
+                "Document probant": "Document de test",
+                "Norme IIA / CRIPP": "Norme de test",
+                "Extrait de la norme": "Extrait de test"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Etape mission - Manuel des procedures": [
+          {
+            "table 1": {
+              "Etape de mission": "Test Phase de préparation",
+              "Document": "Manuel de test - Procédure 2",
+              "Processus": "Test de simulation API",
+              "Cycle d'activité": "Cycle de test",
+              "Secteur d'activité": "Banque Test",
+              "Norme": {
+                "Norme 1": "Norme 2.1 Test"
+              },
+              "Reference": "TEST-002",
+              "Version": "V1.0 Test",
+              "Etablissement": "Banque de Test",
+              "Approbation": "Direction Test"
+            }
+          },
+          {
+            "table 2": [
+              {
+                "Étape méthodologique": "Étape de test 2",
+                "Acteur audit": "Auditeur Test",
+                "Traitement et diligences d'audit": "Test des diligences d'audit",
+                "Document probant": "Document de test",
+                "Norme IIA / CRIPP": "Norme de test",
+                "Extrait de la norme": "Extrait de test"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

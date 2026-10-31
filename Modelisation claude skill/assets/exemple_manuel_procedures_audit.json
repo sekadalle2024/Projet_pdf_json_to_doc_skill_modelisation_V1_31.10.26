@@ -1,0 +1,82 @@
+{
+  "Etape mission - Manuel des procedures": [
+    {
+      "table 1": {
+        "Etape de mission": "Manuel audit interne - Phase de préparation",
+        "Document": "Manuel méthodologique d'audit interne - Guide d'identification, de cotation et de cartographie des risques de mission",
+        "Processus": "Audit interne - Identification et évaluation des risques opérationnels, financiers et de conformité",
+        "Cycle d'activité": "Méthodologie de Conduite des Missions d'Audit Interne (CRIPP 2025)",
+        "Secteur d'activité": "Banque, Industrie et Assurance UMOA (Afrique de l'Ouest)",
+        "Norme": {
+          "Norme 1": "Norme 1.1 Honnêteté et courage professionnel",
+          "Norme 2": "Norme 2.1 Objectivité individuelle",
+          "Norme 3": "Norme 4.2 Conscience professionnelle",
+          "Norme 4": "Norme 4.3 Scepticisme professionnel",
+          "Norme 5": "Norme 9.1 Compréhension des processus de gouvernance, de gestion des risques et de contrôle",
+          "Norme 6": "Norme 9.4 Plan d'audit interne",
+          "Norme 7": "Norme 9.5 Coordination et utilisation d'autres travaux",
+          "Norme 8": "Norme 10.3 Ressources technologiques",
+          "Norme 9": "Norme 11.1 Établissement de relations et communication avec les parties prenantes",
+          "Norme 10": "Norme 11.2 Communication efficace",
+          "Norme 11": "Norme 11.3 Communication des résultats",
+          "Norme 12": "Norme 12.3 Supervision et amélioration de la réalisation de la mission",
+          "Norme 13": "Norme 13.1 Communication relative à la mission",
+          "Norme 14": "Norme 13.2 Évaluation des risques dans le cadre de la mission",
+          "Norme 15": "Norme 13.3 Objectifs et périmètre de la mission",
+          "Norme 16": "Norme 13.4 Critères d'évaluation",
+          "Norme 17": "Norme 13.6 Programme de travail",
+          "Norme 18": "Norme 14.1 Collecte d'informations pour l'analyse et l'évaluation",
+          "Norme 19": "Norme 14.6 Documentation relative à la mission"
+        },
+        "Reference": "MAN-AUD-METH-RISK-02",
+        "Version": "V3.2 - Démarche normée d'identification des risques, matrice RCM et carte thermique",
+        "Etablissement": "Afrika Group Holdings (Banque & Industrie - Abidjan, Dakar, Lomé)",
+        "Approbation": "Comité d'Audit et des Risques / Direction de l'Audit Interne"
+      }
+    },
+    {
+      "table 2": [
+        {
+          "Étape méthodologique": "Cadrage initial du périmètre d'identification et alignement stratégique",
+          "Acteur audit": "Directeur de l'Audit Interne / Chef de mission",
+          "Traitement et diligences d'audit": "- Définit le périmètre d'analyse des risques à partir des orientations stratégiques et de la lettre de mission.\n- Délimite les frontières organisationnelles, géographiques et fonctionnelles du processus sous revue.\n- Identifie les objectifs stratégiques, opérationnels et réglementaires assignés à l'entité auditée.",
+          "Document probant": "Lettre de cadrage de mission, Note de stratégie d'audit, Déclaration des objectifs opérationnels",
+          "Norme IIA / CRIPP": "Norme 13.3 Objectifs et périmètre de la mission",
+          "Extrait de la norme": "Les auditeurs internes doivent déterminer les objectifs et le périmètre de la mission pour planifier la mission avec efficacité. [...] Le périmètre de la mission doit être suffisant pour atteindre les objectifs fixés et couvrir l'ensemble des processus, systèmes, opérations et personnes concernés."
+        },
+        {
+          "Étape méthodologique": "Collecte et analyse de l'environnement documentaire du processus",
+          "Acteur audit": "Auditeur Interne Senior",
+          "Traitement et diligences d'audit": "- Recueille et passe en revue l'ensemble du corpus documentaire : manuels de procédures, organigrammes, circuits de validation, délégations.\n- Identifie les flux d'informations et transactions financières critiques (entrées, traitements, sorties).\n- Relève les lacunes de formalisation procédurale constitutives de facteurs de risque inhérents.",
+          "Document probant": "Dossier documentaire permanent, Manuels de procédures internes, Schémas directeurs des flux",
+          "Norme IIA / CRIPP": "Norme 14.1 Collecte d'informations pour l'analyse et l'évaluation",
+          "Extrait de la norme": "Pour effectuer des analyses et des évaluations, les auditeurs internes doivent recueillir des informations pertinentes, fiables et suffisantes. [...] Les procédures de recueil des informations aux fins d'analyse peuvent inclure [...] l'inspection ou l'examen d'éléments probants matériels (tels que des documents)."
+        },
+        {
+          "Étape méthodologique": "Entretiens structurés d'identification avec les propriétaires de risques (Risk Owners)",
+          "Acteur audit": "Chef de mission / Auditeur Senior",
+          "Traitement et diligences d'audit": "- Conduit des entretiens semi-directifs avec les responsables opérationnels de chaque ligne de métier.\n- Administre le questionnaire de prise de connaissance pour identifier les incidents et ruptures de processus historiques.\n- Fait émerger les risques perçus, les zones de vulnérabilité technique et les dépendances opérationnelles clés.",
+          "Document probant": "Guides d'entretien d'audit signés, Questionnaires de contrôle interne (QCI) complétés, Comptes-rendus d'échange",
+          "Norme IIA / CRIPP": "Norme 11.1 Établissement de relations et communication avec les parties prenantes",
+          "Extrait de la norme": "Le responsable de l'audit interne doit élaborer une approche visant à établir des relations et une confiance mutuelle avec les parties prenantes clés. [...] Les auditeurs internes doivent communiquer tout au long de la mission avec les responsables de l'activité examinée."
+        },
+        {
+          "Étape méthodologique": "Décomposition granulaire du processus en sous-processus et activités élémentaires",
+          "Acteur audit": "Auditeur Interne Opérations",
+          "Traitement et diligences d'audit": "- Découpe chaque grand processus opérationnel en sous-processus homogènes et en tâches élémentaires séquentielles.\n- Associe à chaque tâche les acteurs opérationnels, les habilitations requises et les systèmes applicatifs support.\n- Établit la cartographie des activités pour s'assurer de l'exhaustivité de l'univers auditable.",
+          "Document probant": "Tableau de décomposition des processus, Matrice RACI opérationnelle, Diagramme de flux de données",
+          "Norme IIA / CRIPP": "Norme 9.1 Compréhension des processus de gouvernance, de gestion des risques et de contrôle",
+          "Extrait de la norme": "Pour élaborer une stratégie et un plan d'audit interne efficaces, le responsable de l'audit interne doit comprendre les processus de gouvernance, de gestion des risques et de contrôle de l'organisation. [...] Il s'agit notamment pour lui de comprendre comment l'organisation identifie et gère les principaux domaines de risque."
+        },
+        {
+          "Étape méthodologique": "Identification exhaustive des événements de risques opérationnels et financiers",
+          "Acteur audit": "Auditeur Interne Senior",
+          "Traitement et diligences d'audit": "- Recense de manière exhaustive les événements indésirables pouvant faire obstacle à l'atteinte des objectifs opérationnels.\n- Catégorise les risques selon la taxonomie prudentielle (erreurs de saisie, pertes d'exploitation, défaillances de contrepartie).\n- Formule chaque risque sous la forme causale stricte : cause racine, événement déclencheur et impact potentiel.",
+          "Document probant": "Registre préliminaire des risques, Référentiel des risques opérationnels UMOA, Fiches de caractérisation d'incident",
+          "Norme IIA / CRIPP": "Norme 13.2 Évaluation des risques dans le cadre de la mission",
+          "Extrait de la norme": "Les auditeurs internes doivent comprendre l'activité examinée pour évaluer les risques y afférents. [...] Pour identifier les risques à examiner, les auditeurs internes doivent identifier les potentiels risques significatifs au regard des objectifs de l'activité examinée."
+        }
+      ]
+    }
+  ]
+}

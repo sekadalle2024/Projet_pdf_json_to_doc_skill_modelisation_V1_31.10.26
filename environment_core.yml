@@ -1,0 +1,56 @@
+name: pdf_excel_env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - numpy
+  - pandas
+  - openpyxl
+  - xlrd
+  - pip:
+    # === Manipulation PDF (Core) ===
+    - pypdf>=4.0.0
+    - PyMuPDF>=1.23.0
+    - pikepdf>=8.0.0
+    - pdfplumber>=0.10.0
+    - reportlab>=4.0.0
+    - fpdf2>=2.7.0
+    
+    # === Manipulation Excel (Core) ===
+    - xlsxwriter>=3.1.0
+    - xlwt>=1.3.0
+    - pyexcel>=0.7.0
+    - pyexcel-xls>=0.7.0
+    - pyexcel-xlsx>=0.6.0
+    - xlwings>=0.30.0
+    - pyxlsb>=1.0.10
+    - formulas>=1.2.0
+    
+    # === Manipulation Word (Core) ===
+    - python-docx>=1.1.0
+    - docx2txt>=0.8
+    - docxtpl>=0.16.0
+    - mammoth>=1.6.0
+    
+    # === Analyse de données (Core) ===
+    - pandas>=2.1.0
+    - numpy>=1.24.0
+    - matplotlib>=3.8.0
+    - seaborn>=0.13.0
+    - scikit-learn>=1.3.0
+    - scipy>=1.11.0
+    - plotly>=5.17.0
+    
+    # === Système de fichiers ===
+    - watchdog>=3.0.0
+    - send2trash>=1.8.2
+    - fs>=2.4.16
+    - filetype>=1.2.0
+    
+    # === Utilitaires ===
+    - pillow>=10.0.0
+    - lxml>=4.9.0
+    - beautifulsoup4>=4.12.0
+    - tqdm>=4.66.0

@@ -1,0 +1,89 @@
+{
+  "Data_integrale": [
+    {
+      "Etape mission - Manuel des procedures": [
+        {
+          "table 1": {
+            "Etape de mission": "Manuel audit interne",
+            "Document": "Manuel méthodologique d'audit interne - Guide de contrôle et d'audit des comptes dormants et de la surveillance permanente",
+            "Processus": "Audit interne - Surveillance permanente et gestion des comptes inactifs et dormants",
+            "Cycle d'activité": "Méthodologie d'Audit Interne Bancaire",
+            "Secteur d'activité": "Banque et établissements financiers UMOA (Côte d'Ivoire)",
+            "Norme": {
+              "Norme 1": "Norme 1.1 Honnêteté et courage professionnel",
+              "Norme 2": "Norme 1.3 Aspects légaux et comportements éthiques",
+              "Norme 3": "Norme 4.2 Conscience professionnelle",
+              "Norme 4": "Norme 4.3 Scepticisme professionnel"
+            },
+            "Reference": "MAN-AUD-BK-DORM-01",
+            "Version": "V3.0 - Production N8N",
+            "Etablissement": "Afrika Financial Bank",
+            "Approbation": "Comité d'Audit et des Risques"
+          }
+        },
+        {
+          "table 2": [
+            {
+              "Étape méthodologique": "Extraction exhaustive de la population des comptes dormants",
+              "Acteur audit": "Auditeur Interne Senior SI",
+              "Traitement et diligences d'audit": "- Extrait directement les tables brutes des comptes sans mouvement depuis plus de deux ans via requêtes SQL sécurisées.\n- Rapproche les soldes cumulés extraits avec le compte de liaison d'attente au grand livre général.\n- Vérifie la non-altération du périmètre d'extraction.",
+              "Document probant": "Requête SQL horodatée, Journal des batchs Core Banking",
+              "Norme IIA / CRIPP": "Norme 14.1 Collecte d'informations pour l'analyse et l'évaluation",
+              "Extrait de la norme": "Les auditeurs internes doivent recueillir des informations pertinentes, fiables et suffisantes."
+            },
+            {
+              "Étape méthodologique": "Réconciliation des comptes réactivés sur la période",
+              "Acteur audit": "Auditeur Interne Opérations",
+              "Traitement et diligences d'audit": "- Recense la totalité des levées d'inactivité intervenues sur les vingt-quatre derniers mois.\n- Confronte la liste des réactivations avec le fichier historique des comptes dormants gelés.",
+              "Document probant": "Fichier de réconciliation des statuts, Balance avant et après déblocage",
+              "Norme IIA / CRIPP": "Norme 13.6 Programme de travail",
+              "Extrait de la norme": "Les auditeurs internes doivent élaborer et documenter un programme de travail."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Etape mission - Manuel des procedures": [
+        {
+          "table 1": {
+            "Etape de mission": "Manuel audit interne - Phase de préparation",
+            "Document": "Manuel méthodologique d'audit interne - Guide d'identification et de cartographie des risques",
+            "Processus": "Audit interne - Identification et évaluation des risques",
+            "Cycle d'activité": "Méthodologie de Conduite des Missions d'Audit Interne",
+            "Secteur d'activité": "Banque, Industrie et Assurance UMOA",
+            "Norme": {
+              "Norme 1": "Norme 1.1 Honnêteté et courage professionnel",
+              "Norme 2": "Norme 9.1 Compréhension des processus de gouvernance",
+              "Norme 3": "Norme 13.2 Évaluation des risques dans le cadre de la mission"
+            },
+            "Reference": "MAN-AUD-METH-RISK-02",
+            "Version": "V3.2 - Production N8N",
+            "Etablissement": "Afrika Group Holdings",
+            "Approbation": "Comité d'Audit et des Risques"
+          }
+        },
+        {
+          "table 2": [
+            {
+              "Étape méthodologique": "Cadrage initial du périmètre d'identification",
+              "Acteur audit": "Directeur de l'Audit Interne",
+              "Traitement et diligences d'audit": "- Définit le périmètre d'analyse des risques à partir des orientations stratégiques.\n- Délimite les frontières organisationnelles et fonctionnelles.\n- Identifie les objectifs stratégiques et opérationnels.",
+              "Document probant": "Lettre de cadrage de mission, Note de stratégie d'audit",
+              "Norme IIA / CRIPP": "Norme 13.3 Objectifs et périmètre de la mission",
+              "Extrait de la norme": "Les auditeurs internes doivent déterminer les objectifs et le périmètre de la mission."
+            },
+            {
+              "Étape méthodologique": "Collecte et analyse de l'environnement documentaire",
+              "Acteur audit": "Auditeur Interne Senior",
+              "Traitement et diligences d'audit": "- Recueille et passe en revue l'ensemble du corpus documentaire.\n- Identifie les flux d'informations et transactions financières critiques.\n- Relève les lacunes de formalisation procédurale.",
+              "Document probant": "Dossier documentaire permanent, Manuels de procédures internes",
+              "Norme IIA / CRIPP": "Norme 14.1 Collecte d'informations pour l'analyse et l'évaluation",
+              "Extrait de la norme": "Les auditeurs internes doivent recueillir des informations pertinentes et fiables."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

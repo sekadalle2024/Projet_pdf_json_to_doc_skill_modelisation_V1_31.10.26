@@ -1,0 +1,28 @@
+# === Core packages seulement - Installation rapide ===
+
+# PDF - Essentiels uniquement
+pypdf>=4.0.0
+pikepdf>=8.0.0
+pdfplumber>=0.10.0
+reportlab>=4.0.0
+fpdf2>=2.7.0
+
+# Excel - Essentiels
+xlsxwriter>=3.1.0
+xlwt>=1.3.0
+formulas>=1.2.0
+
+# Word - Essentiels
+python-docx>=1.1.0
+docx2txt>=0.8
+docxtpl>=0.16.0
+
+# Analyse - Essentiels
+matplotlib>=3.8.0
+seaborn>=0.13.0
+scipy>=1.11.0
+
+# Utilitaires
+pillow>=10.0.0
+lxml>=4.9.0
+tqdm>=4.66.0

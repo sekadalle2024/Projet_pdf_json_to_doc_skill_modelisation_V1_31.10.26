@@ -1,0 +1,282 @@
+{
+  "Etape mission - Manuel des procedures": [
+    {
+      "table 1": {
+        "Etape de mission": "Manuel audit interne",
+        "Document": "Manuel méthodologique d'audit interne - Guide de contrôle et d'audit des comptes dormants et de la surveillance permanente",
+        "Processus": "Audit interne - Surveillance permanente et gestion des comptes inactifs et dormants",
+        "Cycle d'activité": "Méthodologie d'Audit Interne Bancaire",
+        "Secteur d'activité": "Banque et établissements financiers UMOA (Côte d'Ivoire)",
+        "Norme": {
+          "Norme 1": "Norme 1.1 Honnêteté et courage professionnel",
+          "Norme 2": "Norme 1.3 Aspects légaux et comportements éthiques",
+          "Norme 3": "Norme 4.2 Conscience professionnelle",
+          "Norme 4": "Norme 4.3 Scepticisme professionnel",
+          "Norme 5": "Norme 7.1 Indépendance au sein de l’organisation",
+          "Norme 6": "Norme 11.2 Communication efficace",
+          "Norme 7": "Norme 11.5 Communication relative à l’acceptation des risques",
+          "Norme 8": "Norme 12.3 Supervision et amélioration de la réalisation de la mission",
+          "Norme 9": "Norme 13.2 Évaluation des risques dans le cadre de la mission",
+          "Norme 10": "Norme 13.3 Objectifs et périmètre de la mission",
+          "Norme 11": "Norme 13.4 Critères d’évaluation",
+          "Norme 12": "Norme 13.6 Programme de travail",
+          "Norme 13": "Norme 14.1 Collecte d’informations pour l’analyse et l’évaluation",
+          "Norme 14": "Norme 14.2 Analyses et constats potentiels de la mission",
+          "Norme 15": "Norme 14.3 Évaluation des constats",
+          "Norme 16": "Norme 14.5 Conclusions de la mission",
+          "Norme 17": "Norme 14.6 Documentation relative à la mission",
+          "Norme 18": "Norme 15.1 Communication des résultats définitifs de la mission",
+          "Norme 19": "Norme 15.2 Confirmation de la mise en œuvre des recommandations ou plans d’action"
+        },
+        "Reference": "MAN-AUD-BK-DORM-01",
+        "Version": "V3.0 - Procédures d'audit probant, inviolabilité des feuilles de couverture et double clé",
+        "Etablissement": "Afrika Financial Bank (Siège Abidjan Plateau & Réseau Agences UMOA)",
+        "Approbation": "Comité d'Audit et des Risques / Direction de l'Audit Interne"
+      }
+    },
+    {
+      "table 2": [
+        {
+          "Étape méthodologique": "Extraction exhaustive de la population des comptes dormants du Core Banking",
+          "Acteur audit": "Auditeur Interne Senior SI",
+          "Traitement et diligences d'audit": "- Extrait directement les tables brutes des comptes sans mouvement depuis plus de deux ans via requêtes SQL sécurisées.\n- Rapproche les soldes cumulés extraits avec le compte de liaison d'attente au grand livre général.\n- Vérifie la non-altération du périmètre d'extraction par comparaison avec le journal des clôtures batch.",
+          "Document probant": "Requête SQL horodatée, Journal des batchs Core Banking, Grand livre auxiliaire des comptes dormants",
+          "Norme IIA / CRIPP": "Norme 14.1 Collecte d’informations pour l’analyse et l’évaluation",
+          "Extrait de la norme": "Pour effectuer des analyses et des évaluations, les auditeurs internes doivent recueillir des informations pertinentes, fiables et suffisantes. [...] L’information sera d’autant plus fiable qu’elle sera obtenue directement par un auditeur interne ou auprès d’une source indépendante [et] corroborée. [...] Lors de la collecte d’informations, les auditeurs internes devraient envisager de tester une population complète de données ou un échantillon représentatif, une démarche facilitée par le recours à des logiciels d’analyse de données."
+        },
+        {
+          "Étape méthodologique": "Réconciliation des comptes réactivés sur la période sous revue",
+          "Acteur audit": "Auditeur Interne Opérations",
+          "Traitement et diligences d'audit": "- Recense la totalité des levées d'inactivité intervenues sur les vingt-quatre derniers mois.\n- Confronte la liste des réactivations avec le fichier historique des comptes dormants gelés.\n- Isole tout écart d'inventaire ou compte débloqué non répertorié dans le registre central.",
+          "Document probant": "Fichier de réconciliation des statuts, Balance avant et après déblocage, Log d'audit trail des comptes",
+          "Norme IIA / CRIPP": "Norme 13.6 Programme de travail",
+          "Extrait de la norme": "Les auditeurs internes doivent élaborer et documenter un programme de travail pour atteindre les objectifs de la mission. [...] Le programme de travail de la mission doit préciser : les critères à utiliser pour évaluer chaque objectif ; les travaux prévus pour atteindre les objectifs de la mission ; les méthodologies, et notamment les procédures analytiques à utiliser, et les outils utilisés pour mener à bien les travaux."
+        },
+        {
+          "Étape méthodologique": "Stratification et ciblage des comptes sous tutelle ou liquidation",
+          "Acteur audit": "Chef de mission Audit Interne",
+          "Traitement et diligences d'audit": "- Filtre les comptes dormants associés à des procédures collectives, règlements préventifs ou liquidations judiciaires.\n- Stratifie la population selon les critères de matérialité financière et de sensibilité juridique.\n- Sélectionne un sous-échantillon à revue intégrale (100 %) pour les comptes supérieurs à dix millions FCFA.",
+          "Document probant": "Base de stratification d'audit, Registre des mandats judiciaires, Tableau d'échantillonnage raisonné",
+          "Norme IIA / CRIPP": "Norme 13.2 Évaluation des risques dans le cadre de la mission",
+          "Extrait de la norme": "Les auditeurs internes doivent comprendre l’activité examinée pour évaluer les risques y afférents. [...] Pour identifier les risques à examiner, les auditeurs internes doivent : identifier les potentiels risques significatifs au regard des objectifs de l’activité examinée ; prendre en compte les risques spécifiques liés à la fraude ; évaluer le caractère significatif des risques et les hiérarchiser en vue de leur examen."
+        },
+        {
+          "Étape méthodologique": "Contrôle de continuité des journaux d'événements et logs système",
+          "Acteur audit": "Auditeur Interne Senior SI",
+          "Traitement et diligences d'audit": "- Vérifie la séquence chronologique continue des logs de modification d'état des comptes.\n- Détecte toute tentative d'interruption volontaire ou de purge non documentée du journal des pistes d'audit.\n- Rapproche les heures de modification avec les plages d'ouverture autorisées du réseau d'agences.",
+          "Document probant": "Logs d'audit trail système, Rapport de contrôle d'intégrité des tables de données, Piste d'audit informatique",
+          "Norme IIA / CRIPP": "Norme 14.1 Collecte d’informations pour l’analyse et l’évaluation",
+          "Extrait de la norme": "Pour effectuer des analyses et des évaluations, les auditeurs internes doivent recueillir des informations pertinentes, fiables et suffisantes. [...] L’information sera d’autant plus fiable qu’elle sera collectée à partir d’un système doté de processus efficaces de gouvernance, de gestion des risques et de contrôle. [...] Les auditeurs internes font preuve de scepticisme professionnel pour en apprécier la fiabilité."
+        },
+        {
+          "Étape méthodologique": "Constitution de la base maîtresse d'audit et scellement d'intégrité",
+          "Acteur audit": "Manager Audit Interne",
+          "Traitement et diligences d'audit": "- Fige la base maîtresse d'audit dans un dossier sécurisé en lecture seule avec empreinte de hachage SHA-256.\n- Établit l'inventaire contradictoire des comptes dormants réactivés à auditer sans possibilité de retrait unilatéral.\n- Valide l'échantillon final avec le Directeur de l'Audit Interne avant le déploiement des travaux de terrain.",
+          "Document probant": "Empreinte numérique SHA-256 de la base, Fiche de validation d'échantillon d'audit, Note de cadrage de mission",
+          "Norme IIA / CRIPP": "Norme 14.6 Documentation relative à la mission",
+          "Extrait de la norme": "Les auditeurs internes doivent documenter les informations et les éléments probants pertinents, fiables et suffisants pour étayer les résultats et les conclusions de la mission. [...] Les documents de travail doivent être conservés et protégés de façon appropriée pour en garantir l’intégrité, la confidentialité et la sécurité tout au long de la mission."
+        },
+        {
+          "Étape méthodologique": "Revue de la séparation des fonctions et des profils Core Banking",
+          "Acteur audit": "Auditeur Interne Senior Opérations",
+          "Traitement et diligences d'audit": "- Examine la matrice des rôles pour vérifier l'incompatibilité stricte entre initiateur de caisse et valideur système.\n- Vérifie l'interdiction technique de déblocage autonome d'un compte dormant par le chef d'agence.\n- Révèle tout cumul anormal de profils autorisant la modification de statut sans validation du siège.",
+          "Document probant": "Matrice des habilitations Core Banking, Fichier d'extraction des privilèges utilisateurs, Rapport d'audit des accès",
+          "Norme IIA / CRIPP": "Norme 13.4 Critères d’évaluation",
+          "Extrait de la norme": "Les auditeurs internes doivent identifier les critères les plus pertinents pour évaluer les aspects de l’activité examinée définis dans les objectifs et le périmètre de la mission. [...] Des critères adéquats sont essentiels pour identifier un écart entre l’état souhaité et l’existant (la situation) [...] Exemples de critères adéquats : les politiques, procédures [...] [et] les attentes d’un dispositif de maîtrise correctement conçu."
+        },
+        {
+          "Étape méthodologique": "Audit du mécanisme de double clé informatique agence-siège",
+          "Acteur audit": "Auditeur Interne Senior SI",
+          "Traitement et diligences d'audit": "- Teste l'efficacité opérationnelle de la double clé conjointe obligatoire (Maker agence / Checker conformité siège).\n- Vérifie l'impossibilité algorithmique de valider une levée de dormance sans visa électronique certifié du siège.\n- Relève les cas d'approbation d'urgence ou de forçage manuel sans double validation hiérarchique.",
+          "Document probant": "Journal de workflow de double validation, Table des transactions de forçage, Spécification technique du module de gel",
+          "Norme IIA / CRIPP": "Norme 14.2 Analyses et constats potentiels de la mission",
+          "Extrait de la norme": "Les auditeurs internes doivent analyser des informations pertinentes, fiables et suffisantes pour élaborer les constats potentiels de la mission. [...] Le programme de travail de la mission peut intégrer une liste d’analyses spécifiques à réaliser, par exemple des vérifications de l’exactitude ou de l’efficacité d’un processus ou d’une activité. [...] Les analyses devraient fournir une comparaison claire entre les critères d’évaluation et la situation de fait."
+        },
+        {
+          "Étape méthodologique": "Contrôle d'imperméabilité des droits sur les coordonnées de contact",
+          "Acteur audit": "Auditeur Interne SI",
+          "Traitement et diligences d'audit": "- Analyse l'historique des modifications des numéros de téléphone et e-mails associés aux comptes dormants.\n- Contrôle l'existence d'un verrouillage système interdisant aux agences d'éditer les coordonnées d'un compte gelé.\n- Confronte la liste des modificateurs de données avec l'organigramme pour repérer les interventions de guichet.",
+          "Document probant": "Table d'audit des modifications de signalétique client, Fiche de paramétrage de profil de guichet, Historique CRM",
+          "Norme IIA / CRIPP": "Norme 4.3 Scepticisme professionnel",
+          "Extrait de la norme": "Les auditeurs internes doivent faire preuve de scepticisme professionnel lorsqu’ils planifient et réalisent des missions d’audit interne. [...] Le scepticisme professionnel consiste à faire preuve de curiosité d’esprit et d’esprit critique lors de l’examen de la fiabilité des informations. [...] Les auditeurs internes doivent être attentifs aux informations contradictoires ou qui soulèvent des doutes quant à la fiabilité des éléments probants."
+        },
+        {
+          "Étape méthodologique": "Vérification des délégations de pouvoirs et des plafonds d'autorisation",
+          "Acteur audit": "Chef de mission Audit Interne",
+          "Traitement et diligences d'audit": "- Confronte les visas électroniques de déblocage avec les délégations de pouvoirs signées par la Direction Générale.\n- Vérifie que les montants des comptes dormants réactivés respectent strictement les paliers d'approbation.\n- Identifie les délégations temporaires octroyées sans date de fin ou transférées sans acte formel.",
+          "Document probant": "Recueil des délégations de pouvoirs bancaires, Actes de délégation de signature, Journal d'approbation des plafonds",
+          "Norme IIA / CRIPP": "Norme 13.3 Objectifs et périmètre de la mission",
+          "Extrait de la norme": "Les auditeurs internes doivent déterminer les objectifs et le périmètre de la mission pour planifier la mission avec efficacité. [...] Le périmètre de la mission doit être suffisant pour atteindre les objectifs fixés et couvrir l’ensemble des processus, systèmes, opérations et personnes concernés. [...] Les auditeurs internes doivent prendre en compte les exigences réglementaires et organisationnelles nécessaires à la mission."
+        },
+        {
+          "Étape méthodologique": "Évaluation de la surveillance permanente de premier et deuxième niveau",
+          "Acteur audit": "Manager Audit Interne",
+          "Traitement et diligences d'audit": "- Examine les comptes-rendus de contrôle permanent de niveau 1 exécutés par les directeurs d'agence.\n- Vérifie l'indépendance et la fréquence effective des revues de niveau 2 opérées par le Contrôle Permanent siège.\n- Évalue l'exhaustivité des alertes transmises au Comité d'Audit et des Risques selon la Circulaire 03-2017/CB/C.",
+          "Document probant": "Rapports de surveillance permanente de niveau 1 et 2, Tableaux de bord trimestriels des risques, PV du Comité d'Audit",
+          "Norme IIA / CRIPP": "Norme 7.1 Indépendance au sein de l’organisation",
+          "Extrait de la norme": "La fonction d’audit interne doit être indépendante au sein de l’organisation et libre de toute ingérence dans la détermination de son périmètre d’intervention, la réalisation de ses travaux et la communication de ses résultats. [...] Le responsable de l’audit interne doit confirmer au Conseil l’indépendance de la fonction d’audit interne au sein de l’organisation."
+        },
+        {
+          "Étape méthodologique": "Contrôle de l'authenticité de la demande écrite de réactivation",
+          "Acteur audit": "Auditeur Interne Terrain",
+          "Traitement et diligences d'audit": "- Exige la production du formulaire original de réactivation manuscrit pour chaque compte réactivé testé.\n- Vérifie la présence physique des mentions légales obligatoires, de la date de dépôt et du timbre à date agence.\n- Détecte l'absence de demande formelle préalable ou l'utilisation d'imprimés non homologués par la banque.",
+          "Document probant": "Formulaire original standardisé de demande de réactivation, Registre physique d'accueil clientèle, Copie conforme d'agence",
+          "Norme IIA / CRIPP": "Norme 14.1 Collecte d’informations pour l’analyse et l’évaluation",
+          "Extrait de la norme": "Pour effectuer des analyses et des évaluations, les auditeurs internes doivent recueillir des informations fiables, c’est-à-dire factuelles et à jour. [...] L’information sera d’autant plus fiable qu’elle sera obtenue directement par un auditeur interne ou auprès d’une source indépendante [et] corroborée. [...] Les procédures de recueil des informations aux fins d’analyse peuvent inclure l’inspection ou l’examen d’éléments probants matériels (tels que des documents)."
+        },
+        {
+          "Étape méthodologique": "Audit de la régularité des jugements de liquidation judiciaire",
+          "Acteur audit": "Auditeur Juriste / Auditeur Senior",
+          "Traitement et diligences d'audit": "- Examine l'expédition originale ou la copie certifiée conforme du jugement de liquidation du Tribunal de Commerce.\n- Vérifie la désignation expresse du liquidateur et l'absence d'ordonnance de révocation ou de clôture.\n- Rapproche les ordonnances versées au dossier avec le registre public du greffe pour exclure tout faux jugement.",
+          "Document probant": "Grosse du jugement du Tribunal de Commerce, Certificat de non-recours du greffe, Fiche d'analyse juridique d'audit",
+          "Norme IIA / CRIPP": "Norme 1.3 Aspects légaux et comportements éthiques",
+          "Extrait de la norme": "Les auditeurs internes doivent respecter les lois et/ou règlements en vigueur et ne doivent pas sciemment prendre part à des activités illégales ou à des actes déshonorants pour l’organisation. [...] Les auditeurs internes doivent comprendre et respecter les exigences légales et réglementaires applicables à l’organisation et au secteur dans lequel elle opère."
+        },
+        {
+          "Étape méthodologique": "Contrôle de conformité de l'identité du liquidateur ou mandataire légal",
+          "Acteur audit": "Auditeur Interne Terrain",
+          "Traitement et diligences d'audit": "- Contrôle la validité de la pièce d'identité biométrique du mandataire au regard des attestations de l'ONECI.\n- Rapproche le spécimen de signature apposé sur la demande avec le carton de signature officiel du mandataire.\n- Signale toute divergence d'identité ou absence d'inscription du mandataire sur la liste des experts agréés.",
+          "Document probant": "Attestation biométrique ONECI, Carton de signature certifié, Tableau de l'Ordre des experts judiciaires",
+          "Norme IIA / CRIPP": "Norme 14.1 Collecte d’informations pour l’analyse et l’évaluation",
+          "Extrait de la norme": "Les auditeurs internes doivent recueillir des informations fiables, c’est-à-dire factuelles et à jour. [...] L’information sera d’autant plus fiable qu’elle sera : obtenue directement par un auditeur interne ou auprès d’une source indépendante, [et] corroborée. [...] Les procédures de recueil des informations aux fins d’analyse peuvent inclure la confirmation ou la vérification des informations auprès d’une personne indépendante de l’activité examinée."
+        },
+        {
+          "Étape méthodologique": "Vérification des contre-appels et entretiens contradictoires obligatoires",
+          "Acteur audit": "Auditeur Interne Opérations",
+          "Traitement et diligences d'audit": "- Inspecte les procès-verbaux de télé-vérification contradictoire dressés par la conformité avant réactivation.\n- Vérifie que le numéro appelé correspond au standard fixe professionnel du cabinet du liquidateur.\n- Constate l'absence de trace de contre-appel ou l'utilisation d'un numéro mobile non répertorié au greffe.",
+          "Document probant": "Fiche d'entretien contradictoire de sécurité, Facture détaillée opérateur téléphonique, Annuaire officiel du tribunal",
+          "Norme IIA / CRIPP": "Norme 14.1 Collecte d’informations pour l’analyse et l’évaluation",
+          "Extrait de la norme": "Les procédures de recueil des informations aux fins d’analyse peuvent inclure : des entretiens ou enquêtes auprès de personnes impliquées dans l’activité ; la confirmation ou la vérification des informations auprès d’une personne indépendante de l’activité examinée. [...] Corroborer les informations en les comparant à plusieurs sources est également un gage d’une plus grande fiabilité."
+        },
+        {
+          "Étape méthodologique": "Contrôle du criblage AML/CFT et conformité anti-blanchiment",
+          "Acteur audit": "Auditeur Interne Conformité",
+          "Traitement et diligences d'audit": "- Examine les résultats du criblage automatique sur les listes de gel des avoirs et Personnes Politiquement Exposées.\n- Vérifie l'absence de levée de blocage prononcée malgré l'existence d'une concordance AML non levée par le siège.\n- Contrôle la formalisation de la déclaration de soupçon à la CENTIF pour tout flux non justifié par la liquidation.",
+          "Document probant": "Rapport de criblage AML Core Banking, Fiche d'analyse de risque blanchiment, Registre interne des déclarations CENTIF",
+          "Norme IIA / CRIPP": "Norme 4.2 Conscience professionnelle",
+          "Extrait de la norme": "Les auditeurs internes doivent planifier et réaliser leurs travaux avec la conscience professionnelle requise, c’est-à-dire faire preuve du soin et des compétences attendus d’un auditeur interne raisonnablement prudent et compétent. [...] Ils doivent prendre en compte l’adéquation et l’efficacité des processus de gouvernance, de gestion des risques et de contrôle au regard des exigences légales et réglementaires."
+        },
+        {
+          "Étape méthodologique": "Analyse chronologique du premier mouvement débiteur post-réactivation",
+          "Acteur audit": "Auditeur Interne Senior Opérations",
+          "Traitement et diligences d'audit": "- Analyse les écritures comptables passées au débit dans les trente jours suivant la reprise des opérations.\n- Constate l'existence d'opérations de débit immédiat ou de vidage intégral du compte réactivé.\n- Recalcule le solde instantané pour vérifier le prélèvement indu de commissions de tenue de compte historiques.",
+          "Document probant": "Extrait de compte chronologique détaillé, Journal des écritures de débit, Fiche d'analyse des flux d'audit",
+          "Norme IIA / CRIPP": "Norme 14.2 Analyses et constats potentiels de la mission",
+          "Extrait de la norme": "Les auditeurs internes doivent analyser des informations pertinentes, fiables et suffisantes pour élaborer les constats potentiels de la mission. [...] Le programme de travail de la mission peut intégrer une liste d’analyses spécifiques à réaliser, par exemple des [...] analyses de ratios, de tendances ou de régression [et des] comparaisons entre les informations [...]. [...] Quand les analyses révèlent un écart entre les critères et la situation de fait, des procédures de mission complémentaires devraient être appliquées."
+        },
+        {
+          "Étape méthodologique": "Audit probant des émissions de chèques certifiés et de banque",
+          "Acteur audit": "Auditeur Interne Senior Opérations",
+          "Traitement et diligences d'audit": "- Inspecte physiquement les souches, bordereaux de remise et copies recto-verso des chèques certifiés émis.\n- Rapproche le montant débité (notamment le débit critique de 34 000 000 FCFA) avec l'ordre de paiement formel.\n- Contrôle la présence des doubles signatures autorisées de l'agence et du visa préalable de la direction des opérations.",
+          "Document probant": "Copie recto-verso du chèque certifié de banque, Souche sécurisée de caisse, Bordereau d'émission de chèque",
+          "Norme IIA / CRIPP": "Norme 14.1 Collecte d’informations pour l’analyse et l’évaluation",
+          "Extrait de la norme": "Pour effectuer des analyses et des évaluations, les auditeurs internes doivent recueillir des informations pertinentes, fiables et suffisantes. [...] Les procédures de recueil des informations aux fins d’analyse peuvent inclure l’inspection ou l’examen d’éléments probants matériels (tels que des documents, inventaires, équipements). [...] Les auditeurs internes doivent évaluer si ces informations sous-jacentes constituent une base raisonnable sur laquelle formuler les constats et conclusions."
+        },
+        {
+          "Étape méthodologique": "Contrôle de destination des fonds et bénéficiaires effectifs",
+          "Acteur audit": "Auditeur Interne Fraude / Senior",
+          "Traitement et diligences d'audit": "- Vérifie l'identité du bénéficiaire final du titre de paiement ou du virement interbancaire émis.\n- Confronte le compte récepteur avec les comptes sous séquestre de l'Ordre des Avocats ou de la Caisse des Dépôts.\n- Décèle tout décaissement suspect opéré au profit d'un compte de particulier ou d'un employé de la banque.",
+          "Document probant": "Avis d'opéré de virement RTGS/SICA, Registre des créanciers vérifiés du liquidateur, Relevé du compte bénéficiaire",
+          "Norme IIA / CRIPP": "Norme 13.2 Évaluation des risques dans le cadre de la mission",
+          "Extrait de la norme": "Les auditeurs internes doivent comprendre l’activité examinée pour évaluer les risques y afférents. [...] Pour identifier les risques à examiner, les auditeurs internes doivent : identifier les potentiels risques significatifs au regard des objectifs de l’activité examinée ; prendre en compte les risques spécifiques liés à la fraude ; évaluer le caractère significatif des risques et les hiérarchiser en vue de leur examen."
+        },
+        {
+          "Étape méthodologique": "Audit de concordance des notifications SMS et routage d'alertes",
+          "Acteur audit": "Auditeur Interne Senior SI",
+          "Traitement et diligences d'audit": "- Extrait les logs du serveur d'envoi des alertes SMS générées lors de la réactivation et du débit des fonds.\n- Confronte le numéro de téléphone destinataire du SMS avec le numéro de mobile officiel du liquidateur judiciaire.\n- Trace toute interception frauduleuse de notification ou modification malveillante du numéro de portable client.",
+          "Document probant": "Logs d'envoi du serveur passerelle SMS, Fichier de corrélation téléphonie-signalétique, Relevé d'acheminement télécom",
+          "Norme IIA / CRIPP": "Norme 14.2 Analyses et constats potentiels de la mission",
+          "Extrait de la norme": "Les auditeurs internes doivent analyser des informations pertinentes, fiables et suffisantes pour élaborer les constats potentiels de la mission. [...] Les auditeurs internes devraient comprendre et exploiter les technologies destinées à améliorer l’efficience et l’efficacité des analyses [...] Les analyses devraient fournir une comparaison claire entre les critères d’évaluation et la situation de fait."
+        },
+        {
+          "Étape méthodologique": "Contrôle du plafonnement des retraits et interdiction des espèces",
+          "Acteur audit": "Auditeur Interne Terrain",
+          "Traitement et diligences d'audit": "- Contrôle le respect strict de l'interdiction de remise de fonds en numéraire au guichet sur compte en liquidation.\n- Vérifie la conformité des décaissements supérieurs au seuil d'autorisation financière de dix millions FCFA.\n- Isole tout fractionnement intentionnel d'opérations de débit visant à contourner les paliers de signature.",
+          "Document probant": "Brouillard journalier de caisse, Journal des retraits d'espèces, Note de service sur les plafonds de décaissement",
+          "Norme IIA / CRIPP": "Norme 14.2 Analyses et constats potentiels de la mission",
+          "Extrait de la norme": "Les auditeurs internes doivent analyser les informations afin d’identifier des écarts entre les critères d’évaluation et l’état actuel (également dénommé la « situation ») de l’activité examinée. [...] Un écart entre les critères et la situation de fait révèle un constat potentiel de la mission qui doit être consigné puis analysé de manière plus approfondie. [...] Des erreurs, des irrégularités, des actes illégaux [...] sont des exemples courants de constats potentiels."
+        },
+        {
+          "Étape méthodologique": "Renseignement exhaustif des données descriptives de la feuille de test",
+          "Acteur audit": "Auditeur Interne Junior / Senior (Preparer)",
+          "Traitement et diligences d'audit": "- Renseigne avec rigueur l'ensemble des colonnes d'identification de la feuille de test BB040 / FC-AG-15.\n- Enregistre le numéro de compte, l'intitulé, la date de déblocage, le solde initial, le montant débité et la référence pièce.\n- Interdit formellement toute cellule laissée vide ou non documentée dans le dossier de travail informatisé.",
+          "Document probant": "Feuille de couverture et de test BB040 renseignée, Dossier d'audit électronique, Référentiel des pièces de test",
+          "Norme IIA / CRIPP": "Norme 14.6 Documentation relative à la mission",
+          "Extrait de la norme": "Les auditeurs internes doivent documenter les informations et les éléments probants pertinents, fiables et suffisants pour étayer les résultats et les conclusions de la mission. [...] Les documents de travail doivent être tenus de façon à permettre à un réviseur indépendant de comprendre la nature, le calendrier et l’étendue des travaux."
+        },
+        {
+          "Étape méthodologique": "Pointage méthodique des critères de contrôle (CTR 1 à CTR 3)",
+          "Acteur audit": "Auditeur Interne Senior",
+          "Traitement et diligences d'audit": "- Appose les signes de pointage normalisés (+ ou -) en face de chaque critère d'audit défini sur la matrice.\n- Attribue le pointage CTR 1 pour la conformité de l'ordonnance judiciaire, CTR 2 pour la double clé, CTR 3 pour le liquidateur.\n- Justifie par une note technique documentée toute attribution d'un signe d'anomalie ou non-conformité relevée.",
+          "Document probant": "Grille de pointage standardisée, Répertoire des symboles d'audit, Notes explicatives de corroboration",
+          "Norme IIA / CRIPP": "Norme 14.6 Documentation relative à la mission",
+          "Extrait de la norme": "Les auditeurs internes doivent consigner et documenter les travaux réalisés, y compris la description des tests, la référence aux éléments probants examinés et les résultats obtenus. [...] Les travaux d’audit doivent être consignés avec clarté, précision et complétude pour étayer objectivement chaque évaluation et constat de la mission."
+        },
+        {
+          "Étape méthodologique": "Interdiction absolue et détection des mentions abusives 'Non applicable'",
+          "Acteur audit": "Chef de mission Audit Interne",
+          "Traitement et diligences d'audit": "- Passe en revue la totalité des lignes de contrôle pour détecter toute mention injustifiée 'Non applicable'.\n- Rejette systématiquement toute biffure ou suppression manuelle d'un test réglementaire par l'équipe d'audit.\n- Exige l'approbation formelle écrite et motivée du Directeur de l'Audit pour toute dispense exceptionnelle de test.",
+          "Document probant": "Rapport de revue d'intégrité de la feuille de couverture, Registre des dérogations exceptionnelles, Matrice inviolable",
+          "Norme IIA / CRIPP": "Norme 1.1 Honnêteté et courage professionnel",
+          "Extrait de la norme": "Les auditeurs internes doivent exercer leur profession avec honnêteté et courage professionnel. [...] Les auditeurs internes doivent faire preuve d’intégrité dans leurs travaux et jugements, et ne pas compromettre la qualité ou l’étendue de leurs évaluations par complaisance ou omission injustifiée."
+        },
+        {
+          "Étape méthodologique": "Formulation des conclusions d'audit et qualification d'assertion",
+          "Acteur audit": "Chef de mission / Manager Audit",
+          "Traitement et diligences d'audit": "- Conclut sans ambiguïté sur chaque ligne de test par 'Satisfaisant', 'Non-satisfaisant' ou 'Limitation'.\n- Qualifie l'assertion comptable et opérationnelle impactée (Validité, Exhaustivité, Évaluation, Séparation d'exercice).\n- Évalue l'impact cumulé des écarts sur les états financiers et le respect de la Circulaire 03-2017/CB/C.",
+          "Document probant": "Synthèse des conclusions de la feuille de test, Tableau de synthèse des assertions d'audit, Note d'arbitrage de mission",
+          "Norme IIA / CRIPP": "Norme 14.5 Conclusions de la mission",
+          "Extrait de la norme": "Les auditeurs internes doivent élaborer une conclusion qui résume les résultats de la mission au regard de ses objectifs et de ceux de la direction. La conclusion de la mission doit résumer le jugement professionnel des auditeurs internes sur le caractère significatif global des constats de la mission dans leur ensemble. [...] Dans le cas d’une mission d’assurance, les auditeurs internes doivent intégrer à leur conclusion leur jugement sur l’efficacité des processus de gouvernance, de gestion des risques et/ou de contrôle de l’activité examinée."
+        },
+        {
+          "Étape méthodologique": "Revue managériale indépendante et validation de la feuille de travail",
+          "Acteur audit": "Directeur de l'Audit Interne (Reviewer)",
+          "Traitement et diligences d'audit": "- Effectue la revue hiérarchique détaillée et contradictoire de la feuille de couverture et des pièces justificatives.\n- Appose son visa électronique infalsifiable attestant de la complétude et de la régularité méthodologique du test.\n- Verrouille le classeur d'audit numérique pour empêcher toute modification ultérieure par les auditeurs ou audités.",
+          "Document probant": "Visa électronique de supervision, Journal d'approbation managériale de mission, Dossier d'audit clôturé",
+          "Norme IIA / CRIPP": "Norme 12.3 Supervision et amélioration de la réalisation de la mission",
+          "Extrait de la norme": "Le responsable de l’audit interne (ou un superviseur de la mission) doit fournir des orientations aux auditeurs internes tout au long de la mission, vérifier l’exhaustivité des programmes de travail et confirmer que les documents de travail de la mission étayent correctement les constats, les conclusions et les recommandations. [...] Le responsable de l’audit interne doit s’assurer que la supervision est étayée par des éléments probants, lesquels doivent être consignés et conservés."
+        },
+        {
+          "Étape méthodologique": "Rédaction de la Feuille de Révélation et d'Analyse de Problème (FRAP)",
+          "Acteur audit": "Auditeur Interne Senior",
+          "Traitement et diligences d'audit": "- Rédige une FRAP circonstanciée pour chaque faille constatée (levée unilatérale, altération de contact, spoliation).\n- Développe méthodiquement les cinq rubriques : Problème, Constat étayé, Causes racines, Conséquences, Recommandations.\n- Chiffre avec précision le montant du préjudice financier potentiel ou avéré (détournement de 34 000 000 FCFA).",
+          "Document probant": "Feuille de Révélation et d'Analyse de Problème (FRAP n° FRAP-DORM-01), Dossier des pièces à conviction chiffrées",
+          "Norme IIA / CRIPP": "Norme 14.3 Évaluation des constats",
+          "Extrait de la norme": "Les auditeurs internes doivent évaluer chaque constat potentiel de la mission pour en déterminer le caractère significatif. [...] Le responsable de l’audit interne peut fournir aux auditeurs internes des modèles à utiliser pour documenter les constats de la mission, en veillant à ce que différents éléments soient correctement documentés, entre autres : les critères ; la situation ; la cause racine (si possible) ; les effets (risque ou exposition potentielle) ; le caractère significatif et le niveau de priorité du constat."
+        },
+        {
+          "Étape méthodologique": "Qualification de déficience majeure du contrôle interne selon l'article 3-n",
+          "Acteur audit": "Directeur de l'Audit Interne",
+          "Traitement et diligences d'audit": "- Qualifie expressément la défaillance de 'Déficience majeure du contrôle interne' au sens de la Circulaire 03-2017/CB/C (Art. 3-n).\n- Démontre la carence structurelle résultant de la suppression d'un contrôle indispensable à la prévention des fraudes.\n- Intègre l'incident dans le tableau de bord de gravité destiné à la Direction Générale et au régulateur.",
+          "Document probant": "Note de qualification réglementaire de déficience majeure, Circulaire N°03-2017/CB/C, Tableau de cotation de gravité",
+          "Norme IIA / CRIPP": "Norme 15.1 Communication des résultats définitifs de la mission",
+          "Extrait de la norme": "Les auditeurs internes doivent élaborer une communication des résultats définitifs de la mission [...] qui doit indiquer les objectifs et le champ de la mission, ainsi que les conclusions, recommandations et plans d’action. [...] Les faiblesses significatives du contrôle interne et les défaillances majeures doivent être communiquées avec précision et mises en évidence selon leur gravité."
+        },
+        {
+          "Étape méthodologique": "Instruction contradictoire et recueil des réponses managériales",
+          "Acteur audit": "Chef de mission Audit Interne",
+          "Traitement et diligences d'audit": "- Transmet contradictoirement la FRAP au responsable de l'agence de Bouaké et au responsable du contrôle permanent.\n- Organise une séance d'arbitrage contradictoire pour recueillir et consigner leurs réponses formelles sous 48 heures.\n- Rejette tout argumentaire fondé sur la recherche artificielle de productivité au détriment de la maîtrise des risques.",
+          "Document probant": "Procès-verbal de restitution contradictoire d'audit, Fiche de réponse managériale visée, Relevé de conclusions d'arbitrage",
+          "Norme IIA / CRIPP": "Norme 11.2 Communication efficace",
+          "Extrait de la norme": "Le responsable de l’audit interne doit élaborer et mettre en œuvre des méthodologies visant à promouvoir la communication d’informations exactes, objectives, claires, concises, constructives, complètes et émises en temps utile. [...] D’esprit constructif – Elle est utile aux parties prenantes et à l’organisation et conduit à des améliorations lorsque c’est nécessaire. Les auditeurs internes devraient communiquer et installer un climat positif de coopération, afin d’impliquer l’activité auditée dans la définition des pistes d’améliorations."
+        },
+        {
+          "Étape méthodologique": "Saisine d'urgence du Comité des Risques et du Conseil d'Administration",
+          "Acteur audit": "Directeur de l'Audit Interne",
+          "Traitement et diligences d'audit": "- Émet une communication d'urgence au Président du Comité des Risques et d'Audit du Conseil d'Administration.\n- Expose l'impact de la suppression de test, la perte financière subie et le risque de sanction sur l'agrément bancaire.\n- Présente le plan de remédiation immédiat exigeant la double clé inviolable et le verrouillage des feuilles de couverture.",
+          "Document probant": "Rapport spécial d'audit d'urgence, Procès-verbal de session extraordinaire du Comité des Risques, Relevé de décisions",
+          "Norme IIA / CRIPP": "Norme 11.5 Communication relative à l’acceptation des risques",
+          "Extrait de la norme": "Lorsque le responsable de l’audit interne estime que la direction a accepté un niveau de risque qui dépasse le seuil de tolérance au risque de l’organisation ou qui est inacceptable, il doit en informer la direction générale. [...] Si le responsable de l’audit interne estime que le problème n’a pas été résolu par la direction générale, il doit en informer le Conseil."
+        },
+        {
+          "Étape méthodologique": "Préparation du reporting réglementaire et notification à la Commission Bancaire",
+          "Acteur audit": "Directeur de l'Audit Interne & Direction Générale",
+          "Traitement et diligences d'audit": "- Rédige le rapport d'incident majeur conformément aux exigences de la Commission Bancaire de l'UMOA et de la BCEAO.\n- Archive l'intégralité du dossier probant dans le classeur permanent d'inspection réglementaire.\n- Assure le suivi hebdomadaire du plan d'action d'apurement des recommandations jusqu'à certification finale.",
+          "Document probant": "Dossier de notification prudentielle à la Commission Bancaire de l'UMOA, Lettre de transmission BCEAO, Matrice de suivi des recos",
+          "Norme IIA / CRIPP": "Norme 15.2 Confirmation de la mise en œuvre des recommandations ou plans d’action",
+          "Extrait de la norme": "Les auditeurs internes doivent confirmer que la direction a mis en œuvre les recommandations des auditeurs internes ou ses propres plans d’action en suivant une méthodologie établie [...] Le niveau de détail de ces procédures doit tenir compte du caractère significatif des constats. [...] Dans certaines circonstances, les régulateurs peuvent exiger que les plans d’action de la direction leur soient communiqués."
+        }
+      ]
+    }
+  ]
+}

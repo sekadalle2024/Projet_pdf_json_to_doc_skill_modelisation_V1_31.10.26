@@ -1,0 +1,852 @@
+/////////////////// ETAPE MISSION /////////////////////////////////////
+
+
+{
+"Etape mission - Feuille couverture": [
+{
+"table 0 - Signature worksheet": [
+{
+"Client": "Afrika Financial Bank",
+"Exercice": "2024",
+"Preparer": "Y.K. / Contrôleur Junior",
+"Reviewer": "D.A.I. / Chef de Mission"
+}
+]
+},
+{
+"table 1": [
+{
+"Etape de mission": "Programme de contrôle des comptes",
+"Test": "A10",
+"Reference": "FC-BK-A10 - Audit des levées de blocage, habilitations double clé et décaissements sur comptes dormants",
+"Nature de test": "Validation"
+}
+]
+},
+{
+"table 2": [
+{
+"OBJECTIFS": "S'assurer de la régularité juridique et procédurale des levées de blocage des comptes dormants, de l'effectivité de la double clé informatique agence-siège (Maker-Checker) et de la légitimité des décaissements post-réactivation selon l'Article 3-n de la Circulaire N°03-2017/CB/C et l'Instruction N°008/07/2013/BCEAO"
+}
+]
+},
+{
+"table 3": [
+{
+"no": "1",
+"travaux a effectuer": "1. Vérifier l'existence et la validité juridique de la demande formelle écrite de réactivation signée du mandataire liquidateur officiel avec pièces justificatives probantes."
+},
+{
+"no": "2",
+"travaux a effectuer": "2. Contrôler dans le Core Banking l'activation obligatoire de la double clé conjointe entre l'agence initiatrice (Maker) et la Direction de la Conformité au siège (Checker)."
+},
+{
+"no": "3",
+"travaux a effectuer": "3. Vérifier que les coordonnées mobiles enregistrées pour les alertes SMS et OTP correspondent strictement à celles du mandataire liquidateur officiel sans modification frauduleuse par l'agence."
+},
+{
+"no": "4",
+"travaux a effectuer": "4. Rapprocher les opérations de débit post-déblocage avec les pièces justificatives d'autorisation et les bordereaux de chèques certifiés émis."
+},
+{
+"no": "5",
+"travaux a effectuer": "5. S'assurer de l'exhaustivité de l'inscription sur la feuille de test permanente sans suppression délibérée ni mention 'Non applicable' non homologuée."
+}
+]
+},
+{
+"table 4": [
+{
+"Résultats des tests": "Autorisation : non-conformité des transactions relatives au processus de réactivation des comptes dormants pour un montant de 34 000 000 FCFA sur 1 Transaction au 31.12.N. Le chef d'agence adjoint a procédé au déblocage unilatéral du compte sans visa préalable de la Conformité du siège."
+}
+]
+},
+{
+"table 5": [
+{
+"N° Ordre": "1",
+"N° Compte Client": "CPT-DOR-04412",
+"Date Réactivation": "14/05/2024",
+"Intitulé Compte": "SOC. IVOIRIENNE LIQUIDATION",
+"Solde Veille Réactivation": "34 000 000",
+"Visa Agence (Maker)": "Oui",
+"Visa Conformité Siège (Checker)": "Non",
+"Contact Liquidateur Conforme": "Non",
+"Montant Débit Réalisé": "34 000 000",
+"Ecart": "34 000 000",
+"Assertion": "Autorisation",
+"CTR 1": "-",
+"CTR 2": "-",
+"CTR 3": "-",
+"CTR 4": "-",
+"CTR 5": "-",
+"Description": "Déblocage unilatéral sans visa Siège, coordonnées du liquidateur falsifiées et détournement de 34 000 000 FCFA par chèque de banque non autorisé.",
+"Conclusion": "Non-satisfaisant"
+},
+{
+"N° Ordre": "2",
+"N° Compte Client": "CPT-DOR-01205",
+"Date Réactivation": "18/01/2024",
+"Intitulé Compte": "ETS KOUADIO ET FILS",
+"Solde Veille Réactivation": "1 500 000",
+"Visa Agence (Maker)": "Oui",
+"Visa Conformité Siège (Checker)": "Oui",
+"Contact Liquidateur Conforme": "Oui",
+"Montant Débit Réalisé": "1 500 000",
+"Ecart": "0",
+"Assertion": "",
+"CTR 1": "+",
+"CTR 2": "+",
+"CTR 3": "+",
+"CTR 4": "+",
+"CTR 5": "+",
+"Description": "Dossier régulier, double clé informatique agence-siège appliquée et pièces justificatives conformes.",
+"Conclusion": "Satisfaisant"
+},
+{
+"N° Ordre": "3",
+"N° Compte Client": "CPT-DOR-01890",
+"Date Réactivation": "02/02/2024",
+"Intitulé Compte": "SOCIETE CIVILE IMMO YACOUBA",
+"Solde Veille Réactivation": "8 250 000",
+"Visa Agence (Maker)": "Oui",
+"Visa Conformité Siège (Checker)": "Oui",
+"Contact Liquidateur Conforme": "Oui",
+"Montant Débit Réalisé": "5 000 000",
+"Ecart": "0",
+"Assertion": "",
+"CTR 1": "+",
+"CTR 2": "+",
+"CTR 3": "+",
+"CTR 4": "+",
+"CTR 5": "+",
+"Description": "Réactivation validée par la Conformité siège avec notification SMS envoyée au mandataire légal.",
+"Conclusion": "Satisfaisant"
+},
+{
+"N° Ordre": "4",
+"N° Compte Client": "CPT-DOR-02114",
+"Date Réactivation": "15/02/2024",
+"Intitulé Compte": "BAH MAMADOU (SUCCESSION)",
+"Solde Veille Réactivation": "3 400 000",
+"Visa Agence (Maker)": "Oui",
+"Visa Conformité Siège (Checker)": "Oui",
+"Contact Liquidateur Conforme": "Oui",
+"Montant Débit Réalisé": "3 400 000",
+"Ecart": "0",
+"Assertion": "",
+"CTR 1": "+",
+"CTR 2": "+",
+"CTR 3": "+",
+"CTR 4": "+",
+"CTR 5": "+",
+"Description": "Acte d'hérédité certifié, contrôle d'habilitation satisfaisant et retrait par bénéficiaire légal.",
+"Conclusion": "Satisfaisant"
+},
+{
+"N° Ordre": "5",
+"N° Compte Client": "CPT-DOR-02550",
+"Date Réactivation": "28/02/2024",
+"Intitulé Compte": "AGRI-PALM SARL LIQUIDATION",
+"Solde Veille Réactivation": "12 000 000",
+"Visa Agence (Maker)": "Oui",
+"Visa Conformité Siège (Checker)": "Oui",
+"Contact Liquidateur Conforme": "Oui",
+"Montant Débit Réalisé": "10 000 000",
+"Ecart": "0",
+"Assertion": "",
+"CTR 1": "+",
+"CTR 2": "+",
+"CTR 3": "+",
+"CTR 4": "+",
+"CTR 5": "+",
+"Description": "Jugement de désignation authentifié au greffe, double clé effective et décaissement autorisé.",
+"Conclusion": "Satisfaisant"
+},
+{
+"N° Ordre": "6",
+"N° Compte Client": "CPT-DOR-03011",
+"Date Réactivation": "10/03/2024",
+"Intitulé Compte": "TRANSPORT SAHARA TRANS",
+"Solde Veille Réactivation": "4 800 000",
+"Visa Agence (Maker)": "Oui",
+"Visa Conformité Siège (Checker)": "Oui",
+"Contact Liquidateur Conforme": "Oui",
+"Montant Débit Réalisé": "2 500 000",
+"Ecart": "0",
+"Assertion": "",
+"CTR 1": "+",
+"CTR 2": "+",
+"CTR 3": "+",
+"CTR 4": "+",
+"CTR 5": "+",
+"Description": "Procédure normale de réactivation appliquée avec succès, traçabilité des logs Core Banking intacte.",
+"Conclusion": "Satisfaisant"
+},
+{
+"N° Ordre": "7",
+"N° Compte Client": "CPT-DOR-03342",
+"Date Réactivation": "25/03/2024",
+"Intitulé Compte": "COMPTOIR TROPICAL CI",
+"Solde Veille Réactivation": "7 150 000",
+"Visa Agence (Maker)": "Oui",
+"Visa Conformité Siège (Checker)": "Oui",
+"Contact Liquidateur Conforme": "Oui",
+"Montant Débit Réalisé": "7 000 000",
+"Ecart": "0",
+"Assertion": "",
+"CTR 1": "+",
+"CTR 2": "+",
+"CTR 3": "+",
+"CTR 4": "+",
+"CTR 5": "+",
+"Description": "Visa conjoint Maker-Checker constaté et respect de l'ensemble des règles prudentielles.",
+"Conclusion": "Satisfaisant"
+},
+{
+"N° Ordre": "8",
+"N° Compte Client": "CPT-DOR-03689",
+"Date Réactivation": "08/04/2024",
+"Intitulé Compte": "ENTREPRISE BTP KONE",
+"Solde Veille Réactivation": "18 900 000",
+"Visa Agence (Maker)": "Oui",
+"Visa Conformité Siège (Checker)": "Oui",
+"Contact Liquidateur Conforme": "Oui",
+"Montant Débit Réalisé": "15 000 000",
+"Ecart": "0",
+"Assertion": "",
+"CTR 1": "+",
+"CTR 2": "+",
+"CTR 3": "+",
+"CTR 4": "+",
+"CTR 5": "+",
+"Description": "Dossier juridique complet, coordonnées téléphoniques vérifiées et déblocage régulier.",
+"Conclusion": "Satisfaisant"
+},
+{
+"N° Ordre": "9",
+"N° Compte Client": "CPT-DOR-03901",
+"Date Réactivation": "22/04/2024",
+"Intitulé Compte": "IVOIRE TEXTILE DISTRIBUTION",
+"Solde Veille Réactivation": "2 300 000",
+"Visa Agence (Maker)": "Oui",
+"Visa Conformité Siège (Checker)": "Oui",
+"Contact Liquidateur Conforme": "Oui",
+"Montant Débit Réalisé": "2 000 000",
+"Ecart": "0",
+"Assertion": "",
+"CTR 1": "+",
+"CTR 2": "+",
+"CTR 3": "+",
+"CTR 4": "+",
+"CTR 5": "+",
+"Description": "Double clé active dans le système, absence d'anomalie sur le flux financier post-réactivation.",
+"Conclusion": "Satisfaisant"
+},
+{
+"N° Ordre": "10",
+"N° Compte Client": "CPT-DOR-04120",
+"Date Réactivation": "05/05/2024",
+"Intitulé Compte": "COOPERATIVE DU SUD",
+"Solde Veille Réactivation": "6 450 000",
+"Visa Agence (Maker)": "Oui",
+"Visa Conformité Siège (Checker)": "Oui",
+"Contact Liquidateur Conforme": "Oui",
+"Montant Débit Réalisé": "6 000 000",
+"Ecart": "0",
+"Assertion": "",
+"CTR 1": "+",
+"CTR 2": "+",
+"CTR 3": "+",
+"CTR 4": "+",
+"CTR 5": "+",
+"Description": "Procès-verbal de réactivation formel et déblocage validé par la Conformité du siège.",
+"Conclusion": "Satisfaisant"
+},
+{
+"N° Ordre": "11",
+"N° Compte Client": "CPT-DOR-04678",
+"Date Réactivation": "28/05/2024",
+"Intitulé Compte": "PHARMACIE DE L'AVENIR",
+"Solde Veille Réactivation": "5 100 000",
+"Visa Agence (Maker)": "Oui",
+"Visa Conformité Siège (Checker)": "Oui",
+"Contact Liquidateur Conforme": "Oui",
+"Montant Débit Réalisé": "5 100 000",
+"Ecart": "0",
+"Assertion": "",
+"CTR 1": "+",
+"CTR 2": "+",
+"CTR 3": "+",
+"CTR 4": "+",
+"CTR 5": "+",
+"Description": "Vérification des pouvoirs du signataire effectuée, transaction totalement justifiée.",
+"Conclusion": "Satisfaisant"
+},
+{
+"N° Ordre": "12",
+"N° Compte Client": "CPT-DOR-05002",
+"Date Réactivation": "12/06/2024",
+"Intitulé Compte": "SOMACI EQUIPEMENT",
+"Solde Veille Réactivation": "9 800 000",
+"Visa Agence (Maker)": "Oui",
+"Visa Conformité Siège (Checker)": "Oui",
+"Contact Liquidateur Conforme": "Oui",
+"Montant Débit Réalisé": "8 500 000",
+"Ecart": "0",
+"Assertion": "",
+"CTR 1": "+",
+"CTR 2": "+",
+"CTR 3": "+",
+"CTR 4": "+",
+"CTR 5": "+",
+"Description": "Contrôle des habilitations conforme, signature de levée d'inactivité validée.",
+"Conclusion": "Satisfaisant"
+},
+{
+"N° Ordre": "13",
+"N° Compte Client": "CPT-DOR-05340",
+"Date Réactivation": "29/06/2024",
+"Intitulé Compte": "AFRICA NEGOCE GROUP",
+"Solde Veille Réactivation": "14 200 000",
+"Visa Agence (Maker)": "Oui",
+"Visa Conformité Siège (Checker)": "Oui",
+"Contact Liquidateur Conforme": "Oui",
+"Montant Débit Réalisé": "14 000 000",
+"Ecart": "0",
+"Assertion": "",
+"CTR 1": "+",
+"CTR 2": "+",
+"CTR 3": "+",
+"CTR 4": "+",
+"CTR 5": "+",
+"Description": "Double clé conjointe agence-siège active, pièces juridiques archivées sans réserve.",
+"Conclusion": "Satisfaisant"
+},
+{
+"N° Ordre": "14",
+"N° Compte Client": "CPT-DOR-05811",
+"Date Réactivation": "15/07/2024",
+"Intitulé Compte": "MANUTENTION GOLFE SARL",
+"Solde Veille Réactivation": "3 600 000",
+"Visa Agence (Maker)": "Oui",
+"Visa Conformité Siège (Checker)": "Oui",
+"Contact Liquidateur Conforme": "Oui",
+"Montant Débit Réalisé": "3 000 000",
+"Ecart": "0",
+"Assertion": "",
+"CTR 1": "+",
+"CTR 2": "+",
+"CTR 3": "+",
+"CTR 4": "+",
+"CTR 5": "+",
+"Description": "Contrôles de second niveau exécutés, réactivation conforme à l'Instruction BCEAO.",
+"Conclusion": "Satisfaisant"
+},
+{
+"N° Ordre": "15",
+"N° Compte Client": "CPT-DOR-06190",
+"Date Réactivation": "30/07/2024",
+"Intitulé Compte": "GLOBAL SERVICES IMPORT",
+"Solde Veille Réactivation": "11 750 000",
+"Visa Agence (Maker)": "Oui",
+"Visa Conformité Siège (Checker)": "Oui",
+"Contact Liquidateur Conforme": "Oui",
+"Montant Débit Réalisé": "10 000 000",
+"Ecart": "0",
+"Assertion": "",
+"CTR 1": "+",
+"CTR 2": "+",
+"CTR 3": "+",
+"CTR 4": "+",
+"CTR 5": "+",
+"Description": "Dossier complet, concordance parfaite entre pièces justificatives et flux financiers.",
+"Conclusion": "Satisfaisant"
+}
+]
+},
+{
+"table 6 - Cross references documentaire": [
+{
+"no": "1",
+"Cross references": "[B01]",
+"Document": "Journal des événements Core Banking — Journal des levées d'inactivité et habilitations",
+"Client": "Afrika Financial Bank",
+"Exercice": "2024"
+},
+{
+"no": "2",
+"Cross references": "[B02]",
+"Document": "Dossiers juridiques clients, jugements de liquidation et mandats judiciaires",
+"Client": "Afrika Financial Bank",
+"Exercice": "2024"
+},
+{
+"no": "3",
+"Cross references": "[B03]",
+"Document": "Matrice des habilitations du système d'information bancaire (Maker-Checker)",
+"Client": "Afrika Financial Bank",
+"Exercice": "2024"
+},
+{
+"no": "4",
+"Cross references": "[B04]",
+"Document": "Bordereaux d'émission de chèques de banque certifiés et relevés de comptes",
+"Client": "Afrika Financial Bank",
+"Exercice": "2024"
+}
+]
+},
+{
+"table 7 - Legendes": [
+{
+"Légende": "Contrôle positif (sans anomalie)",
+"Symboles": "+"
+},
+{
+"Légende": "Contrôle négatif (anomalie relevée)",
+"Symboles": "-"
+},
+{
+"Légende": "Non applicable",
+"Symboles": "x / N/A"
+}
+]
+},
+{
+"table 8 - Revue manager": [
+{
+"no": "1",
+"Superviseur": "Confirmer l'impact du déblocage unilatéral sur le compte CPT-DOR-04412 et la qualification en déficience majeure selon l'Article 3-n de la Circulaire 03-2017/CB/C.",
+"Preparer": "Déficience majeure confirmée : absence de visa Conformité Siège, coordonnée liquidateur falsifiée et émission frauduleuse d'un chèque de 34 000 000 FCFA. FRAP établie."
+},
+{
+"no": "2",
+"Superviseur": "S'assurer de l'exhaustivité de la population extraite du Core Banking pour l'ensemble du réseau d'agences.",
+"Preparer": "Population exhaustive réconciliée avec le journal des modifications de statuts de comptes. Aucune omission relevée sur les 15 comptes testés."
+},
+{
+"no": "3",
+"Superviseur": "Vérifier la transmission immédiate du dossier au Comité des Risques et à la Direction Générale.",
+"Preparer": "Dossier transmis au DAI et au Comité des Risques avec plan d'action de remédiation et notification réglementaire préparée."
+}
+]
+}
+]
+}
+
+
+
+{
+"Etape mission - Feuille couverture": [
+{
+"table 0 - Signature worksheet": [
+{
+"Client": "Afrika Financial Bank",
+"Exercice": "2024",
+"Preparer": "KMP",
+"Reviewer": "JFK"
+}
+]
+},
+{
+"table 1": [
+{
+"Etape de mission": "Programme de contrôle des comptes",
+"Test": "A10",
+"Reference": "FR-CPT-A10 - Révision des comptes de dépôts ordinaires et comptes indisponibles (Comptes dormants)",
+"Nature de test": "Rapprochement"
+}
+]
+},
+{
+"table 2": [
+{
+"OBJECTIFS": "Vérifier la régularité, la réalité et l'exactitude des soldes et écritures comptables des comptes de dépôts de la clientèle sous tutelle judiciaire, et constater les ajustements requis suite aux débits frauduleux non autorisés conformément au PCB UMOA et aux normes CRIPP 13.6 et 14.2"
+}
+]
+},
+{
+"table 3": [
+{
+"no": "1",
+"travaux a effectuer": "1. Rapprocher les écritures de débit enregistrées au compte client 251100 avec les ordres de paiement formels signés par le mandataire liquidateur légal."
+},
+{
+"no": "2",
+"travaux a effectuer": "2. Vérifier l'existence et la validité de l'autorisation conjointe de certification du chèque de banque tiré sur le compte réactivé."
+},
+{
+"no": "3",
+"travaux a effectuer": "3. Recalculer le solde réel dû à la société en liquidation judiciaire avant et après déduction du flux contesté."
+},
+{
+"no": "4",
+"travaux a effectuer": "4. Contrôler l'adéquation de la contrepartie comptable enregistrée au compte de chèques certifiés à payer (Compte PCB 371100)."
+},
+{
+"no": "5",
+"travaux a effectuer": "5. Vérifier la conformité de l'enregistrement de la provision pour créance douteuse ou de la mise en débet du responsable de l'agence."
+}
+]
+},
+{
+"table 4": [
+{
+"Résultats des tests": "Validité : Ajustement pour surévaluation sur les transactions relatives aux comptes 251100 - Dépôts à vue de la clientèle - Entreprises privées pour un montant de 34 000 000 FCFA / 1 Transaction au 31.12.N. Un débit de 34 000 000 FCFA a été comptabilisé sur la base d'un chèque certifié émis frauduleusement sans signature du liquidateur judiciaire officiel."
+},
+{
+"Résultats des tests": "Exhaustivité : Ajustement pour sous-évaluation sur les transactions relatives aux comptes 253100 - Comptes indisponibles et dépôts bloqués pour un montant de 34 000 000 FCFA / 1 Transaction au 31.12.N. Le solde du compte sous tutelle judiciaire a été extourné à tort des comptes gelés suite à une levée d'inactivité non homologuée par la Conformité."
+}
+]
+},
+{
+"table 5": [
+{
+"N° Ordre": "01",
+"N° Compte PCB": "251100",
+"Date Opération": "14/05/2024",
+"Libellé Écriture": "CHQ-CERT-0091 SOC. IVOIRIENNE LIQUIDATION",
+"Montant Débit Comptabilisé": "34 000 000",
+"Réf Pièce Justificative": "CHQ-CERT-0091",
+"Montant Justifié": "0",
+"Ecart": "34 000 000",
+"Assertion": "Validité",
+"CTR 1": "-",
+"CTR 2": "-",
+"CTR 3": "-",
+"CTR 4": "-",
+"CTR 5": "-",
+"Description": "Écriture de débit non justifiée de 34 000 000 FCFA enregistrée suite à l'émission d'un chèque certifié sans autorisation du mandataire liquidateur officiel ni validation conjointe du siège.",
+"Conclusion": "Non-satisfaisant"
+},
+{
+"N° Ordre": "02",
+"N° Compte PCB": "251100",
+"Date Opération": "18/05/2024",
+"Libellé Écriture": "RETRAIT GUICHET ETS BARRY & CIE",
+"Montant Débit Comptabilisé": "2 500 000",
+"Réf Pièce Justificative": "RT-2024-512",
+"Montant Justifié": "2 500 000",
+"Ecart": "0",
+"Assertion": "",
+"CTR 1": "+",
+"CTR 2": "+",
+"CTR 3": "+",
+"CTR 4": "+",
+"CTR 5": "+",
+"Description": "Retrait d'espèces de 2 500 000 FCFA conforme aux pouvoirs bancaires en vigueur et justifié par un bordereau signé.",
+"Conclusion": "Satisfaisant"
+},
+{
+"N° Ordre": "03",
+"N° Compte PCB": "251100",
+"Date Opération": "22/05/2024",
+"Libellé Écriture": "VIREMENT EMIS PHARMACIE DU CENTRE",
+"Montant Débit Comptabilisé": "8 750 000",
+"Réf Pièce Justificative": "VIR-2024-089",
+"Montant Justifié": "8 750 000",
+"Ecart": "0",
+"Assertion": "",
+"CTR 1": "+",
+"CTR 2": "+",
+"CTR 3": "+",
+"CTR 4": "+",
+"CTR 5": "+",
+"Description": "Ordre de virement de 8 750 000 FCFA régulier, confirmé par signature autorisée et justificatifs probants.",
+"Conclusion": "Satisfaisant"
+},
+{
+"N° Ordre": "04",
+"N° Compte PCB": "251100",
+"Date Opération": "04/06/2024",
+"Libellé Écriture": "EMISSION CHQ BANQUE TRANS-AFRIK SA",
+"Montant Débit Comptabilisé": "15 000 000",
+"Réf Pièce Justificative": "CHQ-BQE-441",
+"Montant Justifié": "15 000 000",
+"Ecart": "0",
+"Assertion": "",
+"CTR 1": "+",
+"CTR 2": "+",
+"CTR 3": "+",
+"CTR 4": "+",
+"CTR 5": "+",
+"Description": "Émission de chèque certifié de 15 000 000 FCFA validée par la Direction des Opérations avec couverture préalable suffisante.",
+"Conclusion": "Satisfaisant"
+},
+{
+"N° Ordre": "05",
+"N° Compte PCB": "253100",
+"Date Opération": "12/06/2024",
+"Libellé Écriture": "DEBLOCAGE COMPTE DORMANT ET DÉBIT STE GOMIS",
+"Montant Débit Comptabilisé": "5 400 000",
+"Réf Pièce Justificative": "LV-DORM-014",
+"Montant Justifié": "0",
+"Ecart": "5 400 000",
+"Assertion": "Exhaustivité",
+"CTR 1": "-",
+"CTR 2": "-",
+"CTR 3": "-",
+"CTR 4": "+",
+"CTR 5": "-",
+"Description": "Levée de blocage et débit de 5 400 000 FCFA opérés unilatéralement en agence sans homologation de la Conformité du siège.",
+"Conclusion": "Non-satisfaisant"
+},
+{
+"N° Ordre": "06",
+"N° Compte PCB": "251100",
+"Date Opération": "20/06/2024",
+"Libellé Écriture": "PAIEMENT FACTURE CIE ENERGIE SIFCA",
+"Montant Débit Comptabilisé": "1 200 000",
+"Réf Pièce Justificative": "PRLV-CIE-99",
+"Montant Justifié": "1 200 000",
+"Ecart": "0",
+"Assertion": "",
+"CTR 1": "+",
+"CTR 2": "+",
+"CTR 3": "+",
+"CTR 4": "+",
+"CTR 5": "+",
+"Description": "Prélèvement automatique régulier de 1 200 000 FCFA adossé à un mandat conforme.",
+"Conclusion": "Satisfaisant"
+},
+{
+"N° Ordre": "07",
+"N° Compte PCB": "251100",
+"Date Opération": "28/06/2024",
+"Libellé Écriture": "REGLEMENT FOURNISSEUR AGRO-INDUS",
+"Montant Débit Comptabilisé": "12 300 000",
+"Réf Pièce Justificative": "VIR-AGRO-77",
+"Montant Justifié": "12 300 000",
+"Ecart": "0",
+"Assertion": "",
+"CTR 1": "+",
+"CTR 2": "+",
+"CTR 3": "+",
+"CTR 4": "+",
+"CTR 5": "+",
+"Description": "Règlement fournisseur de 12 300 000 FCFA visé par deux fondés de pouvoir habilités.",
+"Conclusion": "Satisfaisant"
+},
+{
+"N° Ordre": "08",
+"N° Compte PCB": "251100",
+"Date Opération": "05/07/2024",
+"Libellé Écriture": "CHQ COMPENSE STE KONE FRERES",
+"Montant Débit Comptabilisé": "4 150 000",
+"Réf Pièce Justificative": "CMP-2024-88",
+"Montant Justifié": "4 150 000",
+"Ecart": "0",
+"Assertion": "",
+"CTR 1": "+",
+"CTR 2": "+",
+"CTR 3": "+",
+"CTR 4": "+",
+"CTR 5": "+",
+"Description": "Compensation interbancaire de 4 150 000 FCFA conforme aux enregistrements du relevé de compte.",
+"Conclusion": "Satisfaisant"
+},
+{
+"N° Ordre": "09",
+"N° Compte PCB": "251100",
+"Date Opération": "14/07/2024",
+"Libellé Écriture": "RETRAIT ESPECES DIRECTION SAHEL",
+"Montant Débit Comptabilisé": "6 000 000",
+"Réf Pièce Justificative": "BORD-RET-31",
+"Montant Justifié": "6 000 000",
+"Ecart": "0",
+"Assertion": "",
+"CTR 1": "+",
+"CTR 2": "+",
+"CTR 3": "+",
+"CTR 4": "+",
+"CTR 5": "+",
+"Description": "Retrait d'espèces de 6 000 000 FCFA validé après vérification d'identité et appel de confirmation.",
+"Conclusion": "Satisfaisant"
+},
+{
+"N° Ordre": "10",
+"N° Compte PCB": "251100",
+"Date Opération": "25/07/2024",
+"Libellé Écriture": "AVIS A TIERS DETENTEUR TRESOR PUBLIC",
+"Montant Débit Comptabilisé": "18 500 000",
+"Réf Pièce Justificative": "ATD-TRESOR-02",
+"Montant Justifié": "18 500 000",
+"Ecart": "0",
+"Assertion": "",
+"CTR 1": "+",
+"CTR 2": "+",
+"CTR 3": "+",
+"CTR 4": "+",
+"CTR 5": "+",
+"Description": "Paiement régulier sur ATD fiscal de 18 500 000 FCFA exécuté conformément aux réquisitions légales.",
+"Conclusion": "Satisfaisant"
+},
+{
+"N° Ordre": "11",
+"N° Compte PCB": "251100",
+"Date Opération": "08/08/2024",
+"Libellé Écriture": "CHQ-CERT-0105 COOP. DU SUD (LIQUIDATION)",
+"Montant Débit Comptabilisé": "7 800 000",
+"Réf Pièce Justificative": "CHQ-CERT-0105",
+"Montant Justifié": "0",
+"Ecart": "7 800 000",
+"Assertion": "Droits et obligations",
+"CTR 1": "-",
+"CTR 2": "-",
+"CTR 3": "-",
+"CTR 4": "-",
+"CTR 5": "-",
+"Description": "Débit de 7 800 000 FCFA non autorisé sur compte sous tutelle judiciaire sans présentation de l'ordonnance du juge-commissaire.",
+"Conclusion": "Non-satisfaisant"
+},
+{
+"N° Ordre": "12",
+"N° Compte PCB": "251100",
+"Date Opération": "19/08/2024",
+"Libellé Écriture": "TRANSFERT INTERNATIONAL COGEDIS SA",
+"Montant Débit Comptabilisé": "45 000 000",
+"Réf Pièce Justificative": "TRF-INT-501",
+"Montant Justifié": "45 000 000",
+"Ecart": "0",
+"Assertion": "",
+"CTR 1": "+",
+"CTR 2": "+",
+"CTR 3": "+",
+"CTR 4": "+",
+"CTR 5": "+",
+"Description": "Transfert commercial étranger de 45 000 000 FCFA conforme aux déclarations de change UMOA.",
+"Conclusion": "Satisfaisant"
+},
+{
+"N° Ordre": "13",
+"N° Compte PCB": "251100",
+"Date Opération": "03/09/2024",
+"Libellé Écriture": "FRAIS TENUE COMPTE CLIENTS DIVERS",
+"Montant Débit Comptabilisé": "450 000",
+"Réf Pièce Justificative": "ARRETE-TRIM-3",
+"Montant Justifié": "450 000",
+"Ecart": "0",
+"Assertion": "",
+"CTR 1": "+",
+"CTR 2": "+",
+"CTR 3": "+",
+"CTR 4": "+",
+"CTR 5": "+",
+"Description": "Prélèvement périodique des commissions de tenue de compte de 450 000 FCFA conforme à la tarification.",
+"Conclusion": "Satisfaisant"
+},
+{
+"N° Ordre": "14",
+"N° Compte PCB": "251100",
+"Date Opération": "17/09/2024",
+"Libellé Écriture": "VIREMENT SALAIRES MOULINS D'ABIDJAN",
+"Montant Débit Comptabilisé": "22 100 000",
+"Réf Pièce Justificative": "SAL-2024-09",
+"Montant Justifié": "22 100 000",
+"Ecart": "0",
+"Assertion": "",
+"CTR 1": "+",
+"CTR 2": "+",
+"CTR 3": "+",
+"CTR 4": "+",
+"CTR 5": "+",
+"Description": "Fichier de salaires de 22 100 000 FCFA télétransmis avec protocole sécurisé et double signature.",
+"Conclusion": "Satisfaisant"
+},
+{
+"N° Ordre": "15",
+"N° Compte PCB": "251100",
+"Date Opération": "30/09/2024",
+"Libellé Écriture": "EXTOURNE OPERATION ERRONEE GUICHET",
+"Montant Débit Comptabilisé": "3 200 000",
+"Réf Pièce Justificative": "OD-EXT-2024",
+"Montant Justifié": "3 200 000",
+"Ecart": "0",
+"Assertion": "",
+"CTR 1": "+",
+"CTR 2": "+",
+"CTR 3": "+",
+"CTR 4": "+",
+"CTR 5": "+",
+"Description": "Opération diverse d'extourne de 3 200 000 FCFA validée par le Chef de Service Comptable.",
+"Conclusion": "Satisfaisant"
+}
+]
+},
+{
+"table 6 - Cross references documentaire": [
+{
+"no": "1",
+"Cross references": "[A10-01]",
+"Document": "Grand-Livre auxiliaire - Compte PCB 251100 (Dépôts à vue de la clientèle)",
+"Client": "Afrika Financial Bank",
+"Exercice": "2024"
+},
+{
+"no": "2",
+"Cross references": "[A10-02]",
+"Document": "Journal des levées d'inactivité et événements système Core Banking",
+"Client": "Afrika Financial Bank",
+"Exercice": "2024"
+},
+{
+"no": "3",
+"Cross references": "[A10-03]",
+"Document": "Registre et souche du chèque de banque certifié frauduleux CHQ-CERT-0091",
+"Client": "Afrika Financial Bank",
+"Exercice": "2024"
+},
+{
+"no": "4",
+"Cross references": "[A10-04]",
+"Document": "Dossier juridique de liquidation judiciaire et ordonnance de désignation du liquidateur",
+"Client": "Afrika Financial Bank",
+"Exercice": "2024"
+},
+{
+"no": "5",
+"Cross references": "[A10-05]",
+"Document": "Rapport d'alerte et de suspicion AML émis par la Direction de la Conformité",
+"Client": "Afrika Financial Bank",
+"Exercice": "2024"
+}
+]
+},
+{
+"table 7 - Legendes": [
+{
+"Légende": "Contrôle positif (sans anomalie)",
+"Symboles": "+"
+},
+{
+"Légende": "Contrôle négatif (anomalie relevée)",
+"Symboles": "-"
+},
+{
+"Légende": "Non applicable",
+"Symboles": "x / N/A"
+}
+]
+},
+{
+"table 8 - Revue manager": [
+{
+"no": "1",
+"Superviseur": "Confirmer l'impact comptable et prudentiel du débit non autorisé de 34 000 000 FCFA et s'assurer que la FRAP qualifie formellement la déficience majeure au sens de l'Art. 3-n de la Circulaire N°03-2017/CB/C.",
+"Preparer": "Matérialité confirmée avec la Conformité. FRAP N°01 rédigée qualifiant la déficience majeure pour transmission au Comité des Risques, avec proposition d'ajustement comptable de régularisation au 31/12/2024."
+},
+{
+"no": "2",
+"Superviseur": "Vérifier si le blocage informatique a été réactivé immédiatement sur le compte 251100 de la société en liquidation pour bloquer tout décaissement ultérieur.",
+"Preparer": "Le compte a été reverrouillé en statut dormant par le département des Systèmes d'Information sous le visa formel de la Direction de la Conformité le 16/05/2024."
+},
+{
+"no": "3",
+"Superviseur": "Étendre les sondages sur l'ensemble des levées de comptes inactifs réalisées par l'agence de Bouaké sur les 12 derniers mois.",
+"Preparer": "Population exhaustive de 15 opérations auditée dans la présente feuille de travail. Deux cas d'anomalies critiques isolés (lignes 01 et 05) et documentés pour l'action disciplinaire."
+}
+]
+}
+]
+}
