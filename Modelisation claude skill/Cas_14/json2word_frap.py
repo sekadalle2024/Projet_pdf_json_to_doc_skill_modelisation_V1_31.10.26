@@ -51,6 +51,7 @@ from datetime import datetime
 from pathlib import Path
 
 from docx import Document
+from docx.enum.section import WD_ORIENT
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
@@ -101,6 +102,22 @@ def generate_reference():
     """
     now = datetime.now()
     return f"AUTO-{now.strftime('%H%M%S')}"
+
+
+def sanitize_filename(filename):
+    """
+    Nettoie un nom de fichier en supprimant les caractères invalides.
+    
+    Args:
+        filename: Nom de fichier à nettoyer
+        
+    Returns:
+        str: Nom de fichier sécurisé
+    """
+    # Remplacer les caractères interdits sur Windows: / : * ? " < > |
+    invalid_chars = r'[/:*?"<>|]'
+    sanitized = re.sub(invalid_chars, '_', filename)
+    return sanitized
 
 
 def set_cell_background(cell, color_hex):
@@ -167,22 +184,49 @@ def format_value_as_text(value):
 def add_bulleted_lines(paragraph, text):
     """
     Ajoute des lignes avec puces dans un paragraphe.
+    Détecte automatiquement si le texte contient des puces ou est narratif.
     
     Args:
         paragraph: Paragraphe docx
         text: Texte avec retours à la ligne
     """
     lines = text.split('\n')
-    for i, line in enumerate(lines):
-        if i > 0:
-            paragraph.add_run('\n')
-        # Ajouter puce si la ligne commence par "-"
-        line_stripped = line.strip()
-        if line_stripped.startswith('-'):
-            # Utiliser un bullet point Unicode
-            paragraph.add_run('• ' + line_stripped[1:].strip())
-        else:
-            paragraph.add_run(line_stripped)
+    
+    # Détecter si au moins une ligne commence par "-" (mode bullet)
+    has_bullets = any(line.strip().startswith('-') for line in lines if line.strip())
+    
+    if has_bullets:
+        # Mode bullet: convertir les "-" en "•" et préserver les autres lignes
+        for i, line in enumerate(lines):
+            if i > 0:
+                paragraph.add_run('\n')
+            line_stripped = line.strip()
+            if line_stripped.startswith('-'):
+                # Utiliser un bullet point Unicode
+                paragraph.add_run('• ' + line_stripped[1:].strip())
+            elif line_stripped:
+                # Ligne sans bullet mais non vide: l'afficher telle quelle
+                paragraph.add_run(line_stripped)
+    else:
+        # Mode narratif: préserver la structure des paragraphes
+        # Grouper les lignes en blocs séparés par des lignes vides
+        current_block = []
+        for line in lines:
+            if line.strip():
+                current_block.append(line.strip())
+            else:
+                # Ligne vide: fin du bloc
+                if current_block:
+                    if paragraph.text:
+                        paragraph.add_run('\n\n')
+                    paragraph.add_run(' '.join(current_block))
+                    current_block = []
+        
+        # Ajouter le dernier bloc
+        if current_block:
+            if paragraph.text:
+                paragraph.add_run('\n\n')
+            paragraph.add_run(' '.join(current_block))
 
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -207,16 +251,19 @@ def create_vertical_table(doc, data_dict, software_name, etape_mission):
     table = doc.add_table(rows=len(data_dict), cols=2)
     table.style = 'Table Grid'
     
-    # Largeurs des colonnes (en twips)
-    # Colonne 1 : 4000 twips, Colonne 2 : 11038 twips
-    col_widths = [4000, 11038]
+    # Largeurs des colonnes en twips (1 inch = 1440 twips)
+    # Colonne 1 : 4000 twips (~2.78 inches), Colonne 2 : 11038 twips (~7.67 inches)
+    col_widths_twips = [4000, 11038]
+    
+    # Convertir twips en EMUs (1 twip = 635 EMUs)
+    for idx, col in enumerate(table.columns):
+        col.width = col_widths_twips[idx] * 635
     
     for row_idx, (key, value) in enumerate(data_dict.items()):
         row_cells = table.rows[row_idx].cells
         
         # Colonne 1 : Rubrique (fond bordeaux #8B0000, texte blanc gras)
         cell_rubrique = row_cells[0]
-        cell_rubrique.width = Inches(col_widths[0] / 1440)
         cell_rubrique.text = key
         
         set_cell_background(cell_rubrique, '8B0000')
@@ -229,7 +276,6 @@ def create_vertical_table(doc, data_dict, software_name, etape_mission):
         
         # Colonne 2 : Description (fond blanc, texte noir)
         cell_description = row_cells[1]
-        cell_description.width = Inches(col_widths[1] / 1440)
         cell_description.text = ""
         
         formatted_value = format_value_as_text(value)
@@ -409,8 +455,9 @@ def generate_word_document(
     
     # Configuration page PAYSAGE A4
     section = doc.sections[0]
-    section.page_width = Inches(11.69)  # A4 paysage
-    section.page_height = Inches(8.27)
+    section.orientation = WD_ORIENT.LANDSCAPE
+    section.page_width = Inches(11.69)  # A4 paysage largeur
+    section.page_height = Inches(8.27)  # A4 paysage hauteur
     section.left_margin = Inches(0.38)
     section.right_margin = Inches(0.38)
     section.top_margin = Inches(0.5)
@@ -430,6 +477,20 @@ def generate_word_document(
     # Convertir en liste si c'est un dict unique
     if isinstance(data_to_process, dict):
         data_to_process = [data_to_process]
+    
+    # Compter le nombre de FRAPs détectés
+    frap_count = 0
+    for item in data_to_process:
+        if isinstance(item, dict):
+            for key in item.keys():
+                if "Etape mission" in key:
+                    frap_count += 1
+    
+    # Avertir si plusieurs FRAPs sont présents
+    if frap_count > 1:
+        print(f"⚠️  AVERTISSEMENT : {frap_count} FRAPs détectés dans le JSON.")
+        print(f"    Seul le premier FRAP sera traité par ce script.")
+        print(f"    Pour traiter plusieurs FRAPs, utilisez execute_cas14_production.py")
     
     # Trouver l'étape de mission et la référence depuis le premier FRAP
     etape_mission = "Frap"
@@ -489,8 +550,34 @@ def generate_word_document(
                 break
     
     if not first_frap:
-        print("❌ Erreur : Aucune clé 'Etape mission - ...' trouvée dans le JSON")
-        return
+        raise ValueError("❌ Erreur : Aucune clé 'Etape mission - ...' trouvée dans le JSON")
+    
+    if not isinstance(first_frap, list):
+        raise TypeError(f"❌ Erreur : La structure 'Etape mission' doit être une liste, reçu {type(first_frap).__name__}")
+    
+    # Validation de la structure des 6 tables
+    tables_found = {}
+    for item in first_frap:
+        if not isinstance(item, dict):
+            continue
+        for sub_key in item.keys():
+            if sub_key.lower().startswith("table "):
+                tables_found[sub_key.lower()] = item[sub_key]
+    
+    # Vérifier que table 1 existe et est un dict
+    if "table 1" not in tables_found:
+        raise ValueError("❌ Erreur : 'table 1' (métadonnées) est obligatoire mais absente du JSON")
+    
+    if not isinstance(tables_found["table 1"], dict):
+        raise TypeError(f"❌ Erreur : 'table 1' doit être un dictionnaire, reçu {type(tables_found['table 1']).__name__}")
+    
+    # Vérifier que les tables 2-6 existent
+    required_tables = ["table 2", "table 3", "table 4", "table 5", "table 6"]
+    missing_tables = [t for t in required_tables if t not in tables_found]
+    
+    if missing_tables:
+        print(f"⚠️  AVERTISSEMENT : Tables manquantes : {', '.join(missing_tables)}")
+        print(f"    Le document sera généré avec les tables disponibles seulement.")
     
     # Traitement des tables
     for item in first_frap:
@@ -537,8 +624,12 @@ def main():
         print(f"❌ Erreur : Le fichier {json_path} n'existe pas.")
         sys.exit(1)
 
-    with open(json_path, "r", encoding="utf-8") as f:
-        content = f.read()
+    try:
+        with open(json_path, "r", encoding="utf-8-sig") as f:
+            content = f.read()
+    except Exception as e:
+        print(f"❌ Erreur de lecture du fichier : {e}")
+        sys.exit(1)
 
     # Extraire le JSON
     try:
@@ -585,18 +676,28 @@ def main():
 
     # Nom du fichier selon le format requis
     output_filename = f"{reference}-{etape_mission}- {args.software}_{timestamp}.docx"
+    output_filename = sanitize_filename(output_filename)
     output_path = Path(args.out_dir) / output_filename
 
     # Créer le dossier de sortie
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
     # Générer le document
-    generate_word_document(
-        json_data,
-        output_path,
-        args.software,
-        args.footer
-    )
+    try:
+        generate_word_document(
+            json_data,
+            output_path,
+            args.software,
+            args.footer
+        )
+    except (ValueError, TypeError) as e:
+        print(f"❌ Erreur de structure JSON : {e}")
+        sys.exit(1)
+    except Exception as e:
+        print(f"❌ Erreur lors de la génération du document : {e}")
+        import traceback
+        traceback.print_exc()
+        sys.exit(1)
 
 
 if __name__ == "__main__":
