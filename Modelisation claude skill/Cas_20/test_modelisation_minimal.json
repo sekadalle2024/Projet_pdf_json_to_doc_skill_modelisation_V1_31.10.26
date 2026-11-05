@@ -1,0 +1,83 @@
+{
+  "Etape mission - Cartographie des risques": [
+    {
+      "table 1": {
+        "Etape de mission": "Cartographie des risques",
+        "Norme": "Norme ISO 31000",
+        "Méthode": "Méthode d'évaluation des risques par criticité",
+        "Processus": "Gestion des comptes clients",
+        "Reference": "CR001"
+      }
+    },
+    {
+      "table 2": [
+        {
+          "no": 1,
+          "Cycle par sous-processus": {
+            "Cycle": "Cycle Revenus",
+            "Processus": "Gestion clients",
+            "Sous-processus": "Ouverture compte",
+            "Tâche clé": "Vérification KYC",
+            "Opérationnel": "Agent commercial",
+            "Document": "Formulaire KYC"
+          },
+          "Identification du risque": {
+            "Risque identifié": "Ouverture de compte sans vérification KYC complète",
+            "Cause racine": "Absence de contrôle automatique dans le système"
+          },
+          "Evaluation des risques par criticité": {
+            "Probabilité": "Élevé",
+            "Impact": "Élevé",
+            "Criticité brute": "Élevé"
+          },
+          "Dispositif de maîtrise des risques": "Contrôle manuel par le superviseur + alerte système",
+          "Criticité nette": "Moyen"
+        },
+        {
+          "no": 2,
+          "Cycle par sous-processus": {
+            "Cycle": "Cycle Revenus",
+            "Processus": "Gestion clients",
+            "Sous-processus": "Mise à jour données",
+            "Tâche clé": "Validation modifications",
+            "Opérationnel": "Agent back-office",
+            "Document": "Fiche modification"
+          },
+          "Identification du risque": {
+            "Risque identifié": "Modification non autorisée des coordonnées bancaires",
+            "Cause racine": "Double validation non systématique"
+          },
+          "Evaluation des risques par criticité": {
+            "Probabilité": "Moyen",
+            "Impact": "Élevé",
+            "Criticité brute": "Élevé"
+          },
+          "Dispositif de maîtrise des risques": "Double validation obligatoire + traçabilité complète",
+          "Criticité nette": "Faible"
+        },
+        {
+          "no": 3,
+          "Cycle par sous-processus": {
+            "Cycle": "Cycle Trésorerie",
+            "Processus": "Encaissements",
+            "Sous-processus": "Réception virements",
+            "Tâche clé": "Rapprochement bancaire",
+            "Opérationnel": "Trésorier",
+            "Document": "Relevé bancaire"
+          },
+          "Identification du risque": {
+            "Risque identifié": "Non-détection de virements frauduleux",
+            "Cause racine": "Rapprochement manuel sans contrôle croisé"
+          },
+          "Evaluation des risques par criticité": {
+            "Probabilité": "Faible",
+            "Impact": "Moyen",
+            "Criticité brute": "Moyen"
+          },
+          "Dispositif de maîtrise des risques": "Rapprochement automatique + alerte sur écarts",
+          "Criticité nette": "Faible"
+        }
+      ]
+    }
+  ]
+}

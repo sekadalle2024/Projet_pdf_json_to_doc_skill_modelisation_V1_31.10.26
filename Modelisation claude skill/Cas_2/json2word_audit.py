@@ -106,13 +106,14 @@ DEFAULT_FOOTER = ("Automatisez vos activités d'audit, risques et contrôles - "
 #   clé JSON -> (libellé d'en-tête, largeur DXA, type de rendu)
 # type : "bold" (gras), "nl" (puces, 1 par ligne \n), "csv" (puces, séparées par
 # des virgules), "text" (texte simple)
+# Note : les colonnes non listées sont auto-détectées (largeur selon contenu)
 COLUMN_SPECS = {
-    "Étape méthodologique":            ("Etape",            1900, "bold"),
-    "Acteur audit":                    ("Acteur",           1500, "text"),
-    "Traitement et diligences d'audit": ("Traitement",      5100, "nl"),
-    "Document probant":                ("Document",         2300, "csv"),
-    "Norme IIA / CRIPP":               ("Normes",           1700, "text"),
-    "Extrait de la norme":             ("Extrait de norme", 2500, "text"),
+    "Étape méthodologique":            ("Etape",           1900, "bold"),
+    "Acteur audit":                    ("Acteur",          1500, "text"),
+    "Traitement et diligences d'audit": ("Traitement",     5100, "nl"),
+    "Document probant":                ("Document",        2300, "csv"),
+    "Norme IIA / CRIPP":               ("Normes",          1700, "text"),
+    "Extrait de la norme":             ("Extrait de norme",2500, "text"),
 }
 # Renseignez ici d'autres colonnes (FRAP, cartographie...) si besoin, ex. :
 # COLUMN_SPECS["Risque"] = ("Risque", 3000, "text")
@@ -293,12 +294,68 @@ def add_vertical_table(doc, content: dict):
     return table
 
 
-def column_layout(keys: list[str]):
+def auto_detect_column_width(key: str, records: list[dict]) -> int | None:
+    """
+    Détecte automatiquement la largeur optimale d'une colonne selon son contenu.
+    
+    Retourne:
+        - 400 pour les colonnes de numérotation (no, #, num)
+        - 600 pour les codes courts (3-5 caractères max)
+        - 1000 pour les codes moyens (6-10 caractères max)
+        - None pour laisser la largeur par défaut
+    """
+    key_lower = key.lower().strip()
+    
+    # Colonne de numérotation
+    if key_lower in ["no", "n°", "#", "num", "numero", "numéro", "n"]:
+        return 400
+    
+    # Analyser le contenu des 10 premières lignes non vides
+    sample_values = []
+    for rec in records[:10]:
+        val = str(rec.get(key, "")).strip()
+        if val:
+            sample_values.append(val)
+    
+    if not sample_values:
+        return None
+    
+    # Calculer la longueur max des valeurs
+    max_len = max(len(v) for v in sample_values)
+    
+    # Codes très courts (1-3 caractères) : 400-600 DXA
+    if max_len <= 3:
+        return 500
+    
+    # Codes courts (4-6 caractères) : 600-800 DXA
+    if max_len <= 6:
+        return 700
+    
+    # Codes moyens (7-10 caractères) : 800-1000 DXA
+    if max_len <= 10:
+        return 900
+    
+    # Sinon, laisser l'algorithme de répartition faire son travail
+    return None
+
+
+def column_layout(keys: list[str], records: list[dict] = None):
     """Libellés, largeurs et types de rendu des colonnes (connues ou non)."""
     labels, widths, kinds = [], [], []
     for k in keys:
-        label, w, kind = COLUMN_SPECS.get(k, (k, None, "text"))
-        labels.append(label); widths.append(w); kinds.append(kind)
+        # Chercher d'abord dans COLUMN_SPECS
+        if k in COLUMN_SPECS:
+            label, w, kind = COLUMN_SPECS[k]
+        else:
+            # Auto-détection pour les colonnes inconnues
+            label = k
+            kind = "text"
+            w = auto_detect_column_width(k, records) if records else None
+        
+        labels.append(label)
+        widths.append(w)
+        kinds.append(kind)
+    
     unknown = [i for i, w in enumerate(widths) if w is None]
     if unknown:
         remaining = max(TABLE_WIDTH - sum(w for w in widths if w), 1200 * len(unknown))
@@ -312,13 +369,13 @@ def column_layout(keys: list[str]):
 
 
 def add_grid_table(doc, records: list[dict], blank_rows: bool, strip_steps: bool):
-    """Table 2 : colonnes, bordures de lignes invisibles, colonnes visibles."""
+    """Table 2 : colonnes, bordures de lignes visibles horizontalement et verticalement."""
     rows_data = with_blank_rows(records, blank_rows)
     keys = list(next(r for r in records if not is_empty_record(r)).keys())
-    labels, widths, kinds = column_layout(keys)
+    labels, widths, kinds = column_layout(keys, records)
 
     table = doc.add_table(rows=1 + len(rows_data), cols=len(keys))
-    style_table(table, widths, inside_h=WHITE)
+    style_table(table, widths, inside_h=GREY)
 
     hdr = table.rows[0]
     style_row(hdr, header=True)
@@ -329,10 +386,9 @@ def add_grid_table(doc, records: list[dict], blank_rows: bool, strip_steps: bool
     last = len(rows_data) - 1
     for idx, (row, rec) in enumerate(zip(table.rows[1:], rows_data)):
         style_row(row)
-        # la dernière ligne ferme le tableau avec une bordure grise
-        bottom = GREY if idx == last else WHITE
+        # Toutes les lignes ont des bordures grises visibles
         for cell, w, key, kind in zip(row.cells, widths, keys, kinds):
-            style_cell(cell, w, top=WHITE, bottom=bottom)
+            style_cell(cell, w, top=GREY, bottom=GREY)
             value = rec.get(key, "")
             if kind == "bold" and strip_steps:
                 value = strip_step_prefix(value)
@@ -401,11 +457,11 @@ def build_filename(reference: str, step: str, software: str) -> str:
     if timestamp_match:
         # Le timestamp devient le nom complet (sans préfixe de référence)
         timestamp = timestamp_match.group(1)
-        # Format: [Etape] ― [Logiciel]_[timestamp].docx
-        return f"{step_part} ― {safe(software)}_{timestamp}.docx"
+        # Format: [Etape] - [Logiciel]_[timestamp].docx (tiret simple pour compatibilité)
+        return f"{step_part} - {safe(software)}_{timestamp}.docx"
     else:
         # Pas de timestamp, format normal avec référence
-        return f"{reference} ― {step_part} ― {safe(software)}.docx"
+        return f"{reference} - {step_part} - {safe(software)}.docx"
 
 
 # --------------------------------------------------------------------------- #

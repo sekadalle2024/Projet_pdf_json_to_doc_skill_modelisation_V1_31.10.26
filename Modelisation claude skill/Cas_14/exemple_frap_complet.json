@@ -1,0 +1,189 @@
+{
+  "Data_integrale": [
+    {
+      "Etape mission - Frap": [
+        {
+          "table 1": {
+            "Etape de mission": "Frap",
+            "Norme": "Norme 14.3 Évaluation des constats",
+            "Méthode": "Méthode des recommandations par les constats d'audit",
+            "Reference": "FRAP-BK-A10-01"
+          }
+        },
+        {
+          "table 2": {
+            "Intitule": "Détournement de 34 millions FCFA sur compte dormant par suppression délibérée du contrôle de surveillance permanente et absence de double clé informatique siège"
+          }
+        },
+        {
+          "table 3": {
+            "Observation": "Le cadre réglementaire (Circulaire N°03-2017/CB/C Art. 3-n et Instruction 008/07/2013/BCEAO) ainsi que la procédure interne de surveillance permanente exigent le contrôle exhaustif de toute réactivation de compte dormant et le strict verrouillage par double clé agence-siège.\n\nNos travaux d'audit à l'agence de Bouaké ont porté sur l'évaluation de l'efficacité du dispositif de surveillance permanente et le respect des habilitations sur l'échantillon A10, ciblant particulièrement les assertions d'Autorisation, de Formalisation, de Traçabilité et de Validité."
+          }
+        },
+        {
+          "table 4": {
+            "Constat": "- Suppression manuelle du contrôle obligatoire des comptes inactifs sur la feuille de couverture permanente par le Responsable du Contrôle Interne pour préserver artificiellement ses KPI (mention 'Non applicable').\n- Réactivation unilatérale dans le Core Banking du compte n° CPT-DOR-04412 (Société Ivoirienne de Liquidation) par le Chef d'Agence Adjoint sans visa préalable de la Conformité du siège.\n- Falsification du numéro mobile de contact du mandataire liquidateur légal dans le fichier client.\n- Émission immédiate d'un chèque de banque certifié frauduleux de 34 000 000 FCFA entraînant la spoliation totale de l'encaisse gelée.\n- Violation caractérisée des assertions d'Autorisation, de Formalisation et de Traçabilité des opérations bancaires."
+          }
+        },
+        {
+          "table 5": {
+            "Risque": "- Risque de sanction disciplinaire lourde de la Commission Bancaire de l'UMOA (révocation de l'agrément de dirigeant bancaire).\n- Risque de sanctions pécuniaires pour défaut de surveillance permanente et non-respect des ratios de contrôle interne.\n- Risque de perte financière directe et définitive de 34 000 000 FCFA liée à la spoliation de fonds.\n- Risque de préjudice réputationnel majeur et d'atteinte grave à la crédibilité de l'établissement.\n- Risque de poursuites judiciaires de la part du mandataire liquidateur pour complicité de détournement et défaillance de garde."
+          }
+        },
+        {
+          "table 6": {
+            "Recommendation": "Afin de rétablir la conformité réglementaire et de prévenir toute récidive de spoliation sur les comptes inactifs, nous recommandons la mise en œuvre des contrôles clés suivants :\n- Mettre en place un blocage informatique strict (Hard Lock) dans le Core Banking interdisant toute réactivation de compte dormant sans visa électronique conjoint obligatoire de la Direction de la Conformité au siège.\n- Rendre la feuille de couverture et de test de surveillance permanente totalement inviolable dans le progiciel d'audit (interdiction formelle de suppression de lignes sans double validation DG/Comité d'Audit).\n- Déposer une plainte pénale et initier la mise en débet immédiate du Chef d'Agence Adjoint pour le recouvrement intégral des 34 000 000 FCFA détournés.\n- Procéder à une revue exhaustive rétroactive de l'ensemble des comptes dormants réactivés sur les 36 derniers mois sur tout le réseau d'agences."
+          }
+        }
+      ]
+    },
+    {
+      "Etape mission - Frap": [
+        {
+          "table 1": {
+            "Etape de mission": "Frap",
+            "Norme": "Norme 12.5 Gestion des habilitations",
+            "Méthode": "Analyse des matrices de séparation des tâches",
+            "Reference": "FRAP-AB-IT-02"
+          }
+        },
+        {
+          "table 2": {
+            "Intitule": "Cumul critique de profils administrateurs sans séparation des tâches et traçabilité insuffisante des actions privilégiées sur le Core Banking"
+          }
+        },
+        {
+          "table 3": {
+            "Observation": "La politique de sécurité des systèmes d'information (réf. POL-SI-2025-v3.2) impose une séparation stricte des habilitations entre les fonctions de création, de validation et de modification des comptes clients dans le Core Banking.\n\nLors de notre revue des droits d'accès au siège d'Abidjan, nous avons constaté que plusieurs profils techniques disposent simultanément de droits incompatibles permettant d'orchestrer des opérations frauduleuses de bout en bout sans contrepartie."
+          }
+        },
+        {
+          "table 4": {
+            "Constat": "- Le profil ADMIN-TECH-001 (M. Kouassi Jean) cumule les droits de création de compte, de validation des KYC et d'émission de cartes bancaires sans contrôle a posteriori.\n- Absence de journalisation détaillée des actions administrateurs (logs incomplets dans le SIEM).\n- Délai de révocation des comptes administrateurs sortants : 47 jours en moyenne (norme : 24h).\n- Aucune revue mensuelle des habilitations par le RSSI.\n- Présence de 12 comptes techniques avec mot de passe par défaut non modifié depuis 18 mois."
+          }
+        },
+        {
+          "table 5": {
+            "Risque": "- Risque de fraude interne par cumul de fonctions incompatibles (création + validation + exécution).\n- Risque de non-détection d'opérations frauduleuses en l'absence de traçabilité.\n- Risque de compromission des comptes techniques par des attaquants externes.\n- Risque de non-conformité PCI-DSS et sanctions de Visa/Mastercard.\n- Risque de responsabilité pénale des dirigeants en cas d'incident majeur."
+          }
+        },
+        {
+          "table 6": {
+            "Recommendation": "- Implémenter immédiatement une matrice de séparation des tâches (Segregation of Duties) dans l'Active Directory et le Core Banking.\n- Activer la journalisation exhaustive de toutes les actions administrateurs avec archivage sur serveur WORM (Write Once Read Many).\n- Réduire le délai de révocation des comptes sortants à 4 heures maximum (automatisation via workflow RH-IT).\n- Instaurer une revue mensuelle obligatoire des habilitations par le RSSI avec reporting au Comité d'Audit.\n- Forcer le changement immédiat de tous les mots de passe par défaut et imposer une politique de rotation trimestrielle."
+          }
+        }
+      ]
+    },
+    {
+      "Etape mission - Frap": [
+        {
+          "table 1": {
+            "Etape de mission": "Frap",
+            "Norme": "Norme 18.2 Contrôle des décaissements",
+            "Méthode": "Revue analytique des flux de trésorerie",
+            "Reference": "FRAP-TR-FIN-03"
+          }
+        },
+        {
+          "table 2": {
+            "Intitule": "Virements suspects vers fournisseurs fictifs pour un montant cumulé de 127 millions FCFA sans validation du Comité des Engagements"
+          }
+        },
+        {
+          "table 3": {
+            "Observation": "Le règlement intérieur (Art. 45) et la procédure FIN-DECAISS-v2.1 imposent la validation préalable du Comité des Engagements pour tout décaissement supérieur à 10 millions FCFA.\n\nL'analyse des flux de trésorerie du T2-2026 révèle 23 virements SWIFT vers des comptes offshore non identifiés dans le référentiel fournisseurs approuvé, totalisant 127 485 000 FCFA, ordonnancés par la Direction Financière sans aucune pièce justificative conforme."
+          }
+        },
+        {
+          "table 4": {
+            "Constat": "- 23 virements SWIFT entre avril et juin 2026 vers 7 comptes bancaires domiciliés aux Seychelles et à Dubaï.\n- Absence totale de contrats cadres, bons de commande ou factures pro forma dans le workflow de validation SAP.\n- Libellés de virement génériques et suspects : 'Prestations diverses', 'Consulting', 'Technical support'.\n- Court-circuitement délibéré du workflow de validation : statut forcé à 'Approuvé' par modification directe de la base de données SAP FI.\n- Signatures électroniques contrefaites du DAF et du DG (investigations CERT en cours).\n- Aucune trace d'évaluation préalable des fournisseurs (due diligence KYC absente)."
+          }
+        },
+        {
+          "table 5": {
+            "Risque": "- Risque de blanchiment de capitaux et de financement du terrorisme (alerte CENTIF probable).\n- Risque de perte financière définitive de 127 millions FCFA.\n- Risque de sanctions pénales pour complicité de détournement de fonds.\n- Risque de révocation de licence bancaire par la BCEAO.\n- Risque de poursuites judiciaires des actionnaires pour faute de gestion lourde.\n- Risque d'atteinte irréversible à la réputation et perte de confiance des déposants."
+          }
+        },
+        {
+          "table 6": {
+            "Recommendation": "Mesures d'urgence à mettre en œuvre sous 48 heures :\n- Bloquer immédiatement tous les virements SWIFT sortants vers destinations offshore non validées par la Conformité.\n- Saisir le Procureur de la République et déposer une plainte pénale pour abus de biens sociaux et faux en écriture.\n- Suspendre les droits SAP FI de la Direction Financière et déclencher un audit forensic complet.\n- Mettre en place un contrôle obligatoire de 2nd niveau par la Direction des Risques pour tout décaissement > 5 millions FCFA.\n- Implémenter un système de validation biométrique (empreinte digitale) pour toute signature électronique au-delà de 10 millions FCFA.\n- Procéder à une due diligence renforcée (Enhanced Due Diligence) sur l'ensemble du référentiel fournisseurs avec purge des entités non conformes."
+          }
+        }
+      ]
+    },
+    {
+      "Etape mission - Frap": [
+        {
+          "table 1": {
+            "Etape de mission": "Frap",
+            "Norme": "Norme 22.1 Sécurité physique des actifs",
+            "Méthode": "Inspection physique et rapprochement inventaires",
+            "Reference": "FRAP-LOG-INV-04"
+          }
+        },
+        {
+          "table 2": {
+            "Intitule": "Écarts d'inventaire majeurs sur le parc informatique : 217 ordinateurs portables manquants pour une valeur de 86 millions FCFA"
+          }
+        },
+        {
+          "table 3": {
+            "Observation": "La procédure LOG-INV-2024 impose un inventaire physique trimestriel exhaustif du parc informatique avec rapprochement comptable obligatoire.\n\nL'inventaire surprise réalisé le 15 octobre 2026 révèle des écarts massifs entre les actifs enregistrés dans le module SAP MM et les biens physiquement présents, notamment sur la catégorie des ordinateurs portables Dell Latitude 7420 et HP EliteBook 840 G9."
+          }
+        },
+        {
+          "table 4": {
+            "Constat": "- Manquent à l'appel : 217 ordinateurs portables sur 850 recensés (taux de perte : 25,5%).\n- Valeur nette comptable des actifs disparus : 86 400 000 FCFA.\n- Dernier inventaire complet réalisé : décembre 2024 (22 mois d'écart, non-respect procédure).\n- Registre des sorties matérielles incomplet : 78% des mouvements ne sont pas tracés.\n- Absence de décharges signées pour 89% des attributions de laptops aux collaborateurs.\n- Contrôle d'accès aux locaux techniques défaillant : 34 badges actifs pour des salariés démissionnaires.\n- Système antivol RFID désactivé depuis avril 2025 (maintenance en attente)."
+          }
+        },
+        {
+          "table 5": {
+            "Risque": "- Risque de perte patrimoniale directe de 86 millions FCFA.\n- Risque de vol organisé avec complicité interne (réseau de revente sur marché parallèle).\n- Risque de fuite de données confidentielles via les disques durs non chiffrés.\n- Risque de non-conformité RGPD et sanctions CNIL (données personnelles clients).\n- Risque de responsabilité du DSI pour défaut de protection des actifs.\n- Risque de dégradation de l'image employeur (laxisme de gestion)."
+          }
+        },
+        {
+          "table 6": {
+            "Recommendation": "- Déclencher immédiatement une enquête interne avec appui de la Gendarmerie Nationale (plainte pour vol en réunion).\n- Imposer la signature obligatoire d'une décharge individuelle de responsabilité pour toute attribution de matériel informatique (valeur > 100 000 FCFA).\n- Réactiver et tester le système antivol RFID avec contrôle automatique aux points de sortie des bâtiments.\n- Chiffrer intégralement tous les disques durs avec BitLocker et gestion centralisée des clés (solution MBAM ou Intune).\n- Mettre en place un inventaire physique mensuel par rotation sur 1/12 du parc (inventaire tournant).\n- Révoquer immédiatement les 34 badges actifs des ex-salariés et auditer l'intégralité du système de contrôle d'accès.\n- Instaurer un reporting mensuel obligatoire au Comex du taux de couverture inventaire et des écarts constatés."
+          }
+        }
+      ]
+    },
+    {
+      "Etape mission - Frap": [
+        {
+          "table 1": {
+            "Etape de mission": "Frap",
+            "Norme": "Norme 9.4 Conformité des procédures de crédit",
+            "Méthode": "Revue des dossiers de crédit et tests de conformité",
+            "Reference": "FRAP-CR-ENT-05"
+          }
+        },
+        {
+          "table 2": {
+            "Intitule": "Octroi de crédits à des entreprises liées et parties apparentées sans délibération du Conseil d'Administration en violation de l'Art. 35 de la Loi Bancaire"
+          }
+        },
+        {
+          "table 3": {
+            "Observation": "L'Article 35 de la Loi Bancaire N°2015-14 et la Circulaire BCEAO N°17-2018/CB/C imposent que tout crédit accordé à une partie liée (administrateur, dirigeant, actionnaire significatif ou société apparentée) fasse l'objet d'une délibération expresse du Conseil d'Administration avec abstention de la partie intéressée.\n\nL'analyse de l'échantillon des 50 plus gros crédits octroyés en 2026 (encours > 500 millions FCFA) révèle que 12 dossiers concernent des entreprises directement ou indirectement contrôlées par des membres du Conseil ou de la Direction Générale, sans aucune trace de délibération conforme."
+          }
+        },
+        {
+          "table 4": {
+            "Constat": "- Crédit de 2,4 milliards FCFA accordé à SARL IVOIRCOM (PDG : fils du Président du Conseil) sans délibération CA.\n- Crédit de 1,8 milliard FCFA à SAS BUILDEX (actionnaire à 45% : Directeur Général Adjoint) sans mention au CA.\n- 10 autres crédits totalisant 8,3 milliards FCFA à des parties apparentées identifiées.\n- Taux préférentiels appliqués : 4,5% contre 7,2% pour clients standards (subvention déguisée).\n- Garanties insuffisantes ou surévaluées : ratios de couverture entre 45% et 60% (norme : 120% minimum).\n- Aucun avis de conformité préalable du Secrétariat Général ou du Comité de Crédit.\n- Non-déclaration à la BCEAO dans le reporting trimestriel des conventions réglementées."
+          }
+        },
+        {
+          "table 5": {
+            "Risque": "- Risque de sanction réglementaire majeure de la BCEAO : amende jusqu'à 500 millions FCFA + astreinte journalière.\n- Risque de révocation des mandats des administrateurs et dirigeants impliqués.\n- Risque de qualification pénale d'abus de biens sociaux et de prise illégale d'intérêts.\n- Risque de contentieux avec les actionnaires minoritaires pour abus de majorité.\n- Risque de provisionnement massif en cas de défaut (exposition totale : 12,5 milliards FCFA).\n- Risque de crise de gouvernance et perte de confiance des autorités de tutelle."
+          }
+        },
+        {
+          "table 6": {
+            "Recommendation": "Actions correctives immédiates à mettre en œuvre :\n- Convoquer un Conseil d'Administration extraordinaire sous 15 jours pour régularisation formelle et ratification a posteriori des 12 crédits (avec abstention des parties intéressées).\n- Aligner immédiatement les taux d'intérêt sur les conditions de marché (révision contractuelle) avec effet rétroactif au 1er janvier 2026 et facturation des intérêts différentiels.\n- Exiger le renforcement des garanties à hauteur de 120% minimum de l'encours dans un délai de 60 jours, sous peine d'exigibilité anticipée.\n- Déclarer rétroactivement l'ensemble de ces opérations à la BCEAO dans le cadre du reporting des conventions réglementées.\n- Mettre en place un dispositif de détection automatique des parties liées dans le CRM et le système de scoring crédit (alerte obligatoire).\n- Former l'ensemble de la filière crédit sur la réglementation des conventions réglementées et les sanctions encourues."
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+╔═══════════════════════════════════════════════════════════════════════╗
+║                   COMMENT UTILISER CES DOCUMENTS                      ║
+╚═══════════════════════════════════════════════════════════════════════╝
+
+📂 VOUS ÊTES ICI : resultats_pdf/
+   Organisation des résultats de recherche d'offres d'emploi par fonction
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 DÉMARRAGE RAPIDE (3 ÉTAPES)
+
+1️⃣  OUVRIR : INDEX.md
+    → Liste de toutes les fonctions disponibles
+
+2️⃣  CHOISIR : Le dossier de votre fonction
+    Exemple : Directeur_Audit_Interne/
+
+3️⃣  CONSULTER : Les PDFs selon votre besoin
+    📄 PDF 01 → Vue complète du marché (toutes offres)
+    📄 PDF 02 → Top opportunités (meilleures offres)
+    📄 PDF 03 → Synthèse rapide (10 minutes)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📁 STRUCTURE ACTUELLE
+
+resultats_pdf/
+├── 📄 INDEX.md                     ← COMMENCEZ ICI
+├── 📄 VUE_ENSEMBLE.md              ← Vue globale projet
+├── 📄 COMMENT_UTILISER.txt         ← Ce fichier
+│
+└── 📂 Directeur_Audit_Interne/     ← Fonction 1
+    ├── 📄 01_Recherche_32_Offres...pdf
+    ├── 📄 02_Top_10_Offres...pdf
+    ├── 📄 03_Synthese_Rapide...pdf
+    └── 📖 README.md                ← Guide détaillé
+
+[Autres fonctions à venir...]
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💡 QUEL PDF CHOISIR ?
+
+┌─────────────────────────────────────────────────────────────────────┐
+│ SITUATION                           │ PDF RECOMMANDÉ                │
+├─────────────────────────────────────┼───────────────────────────────┤
+│ Je cherche un emploi               │ → PDF 02 (Top 10)             │
+│ Je veux TOUTES les infos          │ → PDF 01 (Recherche extensive)│
+│ Je suis pressé (10 min)           │ → PDF 03 (Synthèse rapide)    │
+│ Je fais une étude de marché       │ → PDF 01 + README.md          │
+│ Je suis RH/Recruteur              │ → PDF 01 (Benchmark)          │
+│ Je suis Executive                  │ → PDF 03 (Décision rapide)    │
+│ Je veux les détails d'une fonction│ → README.md du dossier        │
+└─────────────────────────────────────┴───────────────────────────────┘
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 EXEMPLE : DIRECTEUR AUDIT INTERNE
+
+📂 Ouvrir : Directeur_Audit_Interne/
+
+📄 PDF 01 - Recherche Extensive (42 pages)
+   • 32 offres détaillées
+   • 8 pays d'Afrique de l'Ouest
+   • Analyse marché 2020-2026
+   • Statistiques complètes
+
+📄 PDF 02 - Top 10 Offres (35 pages)
+   • 10 offres premium sélectionnées
+   • Salaires 20K-120K USD/an
+   • UNDP, PwC, grandes banques
+   • Guide de candidature
+
+📄 PDF 03 - Synthèse Rapide (15 pages)
+   • Top 3 opportunités à saisir
+   • Tableaux comparatifs
+   • Actions immédiates
+   • Lecture 10 minutes
+
+📖 README.md
+   • Vue d'ensemble complète
+   • Statistiques détaillées
+   • Top employeurs
+   • Ressources et contacts
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🚀 POUR AJOUTER UNE NOUVELLE FONCTION
+
+1. Lancer le skill de recherche :
+   "Trouve [X] offres pour [FONCTION] en [ZONE]"
+
+2. Les PDFs seront générés automatiquement dans :
+   resultats_pdf/[Nouvelle_Fonction]/
+
+3. Structure identique pour chaque fonction :
+   • 3 PDFs (extensive, top, synthèse)
+   • 1 README.md
+   • Documentation complète
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📊 FONCTIONS ACTUELLES
+
+✅ Directeur Audit Interne
+   • 42 offres collectées
+   • 8 pays couverts
+   • 3 PDFs + README
+   • 100% validé
+
+[Prochaines fonctions...]
+   → Data Scientist
+   → Développeur Full Stack
+   → Contrôleur Financier
+   → Responsable RH
+   → Et plus...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+❓ BESOIN D'AIDE ?
+
+📖 Documentation complète
+   → Lire INDEX.md
+   → Consulter VUE_ENSEMBLE.md
+   → Ouvrir README.md dans chaque dossier fonction
+
+🔙 Retour au projet principal
+   → Dossier parent : ../
+   → Skill : ../job-search-collector.md
+   → Guide rapide : ../QUICK_START.md
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✨ CONSEIL PRO
+
+Pour une fonction donnée, suivez cet ordre :
+
+1️⃣  README.md       (5 min)  → Vue d'ensemble
+2️⃣  PDF 03          (10 min) → Synthèse rapide
+3️⃣  PDF 02          (30 min) → Top opportunités
+4️⃣  PDF 01          (45 min) → Analyse complète
+
+Total : ~1h30 pour maîtriser complètement le marché d'une fonction !
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎉 PRÊT À COMMENCER ?
+
+👉 Ouvrez INDEX.md maintenant !
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Créé le : 2 novembre 2026
+Version : 1.0
+Statut : ✅ Opérationnel

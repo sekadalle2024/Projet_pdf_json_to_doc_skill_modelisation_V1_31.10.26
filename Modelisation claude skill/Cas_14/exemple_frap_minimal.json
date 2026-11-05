@@ -1,0 +1,41 @@
+{
+  "Data_integrale": [
+    {
+      "Etape mission - Frap": [
+        {
+          "table 1": {
+            "Etape de mission": "Frap",
+            "Norme": "Norme 14.3 Évaluation des constats",
+            "Méthode": "Méthode des recommandations par les constats d'audit",
+            "Reference": "FRAP-TEST-01"
+          }
+        },
+        {
+          "table 2": {
+            "Intitule": "Test de génération FRAP minimal - Vérification du workflow automatisé"
+          }
+        },
+        {
+          "table 3": {
+            "Observation": "Dans le cadre de la validation du système automatisé de génération de documents FRAP, nous avons procédé à un test unitaire minimal avec une structure JSON simplifiée.\n\nL'objectif est de vérifier la capacité du skill à générer un document Word conforme aux contraintes obligatoires (orientation paysage, en-tête bordeaux, 6 tables dynamiques)."
+          }
+        },
+        {
+          "table 4": {
+            "Constat": "- Le système de conversion JSON vers Word fonctionne correctement.\n- La structure des 6 tables est respectée (1 table métadonnées + 5 tables de contenu).\n- Le formatage des lignes à puces est opérationnel.\n- L'horodatage automatique du nom de fichier est fonctionnel."
+          }
+        },
+        {
+          "table 5": {
+            "Risque": "- Risque mineur lié à la phase de test (aucun impact en production).\n- Risque de non-détection d'erreurs si les tests ne couvrent pas tous les cas d'usage.\n- Risque de performance si le volume de données augmente significativement."
+          }
+        },
+        {
+          "table 6": {
+            "Recommendation": "Nous recommandons de :\n- Compléter les tests avec un exemple JSON complet (5-10 FRAP).\n- Valider le workflow complet en environnement de production.\n- Mesurer les temps de génération sur des volumes réalistes.\n- Documenter les cas d'erreur potentiels et leurs solutions."
+          }
+        }
+      ]
+    }
+  ]
+}

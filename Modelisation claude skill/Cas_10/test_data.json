@@ -1,0 +1,266 @@
+{
+  "DATA_COLLECTION": [
+    {
+      "source": "Etape_mission_PROGRAMME_E-audit",
+      "data": {
+        "Etape mission - Programme": [
+          {
+            "table 1": {
+              "Etape de mission": "Programme de travail",
+              "Norme": "Norme 13.6 Programme de travail",
+              "Méthode": "Méthode des contrôles audit par les tâches clés",
+              "Reference": "PRG-KYC-A10"
+            }
+          },
+          {
+            "table 2": [
+              {
+                "no": 1,
+                "tâches clés": "Extraction de la base de référence des comptes en anomalie",
+                "Point de controle": "Concordance entre le volume de la matrice Excel (N'Goran) et les extractions CBS.",
+                "Risque": "Omission de comptes en anomalie dans le périmètre de remédiation (Exhaustivité).",
+                "contrôle audit": "Rapprocher le nombre total de comptes de la matrice Excel avec une requête indépendante du CBS filtrée sur les champs KYC manquants.",
+                "Document": "Matrice Excel N'Goran, Requête CBS",
+                "Assertion": "Exhaustivité"
+              },
+              {
+                "no": 2,
+                "tâches clés": "Rapprochement des données d'identification (Nom/Prénom)",
+                "Point de controle": "Identité stricte entre le CBS et les pièces collectées lors de la remédiation.",
+                "Risque": "Erreur d'affectation de la pièce d'identité à un compte tiers.",
+                "contrôle audit": "Vérifier sur un échantillon que les noms saisis dans le CBS correspondent exactement à la pièce d'identité numérisée.",
+                "Document": "Écran CBS, Copie CNI/Passeport",
+                "Assertion": "Exactitude"
+              },
+              {
+                "no": 3,
+                "tâches clés": "Vérification de la validité des pièces d'identité",
+                "Point de controle": "Date de validité de la pièce au moment de l'apurement de l'anomalie.",
+                "Risque": "Apurement d'anomalie avec des documents périmés (Non-conformité réglementaire).",
+                "contrôle audit": "Contrôler que la date d'expiration de la pièce est postérieure à la date de mise à jour du dossier.",
+                "Document": "Pièce d'identité, Registre de remédiation",
+                "Assertion": "Validité"
+              },
+              {
+                "no": 4,
+                "tâches clés": "Mise à jour du statut KYC dans le CBS",
+                "Point de controle": "Passage automatique ou manuel du statut 'Anomalie' à 'Conforme'.",
+                "Risque": "Maintien indue du statut anomalie malgré la présence des pièces.",
+                "contrôle audit": "Tester le changement de statut dans le CBS après injection des données de la matrice Excel.",
+                "Document": "Log de modification CBS",
+                "Assertion": "Évaluation"
+              },
+              {
+                "no": 5,
+                "tâches clés": "Collecte des justificatifs de domicile",
+                "Point de controle": "Présence d'une facture de service public de moins de 3 mois.",
+                "Risque": "Localisation client erronée ou non documentée.",
+                "contrôle audit": "Vérifier la présence et la date du justificatif de domicile pour les comptes apurés.",
+                "Document": "Facture CIE/SODECI/Certificat de résidence",
+                "Assertion": "Existence"
+              },
+              {
+                "no": 6,
+                "tâches clés": "Validation des dossiers par le Front Office",
+                "Point de controle": "Signature du gestionnaire sur le bordereau de mise à jour KYC.",
+                "Risque": "Mise à jour de comptes sans validation de l'origine des documents.",
+                "contrôle audit": "Vérifier l'existence du visa du gestionnaire sur les dossiers physiques de remédiation.",
+                "Document": "Bordereau de mise à jour",
+                "Assertion": "Obligation"
+              },
+              {
+                "no": 7,
+                "tâches clés": "Contrôle de second niveau (Reporting 2ème ligne)",
+                "Point de controle": "Exactitude du taux de remédiation affiché dans le reporting mensuel.",
+                "Risque": "Surévaluation du niveau d'avancement de la remédiation (Reporting trompeur).",
+                "contrôle audit": "Recalculer le taux de remédiation à partir des données brutes du CBS et comparer avec le reporting de la 2ème ligne.",
+                "Document": "Reporting Compliance, Dashboard CBS",
+                "Assertion": "Présentation"
+              },
+              {
+                "no": 8,
+                "tâches clés": "Traitement des comptes de personnes morales",
+                "Point de controle": "Présence du registre de commerce (RCCM) et des statuts mis à jour.",
+                "Risque": "Défaut d'identification des bénéficiaires effectifs.",
+                "contrôle audit": "Vérifier pour les comptes entreprises la présence du RCCM et de la pièce d'identité du mandataire.",
+                "Document": "Dossier juridique, RCCM",
+                "Assertion": "Exhaustivité"
+              },
+              {
+                "no": 9,
+                "tâches clés": "Gestion des comptes bloqués pour défaut de KYC",
+                "Point de controle": "Levée effective du blocage uniquement après régularisation complète.",
+                "Risque": "Déblocage de comptes sans apurement réel des anomalies.",
+                "contrôle audit": "Extraire la liste des comptes débloqués et vérifier la présence des pièces obligatoires en amont de la date de déblocage.",
+                "Document": "Historique des blocages/déblocages",
+                "Assertion": "Droits"
+              },
+              {
+                "no": 10,
+                "tâches clés": "Archivage numérique des pièces KYC",
+                "Point de controle": "Lisibilité et accessibilité des pièces numérisées dans la GED.",
+                "Risque": "Perte de la preuve de remédiation en cas de contrôle régulateur.",
+                "contrôle audit": "Tenter d'ouvrir les fichiers numérisés associés aux 420 comptes depuis l'interface CBS/GED.",
+                "Document": "Système de GED",
+                "Assertion": "Existence"
+              },
+              {
+                "no": 11,
+                "tâches clés": "Identification des Personnes Politiquement Exposées (PPE)",
+                "Point de controle": "Marquage spécifique PPE dans le CBS lors de la remédiation.",
+                "Risque": "Non-détection d'un profil à risque élevé lors de la mise à jour.",
+                "contrôle audit": "Vérifier si le criblage PPE a été effectué pour les nouveaux documents d'identité reçus.",
+                "Document": "Outil de filtrage (World-Check/Siron)",
+                "Assertion": "Évaluation"
+              },
+              {
+                "no": 12,
+                "tâches clés": "Suivi des comptes sans mouvement (Dormants)",
+                "Point de controle": "Application de la procédure spécifique aux comptes dormants en anomalie.",
+                "Risque": "Remédiation inutile ou frauduleuse sur des comptes inactifs.",
+                "contrôle audit": "Identifier les comptes dormants parmi les 420 et vérifier si la procédure de réactivation a été suivie.",
+                "Document": "Listing comptes dormants",
+                "Assertion": "Réalité"
+              },
+              {
+                "no": 13,
+                "tâches clés": "Saisie du numéro de pièce d'identité",
+                "Point de controle": "Absence de doublons de numéros de pièces sur des comptes différents.",
+                "Risque": "Création de comptes fictifs ou usurpation d'identité.",
+                "contrôle audit": "Effectuer un test d'unicité sur le champ 'Numéro de pièce' dans la base remédiée.",
+                "Document": "Base de données CBS",
+                "Assertion": "Exactitude"
+              },
+              {
+                "no": 14,
+                "tâches clés": "Validation par le Responsable Conformité",
+                "Point de controle": "Approbation finale des dossiers complexes ou à haut risque.",
+                "Risque": "Validation de dossiers non conformes par le Front Office.",
+                "contrôle audit": "Vérifier le workflow de validation pour les dossiers classés 'Risque Élevé'.",
+                "Document": "Workflow électronique",
+                "Assertion": "Autorisation"
+              },
+              {
+                "no": 15,
+                "tâches clés": "Rapprochement des dates de naissance",
+                "Point de controle": "Cohérence entre la date de naissance CBS et la pièce d'identité.",
+                "Risque": "Erreurs de saisie impactant le scoring de risque.",
+                "contrôle audit": "Comparer la date de naissance sur l'échantillon de pièces avec le champ correspondant dans le CBS.",
+                "Document": "CNI, Fiche client CBS",
+                "Assertion": "Exactitude"
+              },
+              {
+                "no": 16,
+                "tâches clés": "Mise à jour des contacts téléphoniques",
+                "Point de controle": "Présence d'un numéro de téléphone valide et vérifié.",
+                "Risque": "Impossibilité de contacter le client pour des alertes de sécurité.",
+                "contrôle audit": "Vérifier la présence d'un numéro de téléphone pour chaque compte apuré.",
+                "Document": "Fiche KYC",
+                "Assertion": "Exhaustivité"
+              },
+              {
+                "no": 17,
+                "tâches clés": "Contrôle de la signature client",
+                "Point de controle": "Présence du spécimen de signature numérisé.",
+                "Risque": "Contestation d'opérations ultérieures par le client.",
+                "contrôle audit": "Vérifier que le spécimen de signature a été mis à jour dans le CBS pour les comptes remédiés.",
+                "Document": "Carton de signature",
+                "Assertion": "Existence"
+              },
+              {
+                "no": 18,
+                "tâches clés": "Analyse des écarts de la matrice N'Goran",
+                "Point de controle": "Justification documentée pour chaque compte non remédié de la liste.",
+                "Risque": "Abandon de la remédiation pour certains comptes sans motif valable.",
+                "contrôle audit": "Examiner les commentaires de la matrice pour les comptes marqués 'En attente' ou 'Impossible'.",
+                "Document": "Matrice Excel (Commentaires)",
+                "Assertion": "Exhaustivité"
+              },
+              {
+                "no": 19,
+                "tâches clés": "Vérification du code secteur d'activité",
+                "Point de controle": "Adéquation entre la profession déclarée et le code secteur saisi.",
+                "Risque": "Scoring de risque erroné basé sur une activité fausse.",
+                "contrôle audit": "Vérifier la cohérence entre la profession sur le justificatif et le code activité CBS.",
+                "Document": "Fiche KYC, Table des codes CBS",
+                "Assertion": "Classification"
+              },
+              {
+                "no": 20,
+                "tâches clés": "Piste d'audit des corrections de données",
+                "Point de controle": "Traçabilité de l'utilisateur ayant effectué la mise à jour.",
+                "Risque": "Modifications non autorisées ou frauduleuses des données KYC.",
+                "contrôle audit": "Consulter les logs système pour identifier les auteurs des modifications sur les 420 comptes.",
+                "Document": "Audit Trail CBS",
+                "Assertion": "Imputabilité"
+              },
+              {
+                "no": 21,
+                "tâches clés": "Reporting des comptes clôturés",
+                "Point de controle": "Clôture effective des comptes n'ayant pas fourni de pièces dans les délais.",
+                "Risque": "Maintien en base de comptes non conformes hors délais de grâce.",
+                "contrôle audit": "Vérifier si les comptes non régularisés après la date butoir ont été clôturés ou bloqués.",
+                "Document": "Liste des comptes clôturés",
+                "Assertion": "Séparation"
+              },
+              {
+                "no": 22,
+                "tâches clés": "Vérification de l'adresse e-mail",
+                "Point de controle": "Format valide de l'adresse e-mail saisie.",
+                "Risque": "Échec des communications digitales obligatoires.",
+                "contrôle audit": "Tester la validité syntaxique des adresses e-mail sur la base remédiée.",
+                "Document": "Base de données",
+                "Assertion": "Exactitude"
+              },
+              {
+                "no": 23,
+                "tâches clés": "Contrôle des doublons clients (Double identifiant)",
+                "Point de controle": "Unicité du client malgré la détention de plusieurs comptes.",
+                "Risque": "Remédiation partielle d'un client possédant plusieurs comptes sous des identifiants différents.",
+                "contrôle audit": "Rechercher des doublons par nom et date de naissance pour fusionner les dossiers KYC.",
+                "Document": "Listing clients",
+                "Assertion": "Exhaustivité"
+              },
+              {
+                "no": 24,
+                "tâches clés": "Réconciliation du reporting de 2ème ligne avec les risques",
+                "Point de controle": "Alignement du reporting avec la cartographie des risques KYC.",
+                "Risque": "Sous-estimation des risques résiduels après remédiation.",
+                "contrôle audit": "Comparer les indicateurs de risque du reporting avec les critères de la politique KYC.",
+                "Document": "Politique KYC, Reporting Risques",
+                "Assertion": "Évaluation"
+              },
+              {
+                "no": 25,
+                "tâches clés": "Clôture de la mission de remédiation",
+                "Point de controle": "Validation finale du projet par le Comité de Direction.",
+                "Risque": "Fin de projet sans validation des résultats obtenus.",
+                "contrôle audit": "Vérifier l'existence du procès-verbal de clôture du projet de remédiation KYC.",
+                "Document": "PV de Comité",
+                "Assertion": "Présentation"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "COLUMNS_LOADED": [
+    "Etape_mission_PROGRAMME_E-audit"
+  ],
+  "COLUMNS_EMPTY": [
+    "Etape_mission_CARTOGRAPHIE_E-audit",
+    "Etape_mission_REVISION_E-audit",
+    "Etape_mission_COUVERTURE_E-audit",
+    "Etape_mission_FRAP_E-audit",
+    "Etape_mission_MATRICE_SP_E-audit",
+    "Etape_mission_MODELISATION_E-audit",
+    "Etape_mission_RECOS_REVISION_E-audit",
+    "Node_aggregate_Workflow_E-audit",
+    "Document_complement _mission_Workflow_E-audit",
+    "Document_1_mission_Workflow_E-audit",
+    "Document_2_mission_Workflow_E-audit",
+    "Document_3_mission_Workflow_E-audit"
+  ],
+  "COLUMNS_ERRORS": []
+}
