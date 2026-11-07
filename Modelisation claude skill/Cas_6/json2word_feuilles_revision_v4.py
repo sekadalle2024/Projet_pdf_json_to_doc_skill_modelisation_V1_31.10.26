@@ -479,18 +479,10 @@ def safe(text: str) -> str:
 
 
 def build_filename(reference: str, step: str, software: str) -> str:
-    step_part = re.sub(r"\s+", "_", safe(step))
-    
-    # Extraire le timestamp de la référence si présent (format: PROD001_V1_14-54-04_31.10.26)
-    timestamp_match = re.search(r"_(V\d+_[\d-]+_[\d.]+)$", reference)
-    if timestamp_match:
-        # Le timestamp devient le nom complet (sans préfixe de référence)
-        timestamp = timestamp_match.group(1)
-        # Format: [Etape] - [Logiciel]_[timestamp].docx (tiret simple pour compatibilité)
-        return f"{step_part} - {safe(software)}_{timestamp}.docx"
-    else:
-        # Pas de timestamp, format normal avec référence
-        return f"{reference} - {step_part} - {safe(software)}.docx"
+    # Format simple: Cas6_YYYYMMDD_HHMMSS.docx (sans accents ni caractères spéciaux)
+    from datetime import datetime
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    return f"Cas6_{timestamp}.docx"
 
 
 # --------------------------------------------------------------------------- #

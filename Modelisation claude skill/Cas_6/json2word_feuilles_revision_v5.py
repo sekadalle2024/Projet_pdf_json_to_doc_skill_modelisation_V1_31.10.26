@@ -115,27 +115,27 @@ COLUMN_SPECS = {
     # Table 4 - Résultats
     "Résultats des tests": ("Résultats des tests", 15000, "text"),
 
-    # Table 5 - Table de test (LA PLUS IMPORTANTE)
-    "N°": ("N°", 300, "text"),
-    "N° Ordre": ("N°", 300, "text"),
-    "N° Compte Client": ("N° Compte", 900, "text"),
-    "Date Réactivation": ("Date", 700, "text"),
-    "Intitulé Compte": ("Intitulé", 1400, "text"),
-    "Solde Veille Réactivation": ("Solde Veille", 900, "text"),
-    "Visa Agence (Maker)": ("Maker", 500, "text"),
-    "Visa Conformité Siège (Checker)": ("Checker", 500, "text"),
-    "Contact Liquidateur Conforme": ("Contact", 500, "text"),
-    "Montant Débit Réalisé": ("Montant", 900, "text"),
-    "Ecart": ("Ecart", 600, "bold"),
-    "Assertion": ("Assertion", 800, "text"),
-    "CTR 1": ("CTR 1", 400, "text"),
-    "CTR 2": ("CTR 2", 400, "text"),
-    "CTR 3": ("CTR 3", 400, "text"),
-    "CTR 4": ("CTR 4", 400, "text"),
-    "CTR 5": ("CTR 5", 400, "text"),
-    "X-Ref": ("X-Ref", 500, "text"),
-    "Description": ("Description", 2000, "text"),
-    "Conclusion": ("Conclusion", 900, "text"),
+    # Table 5 - Table de test (LA PLUS IMPORTANTE - largeurs augmentées)
+    "N°": ("N°", 500, "text"),
+    "N° Ordre": ("N°", 500, "text"),
+    "N° Compte Client": ("N° Compte", 1400, "text"),
+    "Date Réactivation": ("Date", 1100, "text"),
+    "Intitulé Compte": ("Intitulé", 2200, "text"),
+    "Solde Veille Réactivation": ("Solde Veille", 1400, "text"),
+    "Visa Agence (Maker)": ("Maker", 800, "text"),
+    "Visa Conformité Siège (Checker)": ("Checker", 800, "text"),
+    "Contact Liquidateur Conforme": ("Contact", 800, "text"),
+    "Montant Débit Réalisé": ("Montant", 1400, "text"),
+    "Ecart": ("Ecart", 1000, "bold"),  # Plus large pour visibilité
+    "Assertion": ("Assertion", 1200, "text"),
+    "CTR 1": ("CTR 1", 600, "text"),
+    "CTR 2": ("CTR 2", 600, "text"),
+    "CTR 3": ("CTR 3", 600, "text"),
+    "CTR 4": ("CTR 4", 600, "text"),
+    "CTR 5": ("CTR 5", 600, "text"),
+    "X-Ref": ("X-Ref", 700, "text"),
+    "Description": ("Description", 3500, "text"),
+    "Conclusion": ("Conclusion", 1400, "text"),
 
     # Table 6 - Cross references
     "Cross references": ("Réf", 500, "text"),
@@ -364,7 +364,7 @@ def auto_detect_column_width(key: str, records: list[dict]) -> int | None:
     return None
 
 
-def column_layout(keys: list[str], records: list[dict] = None):
+def column_layout(keys: list[str], records: list[dict] = None, target_width: int = TABLE_WIDTH):
     """Libellés, largeurs et types de rendu des colonnes (connues ou non)."""
     labels, widths, kinds = [], [], []
     for k in keys:
@@ -383,13 +383,13 @@ def column_layout(keys: list[str], records: list[dict] = None):
     
     unknown = [i for i, w in enumerate(widths) if w is None]
     if unknown:
-        remaining = max(TABLE_WIDTH - sum(w for w in widths if w), 1200 * len(unknown))
+        remaining = max(target_width - sum(w for w in widths if w), 1200 * len(unknown))
         for i in unknown:
             widths[i] = remaining // len(unknown)
     total = sum(widths)
-    if total != TABLE_WIDTH:                      # recalage sur la largeur utile
-        widths = [round(w * TABLE_WIDTH / total) for w in widths]
-        widths[-1] += TABLE_WIDTH - sum(widths)
+    if total != target_width:                      # recalage sur la largeur utile
+        widths = [round(w * target_width / total) for w in widths]
+        widths[-1] += target_width - sum(widths)
     return labels, widths, kinds
 
 
@@ -427,11 +427,16 @@ def reorder_table5_columns(records: list[dict]) -> list[dict]:
     return reordered
 
 
-def add_grid_table(doc, records: list[dict], blank_rows: bool, strip_steps: bool):
+def add_grid_table(doc, records: list[dict], blank_rows: bool, strip_steps: bool, table_name: str = ""):
     """Table 2 : colonnes, bordures de lignes visibles horizontalement et verticalement."""
     rows_data = with_blank_rows(records, blank_rows)
     keys = list(next(r for r in records if not is_empty_record(r)).keys())
-    labels, widths, kinds = column_layout(keys, records)
+    
+    # Pour la table 5 (table de test), utiliser une largeur TRIPLE pour éviter compression
+    is_table5 = "table 5" in table_name.lower() or "table5" in table_name.lower()
+    target_width = TABLE_WIDTH * 3 if is_table5 else TABLE_WIDTH
+    
+    labels, widths, kinds = column_layout(keys, records, target_width=target_width)
 
     table = doc.add_table(rows=1 + len(rows_data), cols=len(keys))
     style_table(table, widths, inside_h=GREY)
@@ -564,7 +569,7 @@ def convert(json_path: Path, out_dir: Path, *, software: str, reference: str | N
         if isinstance(content, dict):
             add_vertical_table(doc, content)
         elif isinstance(content, list) and content:
-            add_grid_table(doc, content, blank_rows, strip_steps)
+            add_grid_table(doc, content, blank_rows, strip_steps, table_name=table_name)
     add_spacer(doc, 1)                      # Word exige un paragraphe final
 
     reference = reference or auto_reference(step)

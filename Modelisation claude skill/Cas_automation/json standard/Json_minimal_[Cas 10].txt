@@ -1,0 +1,47 @@
+{
+  "Etape mission - Programme": [
+    {
+      "table 1": {
+        "Etape de mission": "Programme de travail",
+        "Reference": "Programme-001"
+      }
+    },
+    {
+      "table 2": [
+        {
+          "no": 1,
+          "Cycle": "Test",
+          "Processus": "Test"
+        }
+      ]
+    },
+    {
+      "[Modélisation design]": {
+        "[Table cible] 1: la table 2": {
+          "Design 1 - Cycle par sous-processus": {
+            "[Niveau 1]": "Cycle par sous-processus",
+            "[Niveau 2]": "Cycle",
+            "[Niveau 3]": "Processus",
+            "[Niveau 4]": "Sous-processus",
+            "Colonnes couvertes": ["Cycle", "Processus", "Sous-processus"]
+          },
+          "Design 2 - Risque et assertion à couvrir": {
+            "[Niveau 1]": "Risque et assertion à couvrir",
+            "[Niveau 2]": "Risque",
+            "[Niveau 3]": "Assertion",
+            "Colonnes couvertes": ["Risque", "Assertion"]
+          },
+          "Design 5 - Preuve et responsabilité": {
+            "[Niveau 1]": "Preuve et responsabilité",
+            "[Niveau 2]": ["Preuve", "Responsabilité et calendrier"],
+            "[Niveau 3]": {
+              "Preuve": ["Document", "X-ref"],
+              "Responsabilité et calendrier": ["Propriétaire du contrôle", "Périodicité"]
+            },
+            "Colonnes couvertes": ["Document", "X-ref", "Propriétaire du contrôle", "Périodicité"]
+          }
+        }
+      }
+    }
+  ]
+}

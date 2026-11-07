@@ -110,7 +110,13 @@ def generate_reference():
 def set_cell_background(cell, color_rgb):
     """Définit la couleur de fond d'une cellule."""
     shading_elm = OxmlElement('w:shd')
-    shading_elm.set(qn('w:fill'), f"{color_rgb.red:02X}{color_rgb.green:02X}{color_rgb.blue:02X}")
+    # RGBColor est un tuple (r, g, b) ou un objet RGBColor
+    if isinstance(color_rgb, tuple):
+        r, g, b = color_rgb
+    else:
+        # C'est un objet RGBColor de python-docx
+        r, g, b = color_rgb
+    shading_elm.set(qn('w:fill'), f"{r:02X}{g:02X}{b:02X}")
     cell._element.get_or_add_tcPr().append(shading_elm)
 
 
@@ -133,7 +139,12 @@ def set_cell_border(cell, **kwargs):
             border_elm.set(qn('w:val'), 'single')
             border_elm.set(qn('w:sz'), str(border_val[0]))
             color = border_val[1]
-            border_elm.set(qn('w:color'), f"{color.red:02X}{color.green:02X}{color.blue:02X}")
+            # Gérer RGBColor comme tuple
+            if isinstance(color, tuple):
+                r, g, b = color
+            else:
+                r, g, b = color
+            border_elm.set(qn('w:color'), f"{r:02X}{g:02X}{b:02X}")
             tcBorders.append(border_elm)
 
     tcPr.append(tcBorders)
@@ -343,10 +354,14 @@ def generate_word_document(
     etape_mission = "Feuille de révision"
     for main_key, main_value in json_data.items():
         if isinstance(main_value, list) and len(main_value) > 0:
-            table1 = main_value[0].get("table 1", {})
-            if "Etape de mission" in table1:
-                etape_mission = table1["Etape de mission"]
-                break
+            for item in main_value:
+                if isinstance(item, dict):
+                    table1 = item.get("table 1")
+                    if table1 and isinstance(table1, (dict, list)):
+                        table1_dict = table1[0] if isinstance(table1, list) else table1
+                        if isinstance(table1_dict, dict) and "Etape de mission" in table1_dict:
+                            etape_mission = table1_dict["Etape de mission"]
+                            break
 
     # En-tête
     header = section.header
@@ -369,7 +384,7 @@ def generate_word_document(
     footer_para.text = footer_text
     footer_para.alignment = WD_ALIGN_PARAGRAPH.CENTER
 
-    # Traitement des tables
+    # Traitement de TOUS les tableaux (pas seulement table 1 et 2)
     for main_key, main_value in json_data.items():
         if not isinstance(main_value, list):
             continue
@@ -378,14 +393,19 @@ def generate_word_document(
             if not isinstance(item, dict):
                 continue
 
+            # Traiter TOUS les tableaux trouvés
             for sub_key, sub_value in item.items():
-                if sub_key == "table 1" and isinstance(sub_value, dict):
-                    create_vertical_table(doc, sub_value, software_name, etape_mission)
-                    doc.add_paragraph()  # Espacement
-
-                elif sub_key == "table 2" and isinstance(sub_value, list):
-                    create_horizontal_table(doc, sub_value, blank_rows, keep_prefix)
-                    doc.add_paragraph()  # Espacement
+                # Vérifier si c'est une clé de type "table X" ou "table X - description"
+                if re.match(r'table\s+\d+', sub_key, re.IGNORECASE):
+                    # Déterminer le type de tableau (vertical ou horizontal)
+                    if isinstance(sub_value, dict):
+                        # Tableau vertical (une seule ligne de métadonnées)
+                        create_vertical_table(doc, sub_value, software_name, etape_mission)
+                    elif isinstance(sub_value, list):
+                        # Tableau horizontal (plusieurs lignes de données)
+                        create_horizontal_table(doc, sub_value, blank_rows, keep_prefix)
+                    
+                    doc.add_paragraph()  # Espacement après chaque tableau
 
     # Sauvegarder
     doc.save(output_path)
