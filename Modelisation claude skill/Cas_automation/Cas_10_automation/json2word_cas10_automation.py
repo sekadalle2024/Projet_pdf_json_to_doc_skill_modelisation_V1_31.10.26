@@ -413,11 +413,39 @@ def main(json_file, output_dir=None):
         if modelisation_design:
             doc = Document(str(temp_output))
             
-            # Ajouter un saut de section (nouveau paragraphe)
-            doc.add_paragraph()
-            
-            # Ajouter les tables de Modelisation design
-            build_design_section_tables(doc, modelisation_design)
+            # Récupérer l'élément XML de Table 2 (index 1)
+            # Table 2 est la deuxième table du document
+            if len(doc.tables) >= 2:
+                table2_el = doc.tables[1]._tbl
+                parent = table2_el.getparent()
+                table2_index = list(parent).index(table2_el)
+                
+                # Créer les éléments de la section design dans un doc temporaire
+                tmp_doc = Document()
+                
+                # Ajouter un paragraphe vide de séparation
+                tmp_doc.add_paragraph()
+                
+                # Construire la section design dans le doc temporaire
+                build_design_section_tables(tmp_doc, modelisation_design)
+                
+                # Insérer les éléments du doc temporaire AVANT table2_el
+                # Les éléments à insérer sont les paragraphes du body du doc temporaire
+                # (en excluant le dernier paragraphe vide obligatoire de tout doc Word)
+                tmp_body = tmp_doc.element.body
+                elements_to_insert = list(tmp_body)[:-1]  # Exclure le dernier para vide final
+                
+                # Insérer en ordre inverse pour maintenir l'ordre (insertion avant)
+                insert_pos = table2_index
+                for elem in elements_to_insert:
+                    # Détacher l'élément de son parent temporaire
+                    tmp_body.remove(elem)
+                    parent.insert(insert_pos, elem)
+                    insert_pos += 1
+            else:
+                # Fallback : ajouter à la fin si moins de 2 tables
+                doc.add_paragraph()
+                build_design_section_tables(doc, modelisation_design)
             
             # Sauvegarder le document mis a jour
             doc.save(str(temp_output))
