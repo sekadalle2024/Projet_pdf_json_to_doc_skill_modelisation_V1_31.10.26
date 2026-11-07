@@ -1,0 +1,65 @@
+{
+  "Etape mission - Programme": [
+    {
+      "table 1": {
+        "Etape de mission": "Programme de travail",
+        "Norme": "Norme 13.6 Programme de travail",
+        "Méthode": "Méthode des contrôles audit par les entretiens",
+        "Processus audité": "Retour de marchandises (matériel et outillage)",
+        "Reference": "Programme-001",
+        "Modélisation design": "[Mode auto] - 5 designs conçus pour le processus",
+        "Echelle de criticite": "E : Élevé | M : Moyen | F : Faible"
+      }
+    },
+    {
+      "table 2": [
+        {
+          "no": 1,
+          "Cycle": "Stocks et logistique",
+          "Processus": "Retour de marchandises",
+          "Sous-processus": "Initiation et autorisation du retour",
+          "Risque": "Risque de retours non justifiés ou fictifs",
+          "Assertion": "Validité",
+          "Probabilité": "Moyen (2)",
+          "Impact": "Moyen (2)",
+          "Criticité brute": "Moyen (4)",
+          "Point de contrôle": "Existence d'une demande de retour formalisée",
+          "Contrôle audit": "Sélectionner un échantillon de retours",
+          "Objectif de contrôle": "S'assurer que tout retour repose sur une demande formalisée",
+          "Document": "Demande de retour de matériel",
+          "X-ref": "[PT-RM-01]",
+          "Propriétaire du contrôle": "Responsable de chantier",
+          "Périodicité": "À chaque retour"
+        }
+      ]
+    },
+    {
+      "[Modélisation design]": {
+        "[Table cible] 1: la table 2": {
+          "Design 1 - Cycle par sous-processus": {
+            "[Niveau 1]": "Cycle par sous-processus",
+            "[Niveau 2]": "Cycle",
+            "[Niveau 3]": "Processus",
+            "[Niveau 4]": "Sous-processus",
+            "Colonnes couvertes": ["Cycle", "Processus", "Sous-processus"]
+          },
+          "Design 2 - Risque et assertion": {
+            "[Niveau 1]": "Risque et assertion à couvrir",
+            "[Niveau 2]": "Risque",
+            "[Niveau 3]": "Assertion",
+            "Colonnes couvertes": ["Risque", "Assertion"]
+          },
+          "Design 5 - Preuve et responsabilité": {
+            "[Niveau 1]": "Preuve et responsabilité",
+            "[Niveau 2]": ["Preuve", "Responsabilité et calendrier"],
+            "[Niveau 3]": {
+              "Preuve": ["Document", "X-ref"],
+              "Responsabilité et calendrier": ["Propriétaire du contrôle", "Périodicité"]
+            },
+            "Colonnes couvertes": ["Document", "X-ref", "Propriétaire du contrôle", "Périodicité"]
+          }
+        }
+      }
+    }
+  ]
+}

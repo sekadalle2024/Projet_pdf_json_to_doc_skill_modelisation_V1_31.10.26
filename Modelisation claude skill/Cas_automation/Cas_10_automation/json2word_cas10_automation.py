@@ -124,9 +124,175 @@ def format_cell_text(cell, text, bold=False, italic=False, color=None):
         run.font.color.rgb = RGBColor.from_string(color)
 
 
+def _set_paragraph_shading(paragraph, fill_color):
+    """Applique un fond coloré à un paragraphe via XML."""
+    pPr = paragraph._p.get_or_add_pPr()
+    shd = OxmlElement('w:shd')
+    shd.set(qn('w:val'), 'clear')
+    shd.set(qn('w:color'), 'auto')
+    shd.set(qn('w:fill'), fill_color)
+    pPr.append(shd)
+
+
+def build_hierarchical_design(doc, design_name, design_spec):
+    """
+    Rend un design avec une structure hiérarchique visuelle (paragraphes indentés).
+    
+    Args:
+        doc: Document python-docx
+        design_name: Nom du design (ex: "Design 1 - Cycle par sous-processus")
+        design_spec: Dictionnaire de spécification du design
+    """
+    # Titre du design (bordeaux, gras, taille 11pt, 0 indent)
+    p = doc.add_paragraph()
+    p.paragraph_format.left_indent = Twips(0)
+    run = p.add_run(str(design_name))
+    run.font.name = "Calibri"
+    run.font.size = Pt(11)
+    run.font.bold = True
+    run.font.color.rgb = RGBColor.from_string(BORDEAUX)
+    
+    # Extraire les niveaux
+    niveau1 = design_spec.get("[Niveau 1]", "")
+    niveau2 = design_spec.get("[Niveau 2]", "")
+    niveau3 = design_spec.get("[Niveau 3]", "")
+    niveau4 = design_spec.get("[Niveau 4]", "")
+    colonnes = design_spec.get("Colonnes couvertes", [])
+    
+    # Déterminer si c'est une structure branchée (niveau2 = liste)
+    is_branching = isinstance(niveau2, list)
+    
+    if is_branching:
+        # Structure branchée (Design 5)
+        
+        # Niveau 1: fond bordeaux, texte blanc, gras, indent 200
+        if niveau1:
+            p = doc.add_paragraph()
+            p.paragraph_format.left_indent = Twips(200)
+            _set_paragraph_shading(p, BORDEAUX)
+            run = p.add_run(f"|- Niveau 1: {niveau1}")
+            run.font.name = "Calibri"
+            run.font.size = Pt(11)
+            run.font.bold = True
+            run.font.color.rgb = RGBColor(255, 255, 255)  # Blanc
+        
+        # Niveau 2 (branches): fond light bordeaux, texte noir, gras, indent 200
+        if niveau2:
+            p = doc.add_paragraph()
+            p.paragraph_format.left_indent = Twips(200)
+            _set_paragraph_shading(p, LIGHT_BORDEAUX)
+            run = p.add_run("|- Niveau 2 (branches):")
+            run.font.name = "Calibri"
+            run.font.size = Pt(10)
+            run.font.bold = True
+            run.font.color.rgb = RGBColor(0, 0, 0)
+            
+            # Lister chaque branche avec indent 400
+            for branch in niveau2:
+                p = doc.add_paragraph()
+                p.paragraph_format.left_indent = Twips(400)
+                _set_paragraph_shading(p, LIGHT_BORDEAUX)
+                run = p.add_run(f"|    |- {branch}")
+                run.font.name = "Calibri"
+                run.font.size = Pt(10)
+                run.font.bold = True
+                run.font.color.rgb = RGBColor(0, 0, 0)
+        
+        # Niveau 3 (détails par branche): fond gris clair, indent 200 puis 600 pour les détails
+        if isinstance(niveau3, dict):
+            p = doc.add_paragraph()
+            p.paragraph_format.left_indent = Twips(200)
+            _set_paragraph_shading(p, LIGHT_GRAY)
+            run = p.add_run("'- Niveau 3 (details par branche):")
+            run.font.name = "Calibri"
+            run.font.size = Pt(10)
+            run.font.bold = False
+            run.font.color.rgb = RGBColor(0, 0, 0)
+            
+            # Détails de chaque branche
+            for branch_name, branch_cols in niveau3.items():
+                p = doc.add_paragraph()
+                p.paragraph_format.left_indent = Twips(600)
+                _set_paragraph_shading(p, LIGHT_GRAY)
+                if isinstance(branch_cols, list):
+                    cols_text = ", ".join(branch_cols)
+                else:
+                    cols_text = str(branch_cols)
+                run = p.add_run(f"     |- {branch_name} -> {cols_text}")
+                run.font.name = "Calibri"
+                run.font.size = Pt(10)
+                run.font.bold = False
+                run.font.color.rgb = RGBColor(0, 0, 0)
+    
+    else:
+        # Structure linéaire (Designs 1-4)
+        
+        # Niveau 1: fond bordeaux, texte blanc, gras, indent 200
+        if niveau1:
+            p = doc.add_paragraph()
+            p.paragraph_format.left_indent = Twips(200)
+            _set_paragraph_shading(p, BORDEAUX)
+            run = p.add_run(f"|- Niveau 1: {niveau1}")
+            run.font.name = "Calibri"
+            run.font.size = Pt(11)
+            run.font.bold = True
+            run.font.color.rgb = RGBColor(255, 255, 255)  # Blanc
+        
+        # Niveau 2: fond light bordeaux, texte noir, gras, indent 400
+        if niveau2:
+            p = doc.add_paragraph()
+            p.paragraph_format.left_indent = Twips(400)
+            _set_paragraph_shading(p, LIGHT_BORDEAUX)
+            run = p.add_run(f"|- Niveau 2: {niveau2}")
+            run.font.name = "Calibri"
+            run.font.size = Pt(10)
+            run.font.bold = True
+            run.font.color.rgb = RGBColor(0, 0, 0)
+        
+        # Niveau 3: fond gris clair, texte noir, normal, indent 600
+        if niveau3:
+            p = doc.add_paragraph()
+            p.paragraph_format.left_indent = Twips(600)
+            _set_paragraph_shading(p, LIGHT_GRAY)
+            run = p.add_run(f"|- Niveau 3: {niveau3}")
+            run.font.name = "Calibri"
+            run.font.size = Pt(10)
+            run.font.bold = False
+            run.font.color.rgb = RGBColor(0, 0, 0)
+        
+        # Niveau 4: fond blanc, texte gris, italique, indent 800
+        if niveau4:
+            p = doc.add_paragraph()
+            p.paragraph_format.left_indent = Twips(800)
+            run = p.add_run(f"'- Niveau 4: {niveau4}")
+            run.font.name = "Calibri"
+            run.font.size = Pt(9)
+            run.font.bold = False
+            run.font.italic = True
+            run.font.color.rgb = RGBColor.from_string(GREY)
+    
+    # Colonnes couvertes: fond gris clair, indent 200
+    if colonnes:
+        p = doc.add_paragraph()
+        p.paragraph_format.left_indent = Twips(200)
+        _set_paragraph_shading(p, LIGHT_GRAY)
+        if isinstance(colonnes, list):
+            colonnes_text = ", ".join(colonnes)
+        else:
+            colonnes_text = str(colonnes)
+        run = p.add_run(f"Colonnes: {colonnes_text}")
+        run.font.name = "Calibri"
+        run.font.size = Pt(9)
+        run.font.bold = False
+        run.font.color.rgb = RGBColor(0, 0, 0)
+    
+    # Espace après le design
+    doc.add_paragraph()
+
+
 def build_design_section_tables(doc, modelisation_design):
     """
-    Ajoute les tables de Modelisation design au document.
+    Ajoute les sections de Modélisation design au document avec une structure hiérarchique visuelle.
     
     Args:
         doc: Document python-docx
@@ -157,116 +323,14 @@ def build_design_section_tables(doc, modelisation_design):
         run.font.bold = True
         run.font.color.rgb = RGBColor.from_string(BORDEAUX)
         
-        # Parcourir chaque design
+        # Parcourir chaque design et appeler build_hierarchical_design
         for design_name, design_spec in designs.items():
             if not isinstance(design_spec, dict):
                 continue
             
-            # Titre du design
-            p = doc.add_paragraph()
-            run = p.add_run(str(design_name))
-            run.font.name = "Calibri"
-            run.font.size = Pt(11)
-            run.font.bold = True
+            build_hierarchical_design(doc, design_name, design_spec)
             
-            # Creer le tableau du design (2 colonnes: Niveau | Colonnes / Sous-groupes)
-            widths = [3000, 12000]
-            table = doc.add_table(rows=1, cols=2)
-            style_design_table(table, widths)
-            
-            # En-tete du tableau
-            hdr_row = table.rows[0]
-            style_cell_shading(hdr_row.cells[0], BORDEAUX)
-            style_cell_shading(hdr_row.cells[1], BORDEAUX)
-            format_cell_text(hdr_row.cells[0], "Niveau", bold=True, color=WHITE)
-            format_cell_text(hdr_row.cells[1], "Colonnes / Sous-groupes", bold=True, color=WHITE)
-            
-            # Extraire les niveaux
-            niveau1 = design_spec.get("[Niveau 1]", "")
-            niveau2 = design_spec.get("[Niveau 2]", "")
-            niveau3 = design_spec.get("[Niveau 3]", "")
-            niveau4 = design_spec.get("[Niveau 4]", "")
-            colonnes = design_spec.get("Colonnes couvertes", [])
-            
-            # Gerer Design 5 avec branchement au Niveau 2
-            is_branching = isinstance(niveau2, list)
-            
-            if is_branching:
-                # Design 5: structure branchee
-                # Niveau 1
-                row = table.add_row()
-                style_cell_shading(row.cells[0], BORDEAUX)
-                style_cell_shading(row.cells[1], BORDEAUX)
-                format_cell_text(row.cells[0], "Niveau 1", bold=True, color=WHITE)
-                format_cell_text(row.cells[1], niveau1, bold=True, color=WHITE)
-                
-                # Niveau 2: branches
-                row = table.add_row()
-                style_cell_shading(row.cells[0], LIGHT_BORDEAUX)
-                style_cell_shading(row.cells[1], LIGHT_BORDEAUX)
-                format_cell_text(row.cells[0], "Niveau 2 (branches)", bold=True, color="000000")
-                branches_text = " | ".join(niveau2)
-                format_cell_text(row.cells[1], branches_text, bold=True, color="000000")
-                
-                # Niveau 3: details des branches
-                if isinstance(niveau3, dict):
-                    for branch_name, branch_cols in niveau3.items():
-                        row = table.add_row()
-                        style_cell_shading(row.cells[0], LIGHT_GRAY)
-                        style_cell_shading(row.cells[1], LIGHT_GRAY)
-                        format_cell_text(row.cells[0], f"  {branch_name}", bold=False, color="000000")
-                        if isinstance(branch_cols, list):
-                            cols_text = ", ".join(branch_cols)
-                        else:
-                            cols_text = str(branch_cols)
-                        format_cell_text(row.cells[1], cols_text, bold=False, color="000000")
-            else:
-                # Designs normaux (1-4): structure lineaire
-                # Niveau 1
-                if niveau1:
-                    row = table.add_row()
-                    style_cell_shading(row.cells[0], BORDEAUX)
-                    style_cell_shading(row.cells[1], BORDEAUX)
-                    format_cell_text(row.cells[0], "Niveau 1", bold=True, color=WHITE)
-                    format_cell_text(row.cells[1], niveau1, bold=True, color=WHITE)
-                
-                # Niveau 2
-                if niveau2:
-                    row = table.add_row()
-                    style_cell_shading(row.cells[0], LIGHT_BORDEAUX)
-                    style_cell_shading(row.cells[1], LIGHT_BORDEAUX)
-                    format_cell_text(row.cells[0], "Niveau 2", bold=True, color="000000")
-                    format_cell_text(row.cells[1], niveau2, bold=True, color="000000")
-                
-                # Niveau 3
-                if niveau3:
-                    row = table.add_row()
-                    style_cell_shading(row.cells[0], LIGHT_GRAY)
-                    style_cell_shading(row.cells[1], LIGHT_GRAY)
-                    format_cell_text(row.cells[0], "Niveau 3", bold=False, color="000000")
-                    format_cell_text(row.cells[1], niveau3, bold=False, color="000000")
-                
-                # Niveau 4
-                if niveau4:
-                    row = table.add_row()
-                    style_cell_shading(row.cells[0], WHITE)
-                    style_cell_shading(row.cells[1], WHITE)
-                    format_cell_text(row.cells[0], "Niveau 4", italic=True, color="000000")
-                    format_cell_text(row.cells[1], niveau4, italic=True, color="000000")
-            
-            # Colonnes couvertes
-            if colonnes:
-                row = table.add_row()
-                style_cell_shading(row.cells[0], LIGHT_GRAY)
-                style_cell_shading(row.cells[1], LIGHT_GRAY)
-                format_cell_text(row.cells[0], "Colonnes couvertes", bold=True, color="000000")
-                if isinstance(colonnes, list):
-                    colonnes_text = ", ".join(colonnes)
-                else:
-                    colonnes_text = str(colonnes)
-                format_cell_text(row.cells[1], colonnes_text, bold=False, color="000000")
-            
-            # Espace apres le tableau
+            # Séparateur visuel entre designs (ligne vide)
             doc.add_paragraph()
 
 
