@@ -1,0 +1,220 @@
+{
+"Etape mission - Matrice de surveillance permanente": [
+{
+"table 1": {
+"Etape de mission": "Dispositif de surveillance permanente de 1er et 2nd niveau",
+"Processus": "Cycle des comptes inactifs, dormants et prévention des fraudes sur comptes sous tutelle/liquidation",
+"Norme principale": "Circulaire N°03-2017/CB/C relative au contrôle interne (Article 3-n sur les déficiences majeures)",
+"Norme secondaire": "Instruction N°008/07/2013/BCEAO relative au traitement des comptes inactifs dans les banques de l'UMOA",
+"Reference": "MSP-BK-A10 - Matrice de surveillance permanente des comptes inactifs et prévention des fraudes",
+"Entite auditrice": "Afrika Financial Bank - Direction du Contrôle Permanent et de la Conformité",
+"Perimetre": "Ensemble des agences réseau et services centraux de traitement des opérations",
+"Objectif du dispositif": "Formaliser les contrôles opérationnels de premier et deuxième niveau pour verrouiller le processus de détection, gel, maintien, modification signalétique et réactivation des comptes inactifs afin d'éradiquer tout risque de détournement de fonds en déshérence et prévenir les omissions de contrôles."
+}
+},
+{
+"table 2": [
+{
+"no": 1,
+"Point de controle": "Détection automatique et classification des comptes sans mouvement depuis plus de 12 mois consécutifs",
+"Risque": "Maintien erroné de comptes inactifs en statut actif favorisant l'initiation d'opérations frauduleuses non surveillées par le personnel d'agence.",
+"Contrôle de premier niveau": "Exécution mensuelle automatisée du batch d'identification des comptes sans mouvement client depuis 365 jours et visa du superviseur des opérations d'agence.",
+"Contrôle de second niveau": "Rapprochement contradictoire par le Contrôleur Permanent entre la base globale des comptes et l'état des comptes classés inactifs produit par le Core Banking.",
+"Document": "État mensuel Core Banking des comptes inactifs (ETAT-INACT-01), PV de contrôle de premier niveau d'agence."
+},
+{
+"no": 2,
+"Point de controle": "Bascule automatique en compte dormant et verrouillage système après 24 mois d'inactivité (Instruction BCEAO 008/07/2013)",
+"Risque": "Défaut de gel informatique strict des comptes dormants permettant des retraits frauduleux ou des virements non détectés en agence.",
+"Contrôle de premier niveau": "Vérification systématique par le Chef de Service Caisse/Opérations de l'application de l'attribut système 'Bloqué/Dormant' interdisant tout débit sans dérogation.",
+"Contrôle de second niveau": "Audit sur extraction IT de l'exhaustivité des comptes atteignant 2 ans d'inactivité pour attester du blocage technique effectif à 100 % sans exclusion manuelle.",
+"Document": "Journal des événements Core Banking, Rapport des statuts de comptes bloqués (REP-GEL-02)."
+},
+{
+"no": 3,
+"Point de controle": "Exclusion des écritures automatiques de frais et agios de l'interruption du délai d'inactivité",
+"Risque": "Considération erronée des frais bancaires ou prélèvements d'agios comme des mouvements clients, maintenant artificiellement des comptes actifs.",
+"Contrôle de premier niveau": "Paramétrage informatique vérifié par le Responsable des Systèmes d'Information excluant les codes flux automatiques (frais tenue de compte, intérêts débiteurs).",
+"Contrôle de second niveau": "Test par échantillonnage du Contrôle Permanent sur 25 comptes inactifs pour vérifier que le compteur d'inactivité ne s'est pas réinitialisé sur perception de frais.",
+"Document": "Matrice des codes opérations Core Banking, Rapport de paramétrage du moteur de calcul d'inactivité."
+},
+{
+"no": 4,
+"Point de controle": "Cantonnement comptable et ségrégation des soldes de comptes dormants sur comptes de bilan dédiés",
+"Risque": "Confusion des soldes dormants avec les dépôts ordinaires, dissimulation d'écarts et impossibilité d'assurer la reddition des comptes au régulateur.",
+"Contrôle de premier niveau": "Rapprochement mensuel par la Comptabilité générale entre la balance auxiliaire des comptes dormants et le compte de grand livre SYSCOHADA/BCEAO correspondant.",
+"Contrôle de second niveau": "Revue trimestrielle de la justification des soldes du grand livre des comptes dormants par le Contrôle Permanent avec pointage des suspens éventuels.",
+"Document": "Balance générale comptable, Balance auxiliaire des dépôts dormants, État de rapprochement comptable/Core Banking."
+},
+{
+"no": 5,
+"Point de controle": "Notification préalable obligatoire au titulaire du compte avant la bascule en statut dormant",
+"Risque": "Non-conformité aux exigences de l'Instruction N°008/07/2013/BCEAO et contestation juridique des clients pour blocage abusif des avoirs.",
+"Contrôle de premier niveau": "Émission par le Service Clientèle d'une lettre recommandée avec accusé de réception ou avis électronique traçable 3 mois avant l'échéance des 24 mois.",
+"Contrôle de second niveau": "Vérification par la Conformité du taux de notification des comptes éligibles au gel et archivage probant des accusés d'envoi.",
+"Document": "Courriers types de mise en demeure/notification, Récépissés postaux, Journal des envois d'alertes par mail certifié."
+},
+{
+"no": 6,
+"Point de controle": "Recensement et marquage spécifique des comptes de sociétés sous liquidation judiciaire ou procédure collective",
+"Risque": "Détournement d'actifs d'entreprises faillies par d'anciens mandataires révoqués ou des complices internes en agence.",
+"Contrôle de premier niveau": "Enregistrement immédiat par le Responsable Juridique de la décision de justice (jugement d'ouverture) avec blocage des mandats des anciens dirigeants.",
+"Contrôle de second niveau": "Contrôle trimestriel croisé par le Contrôle Permanent entre les annonces légales du RCCM/BODACC local et la base signalétique bancaire.",
+"Document": "Copies des jugements de liquidation judiciaire, PV de nomination des liquidateurs, Fiche de marquage signalétique 'Sous Procédure'."
+},
+{
+"no": 7,
+"Point de controle": "Sécurisation physique et intégrité des dossiers d'ouverture et cartons de signature des comptes dormants",
+"Risque": "Soustraction physique ou altération des cartons de signature pour monter des faux ordres de décaissement post-réactivation.",
+"Contrôle de premier niveau": "Archivage sécurisé sous clé ou coffre-fort des dossiers physiques avec registre d'accès émargé par le responsable des archives d'agence.",
+"Contrôle de second niveau": "Contrôle inopiné semestriel de l'existence physique et numérique des spécimens de signature sur un échantillon de 20 comptes inactifs à solde élevé.",
+"Document": "Cartons de signature scannés dans la GED, Registre des entrées/sorties de dossiers d'archives physiques."
+},
+{
+"no": 8,
+"Point de controle": "Contrôle strict des demandes de modification des données de contact (téléphone, adresse, email) sur compte inactif",
+"Risque": "Piratage de compte (Account Takeover) par substitution du contact légal afin d'intercepter les SMS de confirmation (OTP) et notifications de solde.",
+"Contrôle de premier niveau": "Exigence impérative de la présence physique du client ou mandat notarié, vérification de la pièce d'identité et double signature agence avant saisie.",
+"Contrôle de second niveau": "Contrôle systématique à 100 % sous 24h par le Contrôle Permanent Siège de toute modification de contact sur compte inactif depuis plus de 6 mois.",
+"Document": "Formulaire de mise à jour signalétique dument signé, Copie CNI/Passeport certifiée, Journal système des modifications signalétiques."
+},
+{
+"no": 9,
+"Point de controle": "Affectation exclusive des coordonnées du liquidateur légal désigné pour les personnes morales en liquidation",
+"Risque": "Saisie délibérée par un agent d'agence de son propre numéro de mobile ou de celui d'un tiers pour intercepter les validations de transactions.",
+"Contrôle de premier niveau": "Contrôle documentaire rigoureux par le Chef d'Agence de la concordance stricte entre le nom/contact du liquidateur judiciaire et les données saisies.",
+"Contrôle de second niveau": "Audit de concordance à 100 % par la Conformité entre les procès-verbaux de désignation du tribunal et les numéros de contact enregistrés dans le progiciel.",
+"Document": "Extrait du jugement de nomination du liquidateur, Pièce d'identité du mandataire judiciaire, Fiche signalétique modifiée."
+},
+{
+"no": 10,
+"Point de controle": "Formalisation obligatoire et recevabilité de la demande écrite de levée de gel / réactivation de compte",
+"Risque": "Réactivation illégitime sur simple demande verbale, mail non sécurisé ou faux ordre de déblocage initié en interne.",
+"Contrôle de premier niveau": "Examen minutieux de l'original de la lettre manuscrite ou formelle de demande de réactivation, comparaison des signatures avec le carton historique.",
+"Contrôle de second niveau": "Revue sur pièces par le Contrôleur Permanent de la complétude du dossier de réactivation préalablement à toute transaction financière.",
+"Document": "Courrier original de demande de réactivation, Bordereau de vérification des signatures (Signature Verification Form)."
+},
+{
+"no": 11,
+"Point de controle": "Mise à jour complète du dossier KYC (Know Your Customer) lors de la demande de réactivation",
+"Risque": "Non-conformité LBC/FT, blanchiment de capitaux sur comptes réactivés et absence d'identification des bénéficiaires effectifs actuels.",
+"Contrôle de premier niveau": "Collecte obligatoire des pièces d'identité récentes, justificatif de domicile de moins de 3 mois et fiche KYC réactualisée signée du titulaire.",
+"Contrôle de second niveau": "Validation formelle du dossier de conformité par le Responsable AML/CFT avant saisie du déblocage informatique.",
+"Document": "Fiche KYC actualisée, Copie de pièce d'identité valide, Facture CIE/SODECI ou certificat de résidence légalisé."
+},
+{
+"no": 12,
+"Point de controle": "Application de la double clé informatique obligatoire (Maker-Checker) Agence - Siège pour toute réactivation",
+"Risque": "Déblocage unilatéral par un agent ou directeur d'agence véreux facilitant le pillage instantané des fonds (cas survenu à Bouaké : 34 millions FCFA).",
+"Contrôle de premier niveau": "Initiation technique du déblocage en agence (Maker) soumise obligatoirement au verrouillage d'un profil de validation distant distinct (Checker Siège).",
+"Contrôle de second niveau": "Extraction informatique quotidienne des comptes réactivés et vérification de la séparation formelle entre l'initiateur (Agence) et le valideur (Conformité Siège).",
+"Document": "Journal système des habilitations Core Banking, Piste d'audit des approbations électroniques (Workflow Approval Logs)."
+},
+{
+"no": 13,
+"Point de controle": "Interdiction absolue de délégation ou d'approbation locale par le Chef d'Agence sans visa Siège",
+"Risque": "Contournement des règles de contrôle interne par collusion managériale au sein de l'agence bancaire.",
+"Contrôle de premier niveau": "Blocage logique dans la matrice d'habilitation du Core Banking empêchant le Chef d'Agence d'approuver un déblocage initié par son collaborateur.",
+"Contrôle de second niveau": "Audit de configuration semestriel des rôles et profils utilisateurs dans le Core Banking par le Contrôle Interne / Audit Informatique.",
+"Document": "Matrice des habilitations utilisateurs (Access Rights Matrix), Rapport de conformité des profils d'utilisateurs d'agence."
+},
+{
+"no": 14,
+"Point de controle": "Surveillance en temps réel des débits massifs survenus dans les 30 jours suivant la réactivation",
+"Risque": "Spoliation immédiate des fonds par virement ou retrait cash sitôt le compte rendu actif par l'opérateur.",
+"Contrôle de premier niveau": "Blocage technique automatique de tout débit supérieur à 5 000 000 FCFA dans les 30 jours suivant le déblocage, nécessitant l'avis écrit de la Direction des Risques.",
+"Contrôle de second niveau": "Analyse quotidienne par le Contrôle Permanent du rapport des mouvements débiteurs exécutés sur comptes réactivés récents.",
+"Document": "Rapport quotidien d'alerte des flux post-réactivation (REP-POST-REACT), Fiches de validation de décaissement exceptionnel."
+},
+{
+"no": 15,
+"Point de controle": "Contrôle de l'émission et de la délivrance de chèques de banque certifiés sur comptes réactivés",
+"Risque": "Transformation rapide de dépôts en déshérence en chèques de banque certifiés pour blanchir ou exfiltrer les fonds sans recours.",
+"Contrôle de premier niveau": "Examen physique de la demande d'émission, vérification de l'ordre, double signature autorisée et rapprochement du compte de liaison chèques de banque.",
+"Contrôle de second niveau": "Audit contradictoire à 100 % sous 48h par le Contrôle Permanent de tous les chèques de banque tirés sur des comptes débloqués depuis moins de 90 jours.",
+"Document": "Bordereau d'émission de chèque de banque, Souche de chèque sécurisé, Pièce d'identité du bénéficiaire émargée."
+},
+{
+"no": 16,
+"Point de controle": "Vérification des retraits d'espèces exceptionnels au guichet sur comptes dormants réactivés",
+"Risque": "Encaissement direct en liquide par complicité de guichetier sans laisser de trace bancaire scripturale extérieure.",
+"Contrôle de premier niveau": "Exigence du passage devant le Chef d'Agence pour tout retrait espèces supérieur au seuil réglementaire (ex: > 2 000 000 FCFA) et enregistrement vidéo guichet.",
+"Contrôle de second niveau": "Rapprochement des fiches d'approbation espèces d'agence avec les débits enregistrés sur les comptes réactivés au cours du mois.",
+"Document": "Bordereau de retrait d'espèces contresigné, Journal de caisse agence, Enregistrement des réquisitions caméras de caisse."
+},
+{
+"no": 17,
+"Point de controle": "Contrôle des ordres de virements électroniques externes (RTGS / SWIFT / UMOA-Titres) post-déblocage",
+"Risque": "Fuite définitive des capitaux vers des banques concurrentes ou comptes offshore sous couvert de faux contrats commerciaux.",
+"Contrôle de premier niveau": "Contrôle par le Service des Virements de l'authenticité de l'ordre, contre-appel systématique sur numéro sécurisé documenté et contrôle de conformité.",
+"Contrôle de second niveau": "Revue des pièces justificatives économiques de chaque virement externe supérieur à 10 000 000 FCFA émis par un compte réactivé.",
+"Document": "Ordre de virement signé, Feuille de contre-appel (Call-back Sheet), Facture ou acte sous-jacent certifié."
+},
+{
+"no": 18,
+"Point de controle": "Traçabilité et transmission effective des alertes SMS/Email de notification au titulaire légal",
+"Risque": "Défaut de transmission des alertes de débit masquant la fraude au véritable titulaire ou liquidateur judiciaire.",
+"Contrôle de premier niveau": "Vérification au fil de l'eau par l'agent back-office que le module d'alerte SMS/Push est actif et correctement connecté à la passerelle télécom.",
+"Contrôle de second niveau": "Audit mensuel des logs du serveur SMS gateway : rapprochement entre les numéros récepteurs d'alertes et les numéros officiels des dossiers clients.",
+"Document": "Logs techniques de la passerelle SMS (SMS Delivery Report), Journal d'audit des messages d'alerte émis."
+},
+{
+"no": 19,
+"Point de controle": "Rapprochement mensuel d'exhaustivité entre la liste Core Banking des déblocages et les dossiers physiques d'agence",
+"Risque": "Omission intentionnelle ou falsification de dossiers en agence pour masquer des déblocages illicites lors des revues d'audit.",
+"Contrôle de premier niveau": "Établissement par l'Adjoint du Chef d'Agence d'un tableau mensuel exhaustif des comptes réactivés avec transmission obligatoire au Siège.",
+"Contrôle de second niveau": "Rapprochement exhaustif opéré par le Contrôle Permanent entre les déblocages techniques enregistrés dans le système et les dossiers physiques transmis.",
+"Document": "Tableau récapitulatif mensuel d'agence, Extraction système IT des changements de statuts de comptes."
+},
+{
+"no": 20,
+"Point de controle": "Intégrité des feuilles de test et matrices permanentes : interdiction de suppression unilatérale de contrôles",
+"Risque": "Suppression arbitraire de lignes de contrôle sur comptes inactifs pour afficher un taux d'exécution artificiel de 100 % (Déficience Circulaire 03-2017/CB/C Art 3-n).",
+"Contrôle de premier niveau": "Verrouillage de la feuille de couverture et de test de l'auditeur/contrôleur avec interdiction de modifier les champs de contrôles obligatoires.",
+"Contrôle de second niveau": "Contrôle qualité semestriel par le Directeur du Contrôle Interne sur les feuilles de travail des contrôleurs juniors pour traquer toute mention 'N/A' non autorisée.",
+"Document": "Feuille de couverture et de test verrouillée (FC-AG-15), Matrice de surveillance permanente validée par le Comité d'Audit."
+},
+{
+"no": 21,
+"Point de controle": "Procédure d'escalade et validation formelle de toute dispense de contrôle ou mention 'Non applicable'",
+"Risque": "Arbitrage managérial illicite de responsables opérationnels réduisant le périmètre d'audit pour des raisons de productivité ou de reporting.",
+"Contrôle de premier niveau": "Obligation pour le contrôleur junior de soumettre une fiche de dérogation écrite dument justifiée pour tout contrôle n'ayant pu être exécuté.",
+"Contrôle de second niveau": "Visa écrit impératif et exclusif du Directeur de l'Audit Interne ou du Directeur du Contrôle Permanent pour valider une dispense de test.",
+"Document": "Fiche formelle de demande de dispense de contrôle (DISP-CTRL-01), PV d'arbitrage méthodologique."
+},
+{
+"no": 22,
+"Point de controle": "Surveillance AML/CFT et déclarations de soupçon (STR) à la CENTIF sur les comptes dormants réactivés",
+"Risque": "Sanctions pécuniaires lourdes et retrait d'agrément par la Commission Bancaire pour défaut de déclaration d'opérations suspectes.",
+"Contrôle de premier niveau": "Génération automatique d'un scénario de vigilance renforcée AML dans l'outil de conformité lors de tout flux créditeur/débiteur atypique sur compte réactivé.",
+"Contrôle de second niveau": "Instruction formelle du dossier par le Responsable Déclarations CENTIF sous 48h et transmission immédiate de la déclaration de soupçon si anomalie confirmée.",
+"Document": "Alertes de l'outil AML (Anti-Money Laundering), Dossiers d'investigation de soupçon, Copies des déclarations transmises à la CENTIF."
+},
+{
+"no": 23,
+"Point de controle": "Inventaire annuel des fonds en déshérence et suivi de la prescription légale (Instruction BCEAO 008/07/2013)",
+"Risque": "Conservation indue d'avoirs prescrits au bilan de la banque et manquement à l'obligation de transfert aux autorités habilitées (CDC ou Trésor Public).",
+"Contrôle de premier niveau": "Arrêté annuel au 31 décembre par la Direction Financière de la liste des comptes atteignant 8 ans, 10 ans et la prescription trentenaire légale.",
+"Contrôle de second niveau": "Audit de conformité légale par la Direction Juridique et le Contrôle Permanent sur l'état liquidatif des avoirs transférés à la Caisse des Dépôts et Consignations.",
+"Document": "État liquidatif annuel des fonds en déshérence prescrits, Récépissés de versement au Trésor Public / CDC."
+},
+{
+"no": 24,
+"Point de controle": "Émission systématique d'une Feuille de Révélation et d'Analyse de Problème (FRAP) en cas d'anomalie de déblocage",
+"Risque": "Traitement informel d'une faille critique de sécurité financière sans plan d'action correctif contraignant ni responsabilisation des acteurs.",
+"Contrôle de premier niveau": "Notification formelle immédiate par le contrôleur permanent de toute tentative ou déblocage sans pièce justificative au Chef d'Agence pour explication sous 24h.",
+"Contrôle de second niveau": "Rédaction d'une FRAP qualifiée de 'Déficience Majeure' transmise au Directeur Général et au Comité des Risques avec plan d'action d'urgence.",
+"Document": "FRAP N° MSP-BK-FRAP-01, Plan d'action correctif (CAP), Accusé de réception de la Direction Générale."
+},
+{
+"no": 25,
+"Point de controle": "Reporting trimestriel spécifique sur la gestion des comptes inactifs destiné au Comité d'Audit et des Risques",
+"Risque": "Asymétrie d'information entre le management exécutif et le Conseil d'Administration masquant les défaillances de contrôle interne.",
+"Contrôle de premier niveau": "Consolidation trimestrielle par le Responsable du Contrôle Permanent des statistiques d'inactivité, réactivations, fraudes déjouées et suspens non levés.",
+"Contrôle de second niveau": "Présentation formelle et contradictoire du rapport par le Directeur du Contrôle Permanent et de la Conformité aux membres du Comité des Risques.",
+"Document": "Tableau de bord trimestriel du contrôle interne (TBCI), Rapport formel au Comité d'Audit et des Risques, Procès-verbal de séance du Conseil."
+}
+]
+}
+]
+}

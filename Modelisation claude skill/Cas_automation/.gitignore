@@ -1,0 +1,27 @@
+# Dossiers de sortie
+output/
+test_output/
+
+# Fichiers générés
+*.docx
+*.log
+
+# Cache Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Environnement virtuel (si créé)
+venv/
+env/
+
+# Fichiers temporaires
+*.tmp
+*.bak
+
+# Configuration locale
+config_local.py
+
+# Logs du serveur
+server.log
+*.log.*

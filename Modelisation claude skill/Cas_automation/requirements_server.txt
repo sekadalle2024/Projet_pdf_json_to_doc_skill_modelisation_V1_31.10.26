@@ -1,0 +1,12 @@
+# Dépendances pour le serveur d'automation
+# Installation: pip install -r requirements_server.txt
+
+# Serveur Web
+Flask>=3.0.0
+Flask-CORS>=4.0.0
+
+# Manipulation de documents (déjà dans pdf_excel_env)
+python-docx>=1.1.0
+
+# Utilitaires
+requests>=2.31.0  # Pour les tests
