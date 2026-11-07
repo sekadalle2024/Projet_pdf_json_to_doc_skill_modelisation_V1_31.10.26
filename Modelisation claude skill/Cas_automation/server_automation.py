@@ -30,11 +30,14 @@ import tempfile
 # Configuration des chemins
 SCRIPT_DIR = Path(__file__).parent
 BASE_DIR = SCRIPT_DIR.parent
-OUTPUT_DIR = SCRIPT_DIR / "output"
-JSON_STANDARD_DIR = SCRIPT_DIR / "json standard"
 
-# Créer le dossier de sortie
+# Utiliser un chemin court pour éviter les problèmes Windows (limite 260 caractères)
+# Le chemin long "H:\Projet_pdf_excel\Modelisation claude skill\Cas_automation\output"
+# combiné avec les noms de fichiers longs générés par les scripts dépasse la limite
+OUTPUT_DIR = Path("C:/audit_output")
 OUTPUT_DIR.mkdir(exist_ok=True)
+
+JSON_STANDARD_DIR = SCRIPT_DIR / "json standard"
 
 # Chemins vers les scripts Python des Cas
 CAS_6_SCRIPT = BASE_DIR / "Cas_6" / "json2word_feuilles_revision.py"
